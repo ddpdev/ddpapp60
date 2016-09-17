@@ -1,0 +1,3 @@
+rootProject.name = 'ddpapp61'
+
+include ':app'
