@@ -1,12 +1,31 @@
 {
   "name": "ddpapp61",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "rndebugger-open",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "es6-promise": "^3.3.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "15.3.1",
-    "react-native": "0.33.0"
+    "react-native": "0.33.0",
+    "react-native-blur": "^1.0.1",
+    "react-native-button": "^1.7.0",
+    "react-native-camera-roll-picker": "^1.1.7",
+    "react-native-elements": "^0.4.0",
+    "react-native-material-kit": "^0.3.2",
+    "react-native-router-flux": "^3.35.0",
+    "react-native-vector-icons": "*",
+    "react-redux": "*",
+    "redux": "*",
+    "redux-logger": "*",
+    "redux-persist": "*",
+    "redux-thunk": "*",
+    "reselect": "*"
+  },
+  "devDependencies": {
+    "react-native-debugger-open": "^0.3.1"
   }
 }

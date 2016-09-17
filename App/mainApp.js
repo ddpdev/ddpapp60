@@ -52,7 +52,7 @@ class MainApp extends Component {
       id : this.props.id,
       name: this.props.name,
     }
-    console.log("MainApp");
+    console.log("MainApp:",this.props,this.state);
   };
   //
     // function actionOne () {

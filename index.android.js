@@ -4,7 +4,9 @@
  * @flow
  */
 
-import { AppRegistry } from 'react-native';
+'use strict';
+
+import { AppRegistry } from "react-native";
 
 //import Setup from './App/setup';
 import Setup from './App/setupRoute';

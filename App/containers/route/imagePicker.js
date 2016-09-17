@@ -19,7 +19,6 @@ import {
 } from 'react-native';
 import Util from '../../util/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {BlurView,VibrancyView} from 'react-native-blur';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
