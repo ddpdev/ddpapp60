@@ -7,11 +7,13 @@ import Error from './Error';
 import StatusModal from './components/StatusModal';
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
+import PageThree from './PageThree';
 import MainApp from '../../mainApp';
 import Product from '../product/productlistview';
 import ProductDetail from '../product/productDetail';
 import ImagePicker from './imagePicker';
 import CameraRollPicker from './cameraRollPicker';
+import PageCameraRollPicker from './PageCameraRollPicker';
 
 import Icon from "react-native-vector-icons/EvilIcons";
 //import * as actions from '../../actions'
@@ -66,6 +68,14 @@ class Right extends React.Component {
                 rightTitle='Main'
                 />
               <Scene key="pageTwo" component={PageTwo} title="Page Two" />
+              <Scene key="pageThree" component={PageThree} title="웹뷰"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+              <Scene key="pageCameraRollPicker" component={PageCameraRollPicker} title="사진 선택"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
               <Scene key="productList" component={Product} title="Product List"
                 onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                 leftTitle="Main"

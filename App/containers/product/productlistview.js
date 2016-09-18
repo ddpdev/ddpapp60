@@ -176,6 +176,7 @@ class Product extends Component {
 
       var posY = event.nativeEvent.contentOffset.y;
       if (posY < this._prevY && posY <= 0) {
+        console.log("reload");
         this.reloadItems();
       }
       this._prevY = posY;
@@ -253,8 +254,8 @@ class Product extends Component {
                 />
                 <View style={styles.rightContainer}>
                     <Text style={styles.title}>[{image.item_id}] {itemInfo.uploadfilename}</Text>
-                    <Text style={styles.year}>{getFormattedDate(image.last_date)}, 등록일시:{image.last_date}</Text>
-                    <Text style={styles.year}>size:{itemInfo.filesize}byte</Text>
+                    <Text style={styles.text}>{getFormattedDate(image.last_date)}</Text><Text style={styles.date}>등록일시:{image.last_date}</Text>
+                    <Text style={styles.date}>size:{itemInfo.filesize}byte</Text>
                 </View>
             </View>
           </TouchableHighlight>
@@ -278,10 +279,25 @@ var styles = StyleSheet.create({
         height:120,
     },
     title: {
-        fontSize: 12,
+        fontSize: 14,
         marginBottom: 8,
         marginLeft: 5,
         textAlign: 'left',
+    },
+    text: {
+      fontSize: 12,
+      marginLeft: 5,
+      alignItems: 'center',
+      color: 'darkblue',
+    },
+    date: {
+      fontSize: 10,
+      marginLeft: 5,
+      alignItems: 'center',
+      color: 'black',
+    },
+    bold: {
+      fontWeight: 'bold',
     },
     year: {
         fontSize: 10,

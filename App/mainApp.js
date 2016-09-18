@@ -12,7 +12,6 @@ import {
   Alert,
   TouchableHighlight,
 } from 'react-native';
-import StatusBar from 'StatusBar';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -21,28 +20,8 @@ import * as actions from './actions';
 import {Actions} from 'react-native-router-flux'
 import { SocialIcon, Button  } from 'react-native-elements'
 
-//import Home from './containers/Home';
-//import Product from './containers/product/itemlist';
-//import Product from './containers/product/itemlistfetch';
-//import Product from './containers/product/itemfetchlistview';
 import Product from './containers/product/productlistview';
-//import ImagePicker from './containers/route/imagePicker';
-//import ImagePicker from './containers/route/imagePicker';
-
-// class Button extends Component{
-//   render() {
-//     return (
-//       <TouchableHighlight
-//         underlayColor={'white'}
-//         style={[styles.button,{backgroundColor:this.props.color}]}
-//         onPress={this.props.onPress}>
-//         <Text style={styles.buttonLabel}>
-//           {this.props.label}
-//         </Text>
-//       </TouchableHighlight>
-//     );
-//   }
-// }
+import BottomBar from './containers/route/components/BottomBar';
 
 //type Props = {};
 class MainApp extends Component {
@@ -54,22 +33,13 @@ class MainApp extends Component {
     }
     console.log("MainApp:",this.props,this.state);
   };
-  //
-    // function actionOne () {
-    //   console.log("actionOne");
-    //   Alert.alert("action1 Title","action1 message");
-    // };
-    // function actionTwo () {
-    //   console.log("actionTwo");
-    //   Alert.alert("action2");
-    // };
 
   render() {
     const { state, actions } = this.props;
     console.log("Props", this.props, state, actions); // everything ok here
     //const gotoDetail = () => Actions.productDetail({ProductItemTitle:uploadfilename, ProductItemPrice:itemPrice, ProductItemURL:imageUri});
-    const imagePicker = () => Actions.imagePicker();
-    const cameraRollPicker = () => Actions.cameraRollPicker({ groupTypes: 'Album', assetType: 'Photos' });
+    //const imagePicker = () => Actions.imagePicker();
+    //const cameraRollPicker = () => Actions.cameraRollPicker({ groupTypes: 'All', assetType: 'Photos' });
 
     return (
       <View style={styles.container}>
@@ -77,32 +47,7 @@ class MainApp extends Component {
               <Product/>
           </View>
           <View style={styles.bottomContainer}>
-            <StatusBar
-              translucent={true}
-              backgroundColor="rgba(0, 0, 255, 0.2)"
-              barStyle="light-content"
-             />
-              <SocialIcon
-                type='google-plus-official'
-              />
-              <Button
-                small
-                iconRight
-                icon={{name: 'add-a-photo'}}
-                title='photo'
-                onPress={imagePicker}
-                />
-                <Button
-                  small
-                  iconRight
-                  icon={{name: 'collections'}}
-                  title='gallery'
-                  onPress={cameraRollPicker}
-                  />
-              <SocialIcon
-                title='Sign In With Facebook'
-                type='facebook'
-              />
+            <BottomBar/>
           </View>
       </View>
     );
