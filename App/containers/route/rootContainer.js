@@ -8,6 +8,7 @@ import StatusModal from './components/StatusModal';
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
 import PageThree from './PageThree';
+import PageEditor from './PageEditor';
 import MainApp from '../../mainApp';
 import Product from '../product/productlistview';
 import ProductDetail from '../product/productDetail';
@@ -69,6 +70,10 @@ class Right extends React.Component {
                 />
               <Scene key="pageTwo" component={PageTwo} title="Page Two" />
               <Scene key="pageThree" component={PageThree} title="웹뷰"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+              <Scene key="pageEditor" component={PageEditor} title="에디터"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />

@@ -30,6 +30,14 @@ class PageOne extends Component {
           backgroundColor='#89faf8'
           onPress={Actions.pageThree}
         />
+          <Button
+              iconRight
+              icon={{name: 'web'}}
+              title='Draft Editor'
+              color='#517fa4'
+              backgroundColor='#89faf8'
+              onPress={Actions.pageEditor}
+          />
         <Button
           raised
           iconRight
