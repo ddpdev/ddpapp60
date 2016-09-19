@@ -7,6 +7,7 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Dimensions from 'Dimensions';
 import _ from 'lodash';
+import Path from 'path';
 import ActionButton from 'react-native-action-button';
 import CameraRollPicker from 'react-native-camera-roll-picker';
 //import Icon from 'react-native-vector-icons/Ionicons';
@@ -57,36 +58,58 @@ class PageCameraRollPicker extends Component {
     // width, height, uri
     var selectFiles = [];
     selectFiles = _.mapValues(selectImages, "uri");
-    console.log("uploadImages:",selectFiles.length,",",selectFiles);
+    console.log("uploadImages:",selectImages.length,",",selectFiles);
+    let dirName = "";
+    let fileName = "";
+    let extName = "";
+    let srcFile = "";
+    let data = new FormData();
 
-    if( selectFiles.length > 0) {
-      console.log("uploadImages:",selectFiles.length,",",selectFiles);
-        // RNFetchBlob.fetch('POST', UPLOAD_URL, {
-        //   Authorization : "app access-token",
-        //   otherHeader : "none",
-        //   'Content-Type' : 'multipart/form-data',
-        // }, [
-        //   // append field data from file path
-        //   { name : 'avatar-foo'
-        //     , filename : 'avatar-foo.png'
-        //     , type:'image/foo'
-        //     , data: RNFetchBlob.wrap(path_to_a_file)
-        //   },
-        // ])    // listen to upload progress event
-        //   .uploadProgress((written, total) => {
-        //     console.log('uploaded', written / total);
-        //   })
-        //   // listen to download progress event
-        //   .progress((received, total) => {
-        //     console.log('progress', received / total);
-        //   })
-        //  .then((resp) => {
-        //   console.log("Upload Fetch Response", resp);
-        // }).catch((err) => {
-        //   console.log("Upload Fetch Error", err);
-        // });
+    if( selectImages.length > 0) {
+      for (var i=0; i<selectImages.length; i++) {
+        let tmpFile = selectImages[i].uri;
+        dirName = Path.dirname(tmpFile);
+        fileName = Path.basename(tmpFile);
+        extName = Path.extname(tmpFile);
 
-    }
+
+        if (Platform.OS === 'ios') {
+           srcFile = selectImages[i].uri.replace('file://', '');
+           console.log("upload[" + i + "]:" + selectImages[i].uri.replace('file://', '') + "," + dirName, ",filename:"+fileName, "ext:"+extName);
+        } else {
+          srcFile = selectImages[i].uri;
+           console.log("upload[" + i + "]:" + selectImages[i].uri + "," + dirName, ",filename:"+fileName, "ext:"+extName);
+        }
+
+        data.append('file',srcFile);
+
+        RNFetchBlob.fetch('POST', UPLOAD_URL, {
+          //Authorization : "app access-token",
+          //otherHeader : "none",
+          'Content-Type' : 'multipart/form-data; charset=utf-8', //application/octet-stream
+        }, [
+          // append field data from file path
+          { name : "file"
+            , filename : srcFile
+            //, type:'image/png'
+            , data:  data //RNFetchBlob.wrap(srcFile)
+          },
+        ])    // listen to upload progress event
+          .uploadProgress((written, total) => {
+            console.log('uploaded', written / total);
+          })
+          // listen to download progress event
+          .progress((received, total) => {
+            console.log('progress', received / total);
+          })
+          .then((resp) => {
+            console.log("Upload Fetch Response", resp);
+          }).catch((err) => {
+          console.log("Upload Fetch Error", err);
+        });
+
+      }
+   }
 
   }
 
@@ -119,10 +142,10 @@ class PageCameraRollPicker extends Component {
             </View>
             <View style={styles.view2}>
               { this.state.selectImagesUri != "" ?
-                <Image  source={{uri: this.state.selectImagesUri}}
-                        style={styles.thumbnail}>
-                  <Text style={styles.bold}> {this.state.selectImagesUri} </Text>
-                </Image>
+                <Text style={styles.bold}>
+                <Image  source={{uri: this.state.selectImagesUri}} style={styles.thumbnail}/>
+                 {this.state.selectImagesUri}
+                 </Text>
                 : null }
             </View>
             {/*{action button}*/}
