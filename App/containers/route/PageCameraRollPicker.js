@@ -2,7 +2,7 @@
  * Created by ms.kim2 on 2016-09-09.
  */
 import React, { Component } from 'react';
-import { View, Text ,StyleSheet, Image } from 'react-native';
+import { Alert, View, Text ,StyleSheet, Image,Platform } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Dimensions from 'Dimensions';
@@ -12,6 +12,10 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
 import { SocialIcon, Button, Icon  } from 'react-native-elements'
+import RNFetchBlob from 'react-native-fetch-blob'
+
+const UPLOAD_URL = 'http://app.ddpstyle.com/common/awsfileupload';
+const prefix = ((Platform.OS === 'android') ? 'file://' : '')
 
 class PageCameraRollPicker extends Component {
   constructor(props) {
@@ -26,6 +30,9 @@ class PageCameraRollPicker extends Component {
       selected: [],
       selectImagesUri : "",
     };
+
+    this.getSelectedImages = this.getSelectedImages.bind(this);
+
     console.log("PageImagePicker",this.props,this.state);
 
   }
@@ -45,6 +52,46 @@ class PageCameraRollPicker extends Component {
     console.log("images:", images);
     console.log(this.state.selected);
   }
+
+  uploadImages(selectImages) {
+    // width, height, uri
+    var selectFiles = [];
+    selectFiles = _.mapValues(selectImages, "uri");
+    console.log("uploadImages:",selectFiles.length,",",selectFiles);
+
+    if( selectFiles.length > 0) {
+      console.log("uploadImages:",selectFiles.length,",",selectFiles);
+        // RNFetchBlob.fetch('POST', UPLOAD_URL, {
+        //   Authorization : "app access-token",
+        //   otherHeader : "none",
+        //   'Content-Type' : 'multipart/form-data',
+        // }, [
+        //   // append field data from file path
+        //   { name : 'avatar-foo'
+        //     , filename : 'avatar-foo.png'
+        //     , type:'image/foo'
+        //     , data: RNFetchBlob.wrap(path_to_a_file)
+        //   },
+        // ])    // listen to upload progress event
+        //   .uploadProgress((written, total) => {
+        //     console.log('uploaded', written / total);
+        //   })
+        //   // listen to download progress event
+        //   .progress((received, total) => {
+        //     console.log('progress', received / total);
+        //   })
+        //  .then((resp) => {
+        //   console.log("Upload Fetch Response", resp);
+        // }).catch((err) => {
+        //   console.log("Upload Fetch Error", err);
+        // });
+
+    }
+
+  }
+
+
+
    // groupTypes : The group where the photos will be fetched, one of 'Album', 'All', 'Event', 'Faces', 'Library', 'PhotoStream' and 'SavedPhotos'. (Default: SavedPhotos)
   render() {
     return (
@@ -62,7 +109,7 @@ class PageCameraRollPicker extends Component {
               assetType='Photos'
               imagesPerRow={3}
               imageMargin={5}
-              callback={this.getSelectedImages.bind(this)} />
+              callback={this.getSelectedImages} />
           </View>
           <View style={styles.content}>
             <View style={styles.view1}>
@@ -80,26 +127,19 @@ class PageCameraRollPicker extends Component {
             </View>
             {/*{action button}*/}
             <View style={styles.view3}>
-              {/*Rest of App come ABOVE the action button component!*/}
-              {/*<ActionButton buttonColor="rgba(231,76,60,1)"*/}
-                            {/*onPress={() => alert("등록")}*/}
-                            {/*position = 'center'*/}
-                            {/*active = {true}*/}
-              {/*/>*/}
-              {/*<Text>가나다</Text>*/}
-              {/*<Button*/}
-                {/*small*/}
-                {/*iconRight*/}
-                {/*icon={{name: 'cloud_upload'}}*/}
-                {/*title='등록'*/}
-                {/*onPress={()=>alert("등록할까요?")}*/}
-              {/*/>*/}
               <Icon
                 raised
                 name='image'
                 type='font-awesome'
                 color='#f50'
-                onPress={()=>alert("등록할까요?")}
+                onPress={()=> Alert.alert(
+                            '파일업로드',
+                            '선택한파일을 등록하시겠습니까?',
+                            [
+                              {text:'Cancel', onPress:()=> console.log('Cancel Pressed')},
+                              {text:'OK', onPress:()=> this.uploadImages(this.state.selected)},
+                            ]
+                        )}
                 />
             </View>
           </View>

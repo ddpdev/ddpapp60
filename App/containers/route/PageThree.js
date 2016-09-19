@@ -12,6 +12,10 @@ import { connect } from 'react-redux';
       <WebView
         source={{uri: 'http://app.ddpstyle.com/common/awsfileupload'}}
         style={{marginTop: 20}}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        decelerationRate='normal'
+        startInLoadingState={true}
       />
         );
     }
