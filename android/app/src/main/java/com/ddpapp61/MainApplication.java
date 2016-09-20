@@ -13,7 +13,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
-import com.burlap.filetransfer.FileTransferPackage;
+//import com.burlap.filetransfer.FileTransferPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,8 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
             new VectorIconsPackage(),
             new ReactMaterialKitPackage(),
             new ImagePickerPackage(),
-            new RNFetchBlobPackage(),
-            new FileTransferPackage()
+            new RNFetchBlobPackage()
+            //new FileTransferPackage()
       );
     }
   };

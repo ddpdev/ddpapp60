@@ -5,6 +5,7 @@ import com.imagepicker.ImagePickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
+//import com.burlap.filetransfer.FileTransferPackage;
 
 public class MainActivity extends ReactActivity {
 
