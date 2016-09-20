@@ -36,6 +36,7 @@
 		3BB1384220E94A4EBDDFEEB0 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08673A9D88F04B6F8EEAFAF6 /* libRNImagePicker.a */; };
 		80A4135AD8B248578982ABD8 /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA736BF2FD5841CDAEC5B349 /* libimageCropPicker.a */; };
 		ACD899A4DD3E4D0CB9FDFCD8 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9F7DE9F8DF42808F1DE681 /* libRNFetchBlob.a */; };
+		1122312630414BC7AE3F8369 /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF67E5810ECD4D9E832AEE8D /* libRNUploader.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,8 @@
 		AA736BF2FD5841CDAEC5B349 /* libimageCropPicker.a */ = {isa = PBXFileReference; name = "libimageCropPicker.a"; path = "libimageCropPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		F6029CF4F14F4280998CBA9A /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		6C9F7DE9F8DF42808F1DE681 /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		D0C56EF5D1EF4BFFACE5142B /* RNUploader.xcodeproj */ = {isa = PBXFileReference; name = "RNUploader.xcodeproj"; path = "../node_modules/react-native-uploader/RNUploader/RNUploader.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		EF67E5810ECD4D9E832AEE8D /* libRNUploader.a */ = {isa = PBXFileReference; name = "libRNUploader.a"; path = "libRNUploader.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,7 @@
 				3BB1384220E94A4EBDDFEEB0 /* libRNImagePicker.a in Frameworks */,
 				80A4135AD8B248578982ABD8 /* libimageCropPicker.a in Frameworks */,
 				ACD899A4DD3E4D0CB9FDFCD8 /* libRNFetchBlob.a in Frameworks */,
+				1122312630414BC7AE3F8369 /* libRNUploader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +323,7 @@
 				E341ACBBFBB74FD5B9D503DC /* RNImagePicker.xcodeproj */,
 				FBDD6E6DE003430B8ABBFA93 /* imageCropPicker.xcodeproj */,
 				F6029CF4F14F4280998CBA9A /* RNFetchBlob.xcodeproj */,
+				D0C56EF5D1EF4BFFACE5142B /* RNUploader.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -664,6 +669,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -680,6 +686,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ddpapp61.app/ddpapp61";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

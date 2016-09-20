@@ -11,7 +11,9 @@ import { SocialIcon, Button  } from 'react-native-elements'
 class PageOne extends Component {
   render() {
     const goToPageTwo = () => Actions.pageTwo({text: 'Hello World!'});
-    const goToPageCameraRollPicker = () => Actions.pageCameraRollPicker({text: 'Hello World!'});
+    const goToPageCameraRollPicker = () => Actions.pageCameraRollPicker();
+    const goToPageCameraRollPickerUpload = () => Actions.pageCameraRollPickerUpload();
+
     return (
       <View style={{flex:1, justifyContent: 'flex-start',alignItems: 'flex-start', marginTop: 100}}>
         <Text >This is 테스트페이지 모음</Text>
@@ -38,6 +40,16 @@ class PageOne extends Component {
               backgroundColor='#89faf8'
               onPress={Actions.pageEditor}
           />
+
+          <Button
+              raised
+              iconRight
+              icon={{name: 'collections'}}
+              title='카메라롤 픽커 & 업로드'
+              color='#f58'
+              onPress={goToPageCameraRollPickerUpload}
+          />
+
         <Button
           raised
           iconRight

@@ -15,6 +15,7 @@ import ProductDetail from '../product/productDetail';
 import ImagePicker from './imagePicker';
 import CameraRollPicker from './cameraRollPicker';
 import PageCameraRollPicker from './PageCameraRollPicker';
+import PageCameraRollPickerUpload from './PageCameraRollPickerUpload';
 
 import Icon from "react-native-vector-icons/EvilIcons";
 //import * as actions from '../../actions'
@@ -81,6 +82,11 @@ class Right extends React.Component {
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
+              <Scene key="pageCameraRollPickerUpload" component={PageCameraRollPickerUpload} title="사진 업로드"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+
               <Scene key="productList" component={Product} title="Product List"
                 onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                 leftTitle="Main"
