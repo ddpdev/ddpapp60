@@ -209,7 +209,7 @@ class Product extends Component {
       Promise.all([
                     this.loadPage(this.state.currentPage+1),
                     new Promise( resolve => this.setState({loadingNextPage:true}, resolve)),
-                    new Promise( resolve => setTimeout(() => resolve(), 1000)),
+                    new Promise( resolve => setTimeout(() => resolve(), 1500)),
                   ])
         .then (() => this.setState({loadingNextPage:false}) )
         .catch(reason => {

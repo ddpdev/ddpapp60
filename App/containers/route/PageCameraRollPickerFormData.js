@@ -2,7 +2,7 @@
  * Created by ms.kim2 on 2016-09-09.
  */
 import React, { Component } from 'react';
-import { Alert, View, Text ,StyleSheet, Image,Platform, DeviceEventEmitter,FormData } from 'react-native';
+import { Alert, View, Text ,StyleSheet, Image,Platform, DeviceEventEmitter } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Dimensions from 'Dimensions';
@@ -10,7 +10,7 @@ import _ from 'lodash';
 import Path from 'path';
 import ActionButton from 'react-native-action-button';
 import CameraRollPicker from 'react-native-camera-roll-picker';
-//import Icon from 'react-native-vector-icons/Ionicons';
+//import FormData from '../../util/FormData';
 import { SocialIcon, Button, Icon  } from 'react-native-elements';
 
 
@@ -68,7 +68,7 @@ class PageCameraRollPickerFormData extends Component {
     let fileName = "";
     let extName = "";
     let srcFile = "";
-    let data = new FormData();
+    //let data = new FormData();
     let uploadFiles = [];
 
     if( selectImages.length > 0) {
@@ -98,7 +98,7 @@ class PageCameraRollPickerFormData extends Component {
   }
 
   postData (url, params, fileURL) {
-    let data = new FormData();
+    //let data = new FormData();
 
     let dirName = Path.dirname(tmpFile);
     let fileName = Path.basename(tmpFile);

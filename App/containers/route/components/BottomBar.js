@@ -30,11 +30,11 @@ class BottomBar extends Component {
     const cameraRollPicker = () => Actions.pageCameraRollPicker({ groupTypes: 'All', assetType: 'Photos' });
     return(
             <View style={styles.bottomContainer}>
-              <StatusBar
-                translucent={true}
-                backgroundColor="rgba(0, 0, 0, 0.2)"
-                barStyle="light-content"
-              />
+              {/*<StatusBar*/}
+                {/*translucent={true}*/}
+                {/*backgroundColor="rgba(0, 0, 0, 0.2)"*/}
+                {/*barStyle="light-content"*/}
+              {/*/>*/}
               <SocialIcon
                 type='google-plus-official'
               />

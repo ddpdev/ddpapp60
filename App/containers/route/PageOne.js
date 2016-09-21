@@ -12,7 +12,7 @@ class PageOne extends Component {
   render() {
     const goToPageTwo = () => Actions.pageTwo({text: 'Hello World!'});
     const goToPageCameraRollPicker = () => Actions.pageCameraRollPicker();
-    const pageCameraRollPickerFormData = () => Actions.pageCameraRollPickerFormData();
+    const pageCameraRollPickerUpload = () => Actions.pageCameraRollPickerUpload();
 
     return (
       <View style={{flex:1, justifyContent: 'flex-start',alignItems: 'flex-start', marginTop: 100}}>
@@ -45,16 +45,16 @@ class PageOne extends Component {
               raised
               iconRight
               icon={{name: 'collections'}}
-              title='카메라롤 픽커 & 업로드'
+              title='카메라롤 픽커 & 업로드(Real)'
               color='#f58'
-              onPress={pageCameraRollPickerFormData}
+              onPress={pageCameraRollPickerUpload}
           />
 
         <Button
           raised
           iconRight
           icon={{name: 'collections'}}
-          title='go To 카메라롤 픽커'
+          title='사진 선택 업로드 테스트(Fetch_Blob)'
           color='#f50'
           onPress={goToPageCameraRollPicker}
         />
