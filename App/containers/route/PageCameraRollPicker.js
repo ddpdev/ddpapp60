@@ -14,6 +14,7 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 
 import { SocialIcon, Button, Icon  } from 'react-native-elements'
 import RNFetchBlob from 'react-native-fetch-blob'
+import Base64 from 'base-64';
 
 const UPLOAD_URL = 'http://app.ddpstyle.com/common/awsfileuploadTest';
 const prefix = ((Platform.OS === 'android') ? 'file://' : '')
@@ -48,12 +49,10 @@ class PageCameraRollPicker extends Component {
       selectImagesUri: current.uri.toString(),
       uploadProgressPercent: 0,
     });
-
     //selectImages = this.state.selected.join();
-
-    console.log("selectImagesUri:", current.uri.toString());
-    console.log("images:", images);
-    console.log(this.state.selected);
+    console.log("current:" +JSON.stringify(current));
+    console.log("images:", JSON.stringify(images));
+    console.log("selected:" + JSON.stringify(this.state.selected));
   }
 
   uploadImages(selectImages) {
@@ -85,16 +84,26 @@ class PageCameraRollPicker extends Component {
 
         //data.append('file',srcFile);
 
-        console.log("RNFetchBlob Start:",fileName,", SERVER:",UPLOAD_URL);
+        console.log("RNFetchBlob Start["+i+"]:",fileName+"_"+i,", SERVER:",UPLOAD_URL);
+
+        var base64ImageString = Base64.encode(srcFile);
 
         RNFetchBlob.fetch('POST', UPLOAD_URL, {
-          //Authorization : "app access-token",
-          //otherHeader : "none",
-          'Content-Type' : 'multipart/form-data; charset=utf-8; boundary: ------DDPStyleBoundaryQGvWeNAiOE4g2VM5--;', //application/octet-stream
+
+            originalFileName: fileName,
+            path: srcFile,
+            otherHeader : "foo",
+            'Content-Type': 'multipart/form-data',
         }, [
-          // append field data from file path
-          { name : "file", filename : Path.basename(srcFile), type:'image/*', data:  RNFetchBlob.wrap(srcFile) },
-        ])    // listen to upload progress event
+          { name : 'myfile', filename: srcFile, type:'image/png', data : base64ImageString}
+          ])
+          //'Content-Type' : 'multipart/form-data;' // charset=utf-8; boundary: ------DDPStyleBoundaryQGvWeNAiOE4g2VM5--;', //application/octet-stream
+        // }, [
+        //   //{"fieldName":"myfile","originalFilename":
+        //   // append field data from file path
+        //   { name : "myfile", filename : fileName+"_"+i,  data: Base64.encode(srcFile) },
+        //   //{ fieldName : "myfile", "originalFilename" : srcFile, "type":'image/*', data:  RNFetchBlob.wrap(srcFile) },
+        // ])    // listen to upload progress event
           .uploadProgress((written, total) => {
             console.log('uploaded:', + Math.floor(written/total*100) + '%', written / total);
             this.setState({
@@ -102,9 +111,9 @@ class PageCameraRollPicker extends Component {
             });
           })
           // listen to download progress event
-          .progress((received, total) => {
-            console.log('download progress', + Math.floor(received/total*100) + '%', received / total);
-          })
+          // .progress((received, total) => {
+          //   console.log('download progress', + Math.floor(received/total*100) + '%', received / total);
+          // })
           .then((resp) => {
             if (resp.status !== 200){
               console.log("response status:", resp.status);
@@ -149,7 +158,7 @@ class PageCameraRollPicker extends Component {
               </Text>
             </View>
             <View style={styles.view2}>
-              { this.state.selectImagesUri != "" ?
+              { this.state.selected.length > 0 && this.state.selectImagesUri != "" ?
                 <Image  source={{uri: this.state.selectImagesUri}} style={styles.thumbnail}>
                 <Text style={styles.imageInfo}>{this.state.selectImagesUri}</Text>
                 </Image>

@@ -7,6 +7,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "base-64": "^0.1.0",
     "draft-js": "^0.9.1",
     "draft-js-hashtag-plugin": "^2.0.0-beta5",
     "draft-js-linkify-plugin": "^2.0.0-beta5",

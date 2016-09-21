@@ -14,6 +14,7 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 
 import { SocialIcon, Button, Icon  } from 'react-native-elements'
 import RNFetchBlob from 'react-native-fetch-blob'
+import Base64 from 'base-64';
 
 const UPLOAD_URL = 'http://app.ddpstyle.com/common/awsfileupload';
 const prefix = ((Platform.OS === 'android') ? 'file://' : '')
@@ -90,10 +91,11 @@ class PageCameraRollPicker extends Component {
         RNFetchBlob.fetch('POST', UPLOAD_URL, {
           //Authorization : "app access-token",
           //otherHeader : "none",
-          'Content-Type' : 'multipart/form-data; charset=utf-8; boundary: ------DDPStyleBoundaryQGvWeNAiOE4g2VM5--;', //application/octet-stream
+          //'originalFilename' : srcFile,
+          'Content-Type' : 'multipart/form-data;', // boundary: ------DDPStyleBoundaryQGvWeNAiOE4g2VM5--;', //application/octet-stream
         }, [
           // append field data from file path
-          { name : "file", filename : srcFile, type:'image/*', data:  RNFetchBlob.wrap(srcFile) },
+          { name : "myfile", filename : srcFile,  data: Base64.encode(srcFile) }, //data:  RNFetchBlob.wrap(srcFile) },
         ])    // listen to upload progress event
             .uploadProgress((written, total) => {
               console.log('uploaded:', + Math.floor(written/total*100) + '%', written / total);
@@ -144,12 +146,11 @@ class PageCameraRollPicker extends Component {
               </Text>
             </View>
             <View style={styles.view2}>
-              { this.state.selectImagesUri != "" ?
-                  <Text style={styles.bold}>
-                    <Image  source={{uri: this.state.selectImagesUri}} style={styles.thumbnail}/>
-                    {this.state.selectImagesUri}  {this.state.uploadProgressPercent}%
-                  </Text>
-                  : null }
+              { this.state.selected.length > 0 && this.state.selectImagesUri != "" ?
+                <Image  source={{uri: this.state.selectImagesUri}} style={styles.thumbnail}>
+                  <Text style={styles.imageInfo}>{this.state.selectImagesUri}</Text>
+                </Image>
+                : null }
             </View>
             {/*{action button}*/}
             <View style={styles.view3}>
@@ -167,6 +168,7 @@ class PageCameraRollPicker extends Component {
                       ]
                   )}
               />
+              <Text style={styles.bold}>{this.state.uploadProgressPercent}%</Text>
             </View>
           </View>
         </View>
@@ -240,6 +242,11 @@ const styles = StyleSheet.create({
   },
   info: {
     fontSize: 12,
+  },
+  imageInfo: {
+    fontSize: 6,
+    alignItems: 'flex-start',
+    color: 'black',
   },
   thumbnail:{
     width:80,

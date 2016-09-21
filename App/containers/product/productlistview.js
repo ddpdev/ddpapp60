@@ -134,26 +134,29 @@ class Product extends Component {
 
     console.log("prev itemList count:"+this.itemList.length);
 
-    console.log("await Start:"+Date.now());
+    try {
+        console.log("await Start:"+Date.now());
+        const response = await fetch(url);
+        console.log("await fetch success:"+Date.now());
+        const responseData = await response.json();
+        console.log("await End:"+Date.now());
 
-    const response = await fetch(url);
-    const responseData = await response.json();
+        this.itemList = this.itemList.concat(responseData.itemlist);
 
-    console.log("await End:"+Date.now());
+        //console.log("FETCH_DATA:",newArray.length,",itemList:",this.itemList.length);
 
-    this.itemList = this.itemList.concat(responseData.itemlist);
+        this.setState({
+            //dataSource: this.state.dataSource.cloneWithRows(responseData.itemlist),
+            // 추가된 item 배열을 전달한다.
+            dataSource: this.state.dataSource.cloneWithRows(this.itemList),
+            loaded:true,
+            currentPage:page,
+            loadingNextPage:false,
+        });
 
-    //console.log("FETCH_DATA:",newArray.length,",itemList:",this.itemList.length);
-
-    this.setState({
-        //dataSource: this.state.dataSource.cloneWithRows(responseData.itemlist),
-        // 추가된 item 배열을 전달한다.
-        dataSource: this.state.dataSource.cloneWithRows(this.itemList),
-        loaded:true,
-        currentPage:page,
-        loadingNextPage:false,
-    });
-
+    } catch (e) {
+      console.log("error:"+e);
+    }
     console.log("item count:"+this.itemList.length);
 }
 
