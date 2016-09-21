@@ -85,7 +85,7 @@ class PageCameraRollPicker extends Component {
 
         //data.append('file',srcFile);
 
-        console.log("RNFetchBlob Start:",UPLOAD_URL);
+        console.log("RNFetchBlob Start:",fileName,", SERVER:",UPLOAD_URL);
 
         RNFetchBlob.fetch('POST', UPLOAD_URL, {
           //Authorization : "app access-token",

@@ -90,7 +90,8 @@ class Product extends Component {
 
     }
 
-    loadPage(page?:number) {
+    // async 미적용 버전 9/20
+    loadPage_Prev(page?:number) {
         var url = (page ===undefined)? API_LASTEST.replace('{page}',0) : API_LASTEST.replace('{page}',page);
 
         console.log("loadPage url:"+url);
@@ -122,6 +123,39 @@ class Product extends Component {
             })
             .done(console.log("FETCH_DONE"));
     }
+
+    // async 적용 since 9/21
+    async loadPage(page?:number) {
+    var url = (page ===undefined)? API_LASTEST.replace('{page}',0) : API_LASTEST.replace('{page}',page);
+
+    console.log("loadPage url:"+url);
+    //var tmpArray = this.itemList;
+    //var newArray = [];
+
+    console.log("prev itemList count:"+this.itemList.length);
+
+    console.log("await Start:"+Date.now());
+
+    const response = await fetch(url);
+    const responseData = await response.json();
+
+    console.log("await End:"+Date.now());
+
+    this.itemList = this.itemList.concat(responseData.itemlist);
+
+    //console.log("FETCH_DATA:",newArray.length,",itemList:",this.itemList.length);
+
+    this.setState({
+        //dataSource: this.state.dataSource.cloneWithRows(responseData.itemlist),
+        // 추가된 item 배열을 전달한다.
+        dataSource: this.state.dataSource.cloneWithRows(this.itemList),
+        loaded:true,
+        currentPage:page,
+        loadingNextPage:false,
+    });
+
+    console.log("item count:"+this.itemList.length);
+}
 
     renderHeader() {
       if (!this.state.reloading) return null;

@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     topContainer: {
         flex: 1,
         //flexDirection:'row',
-        height: (Dimensions.get('window').height) - 120,
+        height: (Dimensions.get('window').height) - 150,
         width: Dimensions.get('window').width,
         backgroundColor: '#90ee90' // lightgreen
         // alignItems: 'center',
@@ -77,9 +77,10 @@ const styles = StyleSheet.create({
    bottomContainer: {
         flex: 1,
         flexDirection:'row',
+        marginBottom: 20,
         height: Dimensions.get('window').height/2,
         width: Dimensions.get('window').width,
-       backgroundColor: '#add8e6' // lightblue
+        backgroundColor: '#add8e6' // lightblue
         //alignItems: 'center',
         //justifyContent: 'center',
     },

@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   bottomContainer: {
     flex: 1,
     flexDirection:'row',
+    marginBottom:20,
     height: Dimensions.get('window').height/2,
     width: Dimensions.get('window').width,
     backgroundColor: '#add8e6' // lightblue

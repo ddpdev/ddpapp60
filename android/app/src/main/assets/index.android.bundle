@@ -95568,7 +95568,7 @@ backgroundColor:'#f0e68c'},
 topContainer:{
 flex:1,
 
-height:_Dimensions2.default.get('window').height-120,
+height:_Dimensions2.default.get('window').height-150,
 width:_Dimensions2.default.get('window').width,
 backgroundColor:'#90ee90'},
 
@@ -95577,6 +95577,7 @@ backgroundColor:'#90ee90'},
 bottomContainer:{
 flex:1,
 flexDirection:'row',
+marginBottom:20,
 height:_Dimensions2.default.get('window').height/2,
 width:_Dimensions2.default.get('window').width,
 backgroundColor:'#add8e6'},
@@ -95735,7 +95736,8 @@ catch(function(error){
 console.error(error);
 });
 
-}},{key:'loadPage',value:function loadPage(
+}},{key:'loadPage_Prev',value:function loadPage_Prev(
+
 
 page){var _this3=this;
 var url=page===undefined?API_LASTEST.replace('{page}',0):API_LASTEST.replace('{page}',page);
@@ -95768,7 +95770,40 @@ loadingNextPage:false});
 console.log("item count:"+_this3.itemList.length);
 }).
 done(console.log("FETCH_DONE"));
-}},{key:'renderHeader',value:function renderHeader()
+}},{key:'loadPage',value:function loadPage(
+
+
+page){var url,response,responseData;return regeneratorRuntime.async(function loadPage$(_context){while(1){switch(_context.prev=_context.next){case 0:
+url=page===undefined?API_LASTEST.replace('{page}',0):API_LASTEST.replace('{page}',page);
+
+console.log("loadPage url:"+url);
+
+
+
+console.log("prev itemList count:"+this.itemList.length);
+
+console.log("await Start:"+Date.now());_context.next=6;return regeneratorRuntime.awrap(
+
+fetch(url));case 6:response=_context.sent;_context.next=9;return regeneratorRuntime.awrap(
+response.json());case 9:responseData=_context.sent;
+
+console.log("await End:"+Date.now());
+
+this.itemList=this.itemList.concat(responseData.itemlist);
+
+
+
+this.setState({
+
+
+dataSource:this.state.dataSource.cloneWithRows(this.itemList),
+loaded:true,
+currentPage:page,
+loadingNextPage:false});
+
+
+console.log("item count:"+this.itemList.length);case 14:case'end':return _context.stop();}}},null,this);}},{key:'renderHeader',value:function renderHeader()
+
 
 {
 if(!this.state.reloading)return null;
@@ -96052,6 +96087,7 @@ backgroundColor:'#90ee90'},
 bottomContainer:{
 flex:1,
 flexDirection:'row',
+marginBottom:20,
 height:_Dimensions2.default.get('window').height/2,
 width:_Dimensions2.default.get('window').width,
 backgroundColor:'#add8e6'},
@@ -96788,7 +96824,7 @@ console.log("upload["+i+"]:"+selectImages[i].uri+","+dirName,",filename:"+fileNa
 
 
 
-console.log("RNFetchBlob Start:",UPLOAD_URL);
+console.log("RNFetchBlob Start:",fileName,", SERVER:",UPLOAD_URL);
 
 _reactNativeFetchBlob2.default.fetch('POST',UPLOAD_URL,{
 
@@ -96796,7 +96832,7 @@ _reactNativeFetchBlob2.default.fetch('POST',UPLOAD_URL,{
 'Content-Type':'multipart/form-data; charset=utf-8; boundary: ------DDPStyleBoundaryQGvWeNAiOE4g2VM5--;'},
 [
 
-{name:"file",filename:srcFile,type:'image/*',data:_reactNativeFetchBlob2.default.wrap(srcFile)}]).
+{name:"file",filename:_path2.default.basename(srcFile),type:'image/*',data:_reactNativeFetchBlob2.default.wrap(srcFile)}]).
 
 uploadProgress(function(written,total){
 console.log('uploaded:',+Math.floor(written/total*100)+'%',written/total);
@@ -96809,6 +96845,11 @@ progress(function(received,total){
 console.log('download progress',+Math.floor(received/total*100)+'%',received/total);
 }).
 then(function(resp){
+if(resp.status!==200){
+console.log("response status:",resp.status);
+}else{
+console.log("response OK status:",resp.status);
+}
 console.log("Upload Fetch Response",resp);
 }).catch(function(err){
 console.log("Upload Fetch Error",err);
@@ -96848,9 +96889,8 @@ _react2.default.createElement(_reactNative.Text,{style:styles.bold},' ',this.sta
 
 _react2.default.createElement(_reactNative.View,{style:styles.view2},
 this.state.selectImagesUri!=""?
-_react2.default.createElement(_reactNative.Text,{style:styles.bold},
-_react2.default.createElement(_reactNative.Image,{source:{uri:this.state.selectImagesUri},style:styles.thumbnail}),
-this.state.selectImagesUri,'  ',this.state.uploadProgressPercent,'%'):
+_react2.default.createElement(_reactNative.Image,{source:{uri:this.state.selectImagesUri},style:styles.thumbnail},
+_react2.default.createElement(_reactNative.Text,{style:styles.imageInfo},this.state.selectImagesUri)):
 
 null),
 
@@ -96866,10 +96906,11 @@ onPress:function onPress(){return _reactNative.Alert.alert(
 '선택한파일을 등록하시겠습니까?',
 [
 {text:'Cancel',onPress:function onPress(){return console.log('Cancel Pressed');}},
-{text:'OK',onPress:function onPress(){return _this3.uploadImages(_this3.state.selected);}}]);}})))));
+{text:'OK',onPress:function onPress(){return _this3.uploadImages(_this3.state.selected);}}]);}}),
 
 
 
+_react2.default.createElement(_reactNative.Text,{style:styles.bold},this.state.uploadProgressPercent,'%')))));
 
 
 
@@ -96920,7 +96961,7 @@ backgroundColor:'skyblue'},
 
 view2:{
 marginTop:5,
-width:_Dimensions2.default.get('window').width/3,
+
 justifyContent:'center',
 alignItems:'center',
 backgroundColor:'skyblue'},
@@ -96943,6 +96984,11 @@ fontWeight:'bold'},
 
 info:{
 fontSize:12},
+
+imageInfo:{
+fontSize:6,
+alignItems:'flex-start',
+color:'black'},
 
 thumbnail:{
 width:80,
@@ -118023,7 +118069,7 @@ console.log("upload["+i+"]:"+selectImages[i].uri+","+dirName,",filename:"+fileNa
 
 
 
-console.log("RNFetchBlob Start:",UPLOAD_URL);
+console.log("RNFetchBlob Start:",fileName,", SERVER:",UPLOAD_URL);
 
 _reactNativeFetchBlob2.default.fetch('POST',UPLOAD_URL,{
 
