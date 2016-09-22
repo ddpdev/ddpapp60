@@ -12,9 +12,10 @@ import ActionButton from 'react-native-action-button';
 import CameraRollPicker from 'react-native-camera-roll-picker';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
-import { SocialIcon, Button, Icon  } from 'react-native-elements'
-import RNFetchBlob from 'react-native-fetch-blob'
+import { SocialIcon, Button, Icon  } from 'react-native-elements';
+import RNFetchBlob from 'react-native-fetch-blob';
 import Base64 from 'base-64';
+
 
 const UPLOAD_URL = 'http://app.ddpstyle.com/common/awsfileuploadTest';
 const prefix = ((Platform.OS === 'android') ? 'file://' : '')

@@ -17,9 +17,11 @@ import {
 //import fetch from 'isomorphic-fetch';
 import { Router, Scene, Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-
 import { PricingCard } from 'react-native-elements';
 
+// Progress Image
+import ProgressImage from 'react-native-image-progress';
+import ProgressBar from 'react-native-progress/Bar';
 
 
 //https://ddpimage01.s3.ap-northeast-2.amazonaws.com/thumb/BJYGFdiU_thm.png
@@ -285,10 +287,17 @@ class Product extends Component {
               onPress={gotoDetail}
             >
             <View style={styles.container} >
-                <Image
+
+                {/*<Image*/}
+                    {/*source={{uri: imageUri}}*/}
+                    {/*style={styles.thumbnail}*/}
+                {/*/>*/}
+                <ProgressImage
                     source={{uri: imageUri}}
+                    indicator={ProgressBar}
                     style={styles.thumbnail}
                 />
+
                 <View style={styles.rightContainer}>
                     <Text style={styles.title}>[{image.item_id}] {itemInfo.uploadfilename}</Text>
                     <Text style={styles.text}>{getFormattedDate(image.last_date)}</Text><Text style={styles.date}>등록일시:{image.last_date}</Text>

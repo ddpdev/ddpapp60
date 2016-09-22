@@ -1,24 +1,18 @@
-/**
- * Created by ms.kim2 on 2016-09-18.
- */
-
-'use strict';
-
-import React from 'react';
+import React, {Component} from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  PixelRatio,
-  TouchableOpacity,
-  Image,
-  Platform
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    PixelRatio,
+    TouchableOpacity,
+    Image,
+    Platform
 } from 'react-native';
 
 import ImagePicker from 'react-native-image-picker';
 
-export default class ImagePickerComp extends React.Component {
+export default class ImagePickerViewer extends Component {
 
   state = {
     avatarSource: null,
@@ -59,10 +53,13 @@ export default class ImagePickerComp extends React.Component {
         } else {
           source = {uri: response.uri.replace('file://', ''), isStatic: true};
         }
+        console.log("URI", response.uri, ",source:", source);
 
         this.setState({
           avatarSource: source
         });
+        //console.log("response:", response);
+
       }
     });
   }
@@ -97,25 +94,25 @@ export default class ImagePickerComp extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
-          <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-            { this.state.avatarSource === null ? <Text>Select a Photo</Text> :
-              <Image style={styles.avatar} source={this.state.avatarSource} />
-            }
-          </View>
-        </TouchableOpacity>
+        <View style={styles.container}>
+          <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
+            <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
+              { this.state.avatarSource === null ? <Text>Select a Photo</Text> :
+                  <Image style={styles.avatar} source={this.state.avatarSource} />
+              }
+            </View>
+          </TouchableOpacity>
 
-        <TouchableOpacity onPress={this.selectVideoTapped.bind(this)}>
-          <View style={[styles.avatar, styles.avatarContainer]}>
-            <Text>Select a Video</Text>
-          </View>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={this.selectVideoTapped.bind(this)}>
+            <View style={[styles.avatar, styles.avatarContainer]}>
+              <Text>Select a Video</Text>
+            </View>
+          </TouchableOpacity>
 
-        { this.state.videoSource &&
-        <Text style={{margin: 8, textAlign: 'center'}}>{this.state.videoSource}</Text>
-        }
-      </View>
+          { this.state.videoSource &&
+          <Text style={{margin: 8, textAlign: 'center'}}>{this.state.videoSource}</Text>
+          }
+        </View>
     );
   }
 

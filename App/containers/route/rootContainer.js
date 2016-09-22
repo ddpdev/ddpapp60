@@ -16,7 +16,9 @@ import ImagePicker from './imagePicker';
 import CameraRollPicker from './cameraRollPicker';
 import PageCameraRollPicker from './PageCameraRollPicker';
 import PageCameraRollPickerUpload from './PageCameraRollPickerUpload';
-//import PageCameraRollPickerFormData from './PageCameraRollPickerFormData';
+import PagePhotoBrowser from './PagePhotoBrowser';
+import PageMaps from './map/PageMaps';
+import PageCalloutsMap from './map/PageCalloutsMap';
 
 import Icon from "react-native-vector-icons/EvilIcons";
 //import * as actions from '../../actions'
@@ -75,6 +77,16 @@ class Right extends React.Component {
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
+              <Scene key="pageMaps" component={PageMaps} title="GeoLocation"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+              <Scene key="pageCalloutsMap" component={PageCalloutsMap} title="Map1-Callout"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+
+
               <Scene key="pageEditor" component={PageEditor} title="에디터"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
@@ -105,12 +117,16 @@ class Right extends React.Component {
                    leftTitle="Main"
                    onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                    rightTitle='Main' />
-
             <Scene key="cameraRollPicker" component={CameraRollPicker} title="Camera Roll Picker"
-                   onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                   leftTitle="Main"
-                   onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                   rightTitle='Main' />
+                     onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     leftTitle="Main"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main' />
+
+            <Scene key="pagePhotoBrowser" component={PagePhotoBrowser} title="Photo Browser"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main' />
+
 
               <Scene key="pageMain" component={MainApp} title="Main" initial={true}
                 onLeft={()=>(Actions.pageOne({type: ActionConst.REPLACE}))}

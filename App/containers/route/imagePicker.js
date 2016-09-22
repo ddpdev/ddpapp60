@@ -43,6 +43,9 @@ class ImagePicker extends Component{
 
   storeImages(data) {
     const assets = data.edges;
+
+    console.log("assets:",assets);
+
     const images = assets.map((asset) => asset.node.image);
     const widths = [];
     const selected = [];
