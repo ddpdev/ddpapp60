@@ -13,7 +13,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
-//import com.burlap.filetransfer.FileTransferPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,11 +30,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new MapsPackage(),
             new VectorIconsPackage(),
             new ReactMaterialKitPackage(),
             new ImagePickerPackage(),
             new RNFetchBlobPackage()
-            //new FileTransferPackage()
       );
     }
   };

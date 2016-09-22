@@ -12,35 +12,36 @@ import PageEditor from './PageEditor';
 import MainApp from '../../mainApp';
 import Product from '../product/productlistview';
 import ProductDetail from '../product/productDetail';
-import ImagePicker from './imagePicker';
+import PageImagePicker from './PageImagePicker';
 import CameraRollPicker from './cameraRollPicker';
 import PageCameraRollPicker from './PageCameraRollPicker';
 import PageCameraRollPickerUpload from './PageCameraRollPickerUpload';
 import PagePhotoBrowser from './PagePhotoBrowser';
 import PageMaps from './map/PageMaps';
-import PageCalloutsMap from './map/PageCalloutsMap';
+import PageMapExamples from './map/PageMapExamples';
+//import PageCameraRoll from './camera/PageCameraRoll';
 
 import Icon from "react-native-vector-icons/EvilIcons";
 //import * as actions from '../../actions'
 
+// class Right extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     console.log("Right:",props);
+//   }
+//   render(){
+//     return <Text style={{
+//       width: 80,
+//       height: 37,
+//       position: "absolute",
+//       bottom: 4,
+//       right: 2,
+//       padding: 8,
+//     }} onClick={()=>Actions.pageProduct}>{this.props.rightTitle}</Text>
+//   }
+// }
 
-class Right extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log("Right:",props);
-  }
-  render(){
-    return <Text style={{
-      width: 80,
-      height: 37,
-      position: "absolute",
-      bottom: 4,
-      right: 2,
-      padding: 8,
-    }} onClick={()=>Actions.pageProduct}>{this.props.rightTitle}</Text>
-  }
-}
- class App extends Component {
+class RootContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -77,14 +78,18 @@ class Right extends React.Component {
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
-              <Scene key="pageMaps" component={PageMaps} title="GeoLocation"
+              <Scene key="pageMaps" component={PageMaps} title="Map Location 테스트"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
-              <Scene key="pageCalloutsMap" component={PageCalloutsMap} title="Map1-Callout"
+              <Scene key="pageMapExamples" component={PageMapExamples} title="Map Examples"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
+              {/*<Scene key="pageCameraRoll" component={PageCameraRoll} title="기본 카메라롤"*/}
+                     {/*onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}*/}
+                     {/*rightTitle='Main'*/}
+              {/*/>*/}
 
 
               <Scene key="pageEditor" component={PageEditor} title="에디터"
@@ -101,25 +106,17 @@ class Right extends React.Component {
               />
 
               <Scene key="productList" component={Product} title="Product List"
-                onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                leftTitle="Main"
-                onRight={()=>(Actions.productDetail({type: ActionConst.REPLACE}))}
-                rightTitle='상품설명'
+                  onRight={()=>(Actions.productDetail({type: ActionConst.REPLACE}))}
+                  rightTitle='상품설명'
                 />
                 <Scene  key="productDetail" component={ProductDetail} title="Product Detail"
-                        onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                       leftTitle="Main"
                        onRight={()=>(Actions.productList({type: ActionConst.REPLACE}))}
                        rightTitle='리스트'
                 />
-            <Scene key="imagePicker" component={ImagePicker} title="Image Picker"
-                   onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                   leftTitle="Main"
+            <Scene key="pageImagePicker" component={PageImagePicker} title="Image Picker"
                    onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                    rightTitle='Main' />
             <Scene key="cameraRollPicker" component={CameraRollPicker} title="Camera Roll Picker"
-                     onLeft={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                     leftTitle="Main"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main' />
 
@@ -130,7 +127,7 @@ class Right extends React.Component {
 
               <Scene key="pageMain" component={MainApp} title="Main" initial={true}
                 onLeft={()=>(Actions.pageOne({type: ActionConst.REPLACE}))}
-                leftTitle="Page"
+                leftTitle="모음"
                 onRight={()=>(Actions.productList({type: ActionConst.REPLACE}))}
                 rightTitle='리스트' />
 
@@ -153,4 +150,4 @@ class Right extends React.Component {
 //   };
 // }
 // export default connect(select)(App);
-export default connect()(App);
+export default connect()(RootContainer);

@@ -26,7 +26,7 @@ class BottomBar extends Component {
   };
 
   render() {
-    const imagePicker = () => Actions.imagePicker();
+    const pageImagePicker = () => Actions.pageImagePicker();
     const cameraRollPicker = () => Actions.pageCameraRollPicker({ groupTypes: 'All', assetType: 'Photos' });
     return(
             <View style={styles.bottomContainer}>
@@ -42,8 +42,8 @@ class BottomBar extends Component {
                 small
                 iconRight
                 icon={{name: 'add-a-photo'}}
-                title='photo'
-                onPress={imagePicker}
+                title='camera'
+                onPress={pageImagePicker}
               />
               <Button
                 small

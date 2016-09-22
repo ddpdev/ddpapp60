@@ -37,6 +37,7 @@
 		80A4135AD8B248578982ABD8 /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA736BF2FD5841CDAEC5B349 /* libimageCropPicker.a */; };
 		ACD899A4DD3E4D0CB9FDFCD8 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9F7DE9F8DF42808F1DE681 /* libRNFetchBlob.a */; };
 		1122312630414BC7AE3F8369 /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF67E5810ECD4D9E832AEE8D /* libRNUploader.a */; };
+		BA59A4C7075446328853F79D /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548AE83D6B374119877BBA5A /* libAirMaps.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,8 @@
 		6C9F7DE9F8DF42808F1DE681 /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		D0C56EF5D1EF4BFFACE5142B /* RNUploader.xcodeproj */ = {isa = PBXFileReference; name = "RNUploader.xcodeproj"; path = "../node_modules/react-native-uploader/RNUploader/RNUploader.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		EF67E5810ECD4D9E832AEE8D /* libRNUploader.a */ = {isa = PBXFileReference; name = "libRNUploader.a"; path = "libRNUploader.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		23BB0E8724124502AC2B72A4 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		548AE83D6B374119877BBA5A /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,7 @@
 				80A4135AD8B248578982ABD8 /* libimageCropPicker.a in Frameworks */,
 				ACD899A4DD3E4D0CB9FDFCD8 /* libRNFetchBlob.a in Frameworks */,
 				1122312630414BC7AE3F8369 /* libRNUploader.a in Frameworks */,
+				BA59A4C7075446328853F79D /* libAirMaps.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +328,7 @@
 				FBDD6E6DE003430B8ABBFA93 /* imageCropPicker.xcodeproj */,
 				F6029CF4F14F4280998CBA9A /* RNFetchBlob.xcodeproj */,
 				D0C56EF5D1EF4BFFACE5142B /* RNUploader.xcodeproj */,
+				23BB0E8724124502AC2B72A4 /* AirMaps.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -686,6 +692,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ddpapp61.app/ddpapp61";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -712,6 +719,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-crop-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
 				);
 				INFOPLIST_FILE = "ddpapp61/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -738,6 +746,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-crop-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
 				);
 				INFOPLIST_FILE = "ddpapp61/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -794,6 +803,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-crop-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -840,6 +850,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-crop-picker\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

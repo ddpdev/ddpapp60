@@ -22,7 +22,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
-class ImagePicker extends Component{
+class PageImagePicker extends Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -221,5 +221,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect()(ImagePicker);
+export default connect()(PageImagePicker);
 

@@ -14,42 +14,22 @@ class PageOne extends Component {
     const goToPageCameraRollPicker = () => Actions.pageCameraRollPicker();
     const pageCameraRollPickerUpload = () => Actions.pageCameraRollPickerUpload();
     const pagePhotoBrowser = () => Actions.pagePhotoBrowser();
+    const pageImagePicker = () => Actions.pageImagePicker();
+    const pageMapExamples = () => Actions.pageMapExamples();
     const pageMaps = () => Actions.pageMaps();
-    const pageCalloutsMap = () => Actions.pageCalloutsMap();
 
     return (
       <View style={{flex:1, justifyContent: 'flex-start',alignItems: 'flex-start', marginTop: 60}}>
         <ScrollView>
             <Text >This is 테스트페이지 모음</Text>
-            <Button
-                iconRight
-                icon={{name: 'smartphone'}}
-                title='go To PageTwo!'
-                backgroundColor='#397af8'
-                onPress={goToPageTwo}
-            />
-            <Button
-                iconRight
-                icon={{name: 'web'}}
-                title='Web View'
-                color='#517fa4'
-                backgroundColor='#89faf8'
-                onPress={Actions.pageThree}
-            />
-            <Button
-                iconRight
-                icon={{name: 'web'}}
-                title='Draft Editor'
-                color='#517fa4'
-                backgroundColor='#89faf8'
-                onPress={Actions.pageEditor}
-            />
+
             <Button
                 raised
                 iconRight
                 icon={{name: 'collections'}}
                 title='카메라롤 픽커 & 업로드(Real)'
                 color='#f58'
+                backgroundColor='#89faf8'
                 onPress={pageCameraRollPickerUpload}
             />
             <Button
@@ -58,31 +38,75 @@ class PageOne extends Component {
                 icon={{name: 'collections'}}
                 title='사진 선택 업로드 테스트(Fetch_Blob)'
                 color='#f50'
+                backgroundColor='#39fbf7'
                 onPress={goToPageCameraRollPicker}
             />
+            {/*<Button*/}
+                {/*raised*/}
+                {/*iconRight*/}
+                {/*icon={{name: 'collections'}}*/}
+                {/*title='기본 카메라롤'*/}
+                {/*color='#f50'*/}
+                {/*onPress={pageCameraRoll}*/}
+            {/*/>*/}
             <Button
-                raised
-                iconRight
-                icon={{name: 'collections'}}
-                title='photo browser'
-                color='#f50'
-                onPress={pagePhotoBrowser}
+              raised
+              iconRight
+              icon={{name: 'collections'}}
+              title='Image Picker,Camera,Video'
+              color='#386'
+              backgroundColor='#89faf8'
+              onPress={pageImagePicker}
+            />
+            <Button
+              raised
+              iconRight
+              icon={{name: 'collections'}}
+              title='photo browser'
+              color='#7c5'
+              //backgroundColor='#39fbf7'
+              onPress={pagePhotoBrowser}
+            />
+            <Button
+              iconRight
+              icon={{name: 'web'}}
+              title='Web View'
+              color='#517fa4'
+              backgroundColor='#89faf8'
+              onPress={Actions.pageThree}
             />
             <Button
                 raised
                 iconRight
                 icon={{name: 'collections'}}
-                title='GeoLocation'
-                color='#f50'
+                title='Map Examples'
+                color='#c93'
+                backgroundColor='#89faf8'
+                onPress={pageMapExamples}
+            />
+            <Button
+                raised
+                iconRight
+                icon={{name: 'collections'}}
+                title='Map Location 테스트'
+                color='#d47'
+                backgroundColor='#39fbf7'
                 onPress={pageMaps}
             />
             <Button
-                raised
-                iconRight
-                icon={{name: 'collections'}}
-                title='Map1-Callouts'
-                color='#f50'
-                onPress={pageCalloutsMap}
+              iconRight
+              icon={{name: 'web'}}
+              title='Editor(draft) 테스트'
+              color='#517fa4'
+              backgroundColor='#89faf8'
+              onPress={Actions.pageEditor}
+            />
+            <Button
+              iconRight
+              icon={{name: 'smartphone'}}
+              title='go To PageTwo!'
+              backgroundColor='#397af8'
+              onPress={goToPageTwo}
             />
 
             <Text onPress={Actions.pageMain}>Back Main!</Text>

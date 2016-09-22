@@ -1,52 +1,61 @@
 /**
  * Created by ms.kim2 on 2016-09-09.
+ * @flow
  */
 import React, { Component } from 'react';
-import { View, Text ,StyleSheet, WebView} from 'react-native';
+import { View, Text ,StyleSheet, WebView, Dimensions,ScrollView} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
 import MapView from 'react-native-maps';
 
+const { width, height } = Dimensions.get('window');
+
+const ASPECT_RATIO = width / height;
+const LATITUDE = 35.907757;
+const LONGITUDE = 127.766922;
+const LATITUDE_DELTA = 10.0;
+const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
  class PageMaps extends Component {
-     state = {
-         initialPosition: 'unknown',
-         lastPosition: 'unknown',
-     };
 
-     watchID: ?number = null;
+    constructor(props) {
+      super(props);
+      this.state = {
+        region: {
+          latitude: LATITUDE,
+          longitude: LONGITUDE,
+          latitudeDelta: LATITUDE_DELTA,
+          longitudeDelta: LONGITUDE_DELTA,
+        },
+        initialPosition : this.region,
+        lastPosition : this.region,
+      };
 
-     componentDidMount() {
-         navigator.geolocation.getCurrentPosition(
-             (position) => {
-                 var initialPosition = JSON.stringify(position);
-                 this.setState({initialPosition});
-             },
-             (error) => alert(error),
-             {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
-         );
-         this.watchID = navigator.geolocation.watchPosition((position) => {
-             var lastPosition = JSON.stringify(position);
-             this.setState({lastPosition});
-         });
-         console.log("position",position);
-     }
-
-     componentWillUnmount() {
-         navigator.geolocation.clearWatch(this.watchID);
-     }
+      console.log("map:",this.props,this.state);
+    }
 
      render() {
          return (
              <View>
-                 <Text>
-                     <Text style={styles.title}>Initial position: </Text>
-                     {this.state.initialPosition}
-                 </Text>
-                 <Text>
-                     <Text style={styles.title}>Current position: </Text>
-                     {this.state.lastPosition}
-                 </Text>
+               <ScrollView>
+                   <MapView
+                     initialRegion={{
+                       latitude: LATITUDE,
+                       longitude: LONGITUDE,
+                       latitudeDelta: LATITUDE_DELTA,
+                       longitudeDelta: LONGITUDE_DELTA,
+                     }}
+                   />
+                   <Text>
+                       <Text style={styles.title}>Initial position: </Text>
+                       {this.state.initialPosition}
+                   </Text>
+                   <Text>
+                       <Text style={styles.title}>Current position: </Text>
+                       {this.state.lastPosition}
+                   </Text>
+                 </ScrollView>
              </View>
          );
      }
