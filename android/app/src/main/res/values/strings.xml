@@ -1,14 +1,5 @@
 <resources>
-
-
-
-
-
-
-
-
-
-
-
     <string name="app_name">ddpapp61</string>
+    <string name="ANDROID_GOOGLE_MAPS_API_KEY">AIzaSyB4v42vGh_B1x_mNKlH7Z3s7E0WHY-h09s</string>
+    <string name="GOOGLE_API_KEY">AIzaSyAnRFZO64vA6cNtemTMS95r5avN_2htDgc</string>
 </resources>
