@@ -18,6 +18,7 @@ import PageCameraRollPicker from './PageCameraRollPicker';
 import PageCameraRollPickerUpload from './PageCameraRollPickerUpload';
 import PagePhotoBrowser from './PagePhotoBrowser';
 import PageMaps from './map/PageMaps';
+import PageLocation from './map/PageLocation';
 import PageMapExamples from './map/PageMapExamples';
 //import PageCameraRoll from './camera/PageCameraRoll';
 
@@ -82,6 +83,10 @@ class RootContainer extends Component {
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
+            <Scene key="pageLocation" component={PageLocation} title="Current Geo Location "
+                   onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                   rightTitle='Main'
+            />
               <Scene key="pageMapExamples" component={PageMapExamples} title="Map Examples"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'

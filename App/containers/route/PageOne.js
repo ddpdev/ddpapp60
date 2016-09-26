@@ -7,6 +7,8 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { SocialIcon, Button  } from 'react-native-elements'
+import { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
+
 
 class PageOne extends Component {
   render() {
@@ -17,6 +19,7 @@ class PageOne extends Component {
     const pageImagePicker = () => Actions.pageImagePicker();
     const pageMapExamples = () => Actions.pageMapExamples();
     const pageMaps = () => Actions.pageMaps();
+    //const pageLocation = () => Actions.pageLocation();
 
     return (
       <View style={{flex:1, justifyContent: 'flex-start',alignItems: 'flex-start', marginTop: 60}}>
@@ -84,6 +87,14 @@ class PageOne extends Component {
                 backgroundColor='#89faf8'
                 onPress={pageMapExamples}
             />
+          <Button
+            iconRight
+            icon={{name: 'web'}}
+            title='Current Geo Location '
+            color='#517fa4'
+            backgroundColor='#89faf8'
+            onPress={Actions.pageLocation}
+          />
             <Button
                 raised
                 iconRight
