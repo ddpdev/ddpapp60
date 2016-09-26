@@ -1,7 +1,16 @@
-/* @flow */
+/**
+ * realm db schema
+ * @flow
+ *
+* */
 
-export type loginInfo = {
-  isLoggedIn:boolean,
-  id : string,
-  name : string
-}
+const UserInfo = {
+    name : 'UserInfo',
+    properties : {
+        isLoggedIn: 'boolean',
+        id : 'string',
+        name : 'string',
+        icon : 'string'
+    }
+};
+
