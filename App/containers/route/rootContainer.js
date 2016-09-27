@@ -8,6 +8,7 @@ import StatusModal from './components/StatusModal';
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
 import PageThree from './PageThree';
+import PageWebView from './PageWebView';
 import PageEditor from './PageEditor';
 import MainApp from '../../mainApp';
 import Product from '../product/productlistview';
@@ -18,7 +19,7 @@ import PageCameraRollPicker from './PageCameraRollPicker';
 import PageCameraRollPickerUpload from './PageCameraRollPickerUpload';
 import PagePhotoBrowser from './PagePhotoBrowser';
 import PageMaps from './map/PageMaps';
-import PageLocation from './map/PageLocation';
+import PageAmapLocation from './map/PageAmapLocation';
 import PageMapExamples from './map/PageMapExamples';
 //import PageCameraRoll from './camera/PageCameraRoll';
 
@@ -75,7 +76,11 @@ class RootContainer extends Component {
                 rightTitle='Main'
                 />
               <Scene key="pageTwo" component={PageTwo} title="Page Two" />
-              <Scene key="pageThree" component={PageThree} title="웹뷰"
+              <Scene key="pageThree" component={PageThree} title="웹뷰(DDPStyle)"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+              <Scene key="pageWebView" component={PageWebView} title="웹뷰"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
@@ -83,10 +88,10 @@ class RootContainer extends Component {
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />
-            <Scene key="pageLocation" component={PageLocation} title="Current Geo Location "
-                   onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
-                   rightTitle='Main'
-            />
+              <Scene key="pageAmapLocation" component={PageAmapLocation} title="현재 위치(GPS,WIFI)"
+                    onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                    rightTitle='Main'
+              />
               <Scene key="pageMapExamples" component={PageMapExamples} title="Map Examples"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'

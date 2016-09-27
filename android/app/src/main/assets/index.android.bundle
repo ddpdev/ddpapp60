@@ -88322,19 +88322,21 @@ var _reactRedux=require(647 /* react-redux */);
 var _Error=require(722 /* ./Error */);var _Error2=babelHelpers.interopRequireDefault(_Error);
 var _StatusModal=require(725 /* ./components/StatusModal */);var _StatusModal2=babelHelpers.interopRequireDefault(_StatusModal);
 var _PageOne=require(726 /* ./PageOne */);var _PageOne2=babelHelpers.interopRequireDefault(_PageOne);
-var _PageTwo=require(775 /* ./PageTwo */);var _PageTwo2=babelHelpers.interopRequireDefault(_PageTwo);
-var _PageThree=require(778 /* ./PageThree */);var _PageThree2=babelHelpers.interopRequireDefault(_PageThree);
-var _PageEditor=require(779 /* ./PageEditor */);var _PageEditor2=babelHelpers.interopRequireDefault(_PageEditor);
-var _mainApp=require(780 /* ../../mainApp */);var _mainApp2=babelHelpers.interopRequireDefault(_mainApp);
-var _productlistview=require(783 /* ../product/productlistview */);var _productlistview2=babelHelpers.interopRequireDefault(_productlistview);
-var _productDetail=require(787 /* ../product/productDetail */);var _productDetail2=babelHelpers.interopRequireDefault(_productDetail);
-var _PageImagePicker=require(788 /* ./PageImagePicker */);var _PageImagePicker2=babelHelpers.interopRequireDefault(_PageImagePicker);
-var _cameraRollPicker=require(790 /* ./cameraRollPicker */);var _cameraRollPicker2=babelHelpers.interopRequireDefault(_cameraRollPicker);
-var _PageCameraRollPicker=require(792 /* ./PageCameraRollPicker */);var _PageCameraRollPicker2=babelHelpers.interopRequireDefault(_PageCameraRollPicker);
-var _PageCameraRollPickerUpload=require(822 /* ./PageCameraRollPickerUpload */);var _PageCameraRollPickerUpload2=babelHelpers.interopRequireDefault(_PageCameraRollPickerUpload);
-var _PagePhotoBrowser=require(823 /* ./PagePhotoBrowser */);var _PagePhotoBrowser2=babelHelpers.interopRequireDefault(_PagePhotoBrowser);
-var _PageMaps=require(858 /* ./map/PageMaps */);var _PageMaps2=babelHelpers.interopRequireDefault(_PageMaps);
-var _PageMapExamples=require(866 /* ./map/PageMapExamples */);var _PageMapExamples2=babelHelpers.interopRequireDefault(_PageMapExamples);
+var _PageTwo=require(782 /* ./PageTwo */);var _PageTwo2=babelHelpers.interopRequireDefault(_PageTwo);
+var _PageThree=require(785 /* ./PageThree */);var _PageThree2=babelHelpers.interopRequireDefault(_PageThree);
+var _PageWebView=require(786 /* ./PageWebView */);var _PageWebView2=babelHelpers.interopRequireDefault(_PageWebView);
+var _PageEditor=require(787 /* ./PageEditor */);var _PageEditor2=babelHelpers.interopRequireDefault(_PageEditor);
+var _mainApp=require(788 /* ../../mainApp */);var _mainApp2=babelHelpers.interopRequireDefault(_mainApp);
+var _productlistview=require(791 /* ../product/productlistview */);var _productlistview2=babelHelpers.interopRequireDefault(_productlistview);
+var _productDetail=require(795 /* ../product/productDetail */);var _productDetail2=babelHelpers.interopRequireDefault(_productDetail);
+var _PageImagePicker=require(796 /* ./PageImagePicker */);var _PageImagePicker2=babelHelpers.interopRequireDefault(_PageImagePicker);
+var _cameraRollPicker=require(798 /* ./cameraRollPicker */);var _cameraRollPicker2=babelHelpers.interopRequireDefault(_cameraRollPicker);
+var _PageCameraRollPicker=require(800 /* ./PageCameraRollPicker */);var _PageCameraRollPicker2=babelHelpers.interopRequireDefault(_PageCameraRollPicker);
+var _PageCameraRollPickerUpload=require(830 /* ./PageCameraRollPickerUpload */);var _PageCameraRollPickerUpload2=babelHelpers.interopRequireDefault(_PageCameraRollPickerUpload);
+var _PagePhotoBrowser=require(831 /* ./PagePhotoBrowser */);var _PagePhotoBrowser2=babelHelpers.interopRequireDefault(_PagePhotoBrowser);
+var _PageMaps=require(866 /* ./map/PageMaps */);var _PageMaps2=babelHelpers.interopRequireDefault(_PageMaps);
+var _PageAmapLocation=require(867 /* ./map/PageAmapLocation */);var _PageAmapLocation2=babelHelpers.interopRequireDefault(_PageAmapLocation);
+var _PageMapExamples=require(869 /* ./map/PageMapExamples */);var _PageMapExamples2=babelHelpers.interopRequireDefault(_PageMapExamples);
 
 
 var _EvilIcons=require(759 /* react-native-vector-icons/EvilIcons */);var _EvilIcons2=babelHelpers.interopRequireDefault(_EvilIcons);var
@@ -88390,11 +88392,19 @@ onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:
 rightTitle:'Main'}),
 
 _react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageTwo',component:_PageTwo2.default,title:'Page Two'}),
-_react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageThree',component:_PageThree2.default,title:'웹뷰',
+_react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageThree',component:_PageThree2.default,title:'웹뷰(DDPStyle)',
+onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:_reactNativeRouterFlux.ActionConst.REPLACE});},
+rightTitle:'Main'}),
+
+_react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageWebView',component:_PageWebView2.default,title:'웹뷰',
 onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:_reactNativeRouterFlux.ActionConst.REPLACE});},
 rightTitle:'Main'}),
 
 _react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageMaps',component:_PageMaps2.default,title:'Map Location 테스트',
+onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:_reactNativeRouterFlux.ActionConst.REPLACE});},
+rightTitle:'Main'}),
+
+_react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageAmapLocation',component:_PageAmapLocation2.default,title:'현재 위치(GPS,WIFI)',
 onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:_reactNativeRouterFlux.ActionConst.REPLACE});},
 rightTitle:'Main'}),
 
@@ -88713,9 +88723,19 @@ var _reactNative=require(12 /* react-native */);
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 var _Ionicons=require(727 /* react-native-vector-icons/Ionicons */);var _Ionicons2=babelHelpers.interopRequireDefault(_Ionicons);
-var _reactNativeElements=require(749 /* react-native-elements */);var
+var _reactNativeElements=require(749 /* react-native-elements */);
+var _reactNativeMaps=require(775 /* react-native-maps */);var
 
-PageOne=function(_Component){babelHelpers.inherits(PageOne,_Component);function PageOne(){babelHelpers.classCallCheck(this,PageOne);return babelHelpers.possibleConstructorReturn(this,(PageOne.__proto__||Object.getPrototypeOf(PageOne)).apply(this,arguments));}babelHelpers.createClass(PageOne,[{key:'render',value:function render()
+
+PageOne=function(_Component){babelHelpers.inherits(PageOne,_Component);
+function PageOne(props){babelHelpers.classCallCheck(this,PageOne);var _this=babelHelpers.possibleConstructorReturn(this,(PageOne.__proto__||Object.getPrototypeOf(PageOne)).call(this,
+props));
+_this.state={
+isLoggedIn:false};
+
+console.log("PageOne:",props,_this.state);return _this;
+}babelHelpers.createClass(PageOne,[{key:'render',value:function render()
+
 {
 var goToPageTwo=function goToPageTwo(){return _reactNativeRouterFlux.Actions.pageTwo({text:'Hello World!'});};
 var goToPageCameraRollPicker=function goToPageCameraRollPicker(){return _reactNativeRouterFlux.Actions.pageCameraRollPicker();};
@@ -88724,6 +88744,8 @@ var pagePhotoBrowser=function pagePhotoBrowser(){return _reactNativeRouterFlux.A
 var pageImagePicker=function pageImagePicker(){return _reactNativeRouterFlux.Actions.pageImagePicker();};
 var pageMapExamples=function pageMapExamples(){return _reactNativeRouterFlux.Actions.pageMapExamples();};
 var pageMaps=function pageMaps(){return _reactNativeRouterFlux.Actions.pageMaps();};
+var pageWebView=function pageWebView(){return _reactNativeRouterFlux.Actions.pageWebView({uri:'http://istarkov.github.io/google-map-react/map/main'});};
+
 
 return(
 _react2.default.createElement(_reactNative.View,{style:{flex:1,justifyContent:'flex-start',alignItems:'flex-start',marginTop:60}},
@@ -88748,14 +88770,6 @@ color:'#f50',
 backgroundColor:'#39fbf7',
 onPress:goToPageCameraRollPicker}),
 
-
-
-
-
-
-
-
-
 _react2.default.createElement(_reactNativeElements.Button,{
 raised:true,
 iconRight:true,
@@ -88777,27 +88791,43 @@ onPress:pagePhotoBrowser}),
 _react2.default.createElement(_reactNativeElements.Button,{
 iconRight:true,
 icon:{name:'web'},
-title:'Web View',
+title:'Web View(DDP)',
 color:'#517fa4',
 backgroundColor:'#89faf8',
 onPress:_reactNativeRouterFlux.Actions.pageThree}),
 
 _react2.default.createElement(_reactNativeElements.Button,{
-raised:true,
 iconRight:true,
-icon:{name:'collections'},
-title:'Map Examples',
-color:'#c93',
+icon:{name:'web'},
+title:'google map 연동 테스트',
+color:'#317fc4',
 backgroundColor:'#89faf8',
-onPress:pageMapExamples}),
+onPress:pageWebView}),
 
 _react2.default.createElement(_reactNativeElements.Button,{
 raised:true,
 iconRight:true,
 icon:{name:'collections'},
-title:'Map Location 테스트',
+title:'Map 예제모음',
+color:'#c93',
+backgroundColor:'#89faf8',
+onPress:pageMapExamples}),
+
+_react2.default.createElement(_reactNativeElements.Button,{
+iconRight:true,
+icon:{name:'collections'},
+title:'현재 위치 조회(GPS,WIFI)',
+color:'#517fa4',
+backgroundColor:'#89faf8',
+onPress:_reactNativeRouterFlux.Actions.pageAmapLocation}),
+
+_react2.default.createElement(_reactNativeElements.Button,{
+raised:true,
+iconRight:true,
+icon:{name:'collections'},
+title:'지도 표시 테스트',
 color:'#d47',
-backgroundColor:'#39fbf7',
+backgroundColor:'#79f9b3',
 onPress:pageMaps}),
 
 _react2.default.createElement(_reactNativeElements.Button,{
@@ -94958,7 +94988,1235 @@ elevation:2}}))});exports.default=
 
 Icon;
 }, "react-native-elements/src/icons/Icon.js");
-__d(775 /* ddpapp61/App/containers/route/PageTwo.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(775 /* react-native-maps/index.js */, function(global, require, module, exports) {var _MapView=require(776 /* ./components/MapView */);var _MapView2=babelHelpers.interopRequireDefault(_MapView);
+
+module.exports=_MapView2.default;
+}, "react-native-maps/index.js");
+__d(776 /* react-native-maps/components/MapView.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+
+
+
+
+
+var _MapMarker=require(777 /* ./MapMarker */);var _MapMarker2=babelHelpers.interopRequireDefault(_MapMarker);
+var _MapPolyline=require(778 /* ./MapPolyline */);var _MapPolyline2=babelHelpers.interopRequireDefault(_MapPolyline);
+var _MapPolygon=require(779 /* ./MapPolygon */);var _MapPolygon2=babelHelpers.interopRequireDefault(_MapPolygon);
+var _MapCircle=require(780 /* ./MapCircle */);var _MapCircle2=babelHelpers.interopRequireDefault(_MapCircle);
+var _MapCallout=require(781 /* ./MapCallout */);var _MapCallout2=babelHelpers.interopRequireDefault(_MapCallout);
+
+var viewConfig={
+uiViewClassName:'AIRMap',
+validAttributes:{
+region:true}};
+
+
+
+var propTypes=babelHelpers.extends({},
+_reactNative.View.propTypes,{
+
+
+
+
+style:_reactNative.View.propTypes.style,
+
+
+
+
+
+
+
+
+
+showsUserLocation:_react.PropTypes.bool,
+
+
+
+
+
+
+
+showsMyLocationButton:_react.PropTypes.bool,
+
+
+
+
+
+
+
+
+followsUserLocation:_react.PropTypes.bool,
+
+
+
+
+
+
+showsPointsOfInterest:_react.PropTypes.bool,
+
+
+
+
+
+
+
+showsCompass:_react.PropTypes.bool,
+
+
+
+
+
+
+zoomEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+rotateEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+cacheEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+loadingEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+loadingBackgroundColor:_reactNative.ColorPropType,
+
+
+
+
+
+
+loadingIndicatorColor:_reactNative.ColorPropType,
+
+
+
+
+
+
+scrollEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+pitchEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+
+toolbarEnabled:_react.PropTypes.bool,
+
+
+
+
+
+
+showsScale:_react.PropTypes.bool,
+
+
+
+
+
+showsBuildings:_react.PropTypes.bool,
+
+
+
+
+
+showsTraffic:_react.PropTypes.bool,
+
+
+
+
+
+
+
+showsIndoors:_react.PropTypes.bool,
+
+
+
+
+
+
+
+
+
+mapType:_react.PropTypes.oneOf([
+'standard',
+'satellite',
+'hybrid',
+'terrain']),
+
+
+
+
+
+
+
+
+region:_react.PropTypes.shape({
+
+
+
+latitude:_react.PropTypes.number.isRequired,
+longitude:_react.PropTypes.number.isRequired,
+
+
+
+
+
+latitudeDelta:_react.PropTypes.number.isRequired,
+longitudeDelta:_react.PropTypes.number.isRequired}),
+
+
+
+
+
+
+
+
+
+
+initialRegion:_react.PropTypes.shape({
+
+
+
+latitude:_react.PropTypes.number.isRequired,
+longitude:_react.PropTypes.number.isRequired,
+
+
+
+
+
+latitudeDelta:_react.PropTypes.number.isRequired,
+longitudeDelta:_react.PropTypes.number.isRequired}),
+
+
+
+
+
+
+
+maxDelta:_react.PropTypes.number,
+
+
+
+
+
+
+minDelta:_react.PropTypes.number,
+
+
+
+
+
+legalLabelInsets:_reactNative.EdgeInsetsPropType,
+
+
+
+
+onRegionChange:_react.PropTypes.func,
+
+
+
+
+onRegionChangeComplete:_react.PropTypes.func,
+
+
+
+
+onPress:_react.PropTypes.func,
+
+
+
+
+onLongPress:_react.PropTypes.func,
+
+
+
+
+onPanDrag:_react.PropTypes.func,
+
+
+
+
+onMarkerPress:_react.PropTypes.func,
+
+
+
+
+
+
+
+onMarkerSelect:_react.PropTypes.func,
+
+
+
+
+
+
+
+onMarkerDeselect:_react.PropTypes.func,
+
+
+
+
+onCalloutPress:_react.PropTypes.func,
+
+
+
+
+onMarkerDragStart:_react.PropTypes.func,
+
+
+
+
+onMarkerDrag:_react.PropTypes.func,
+
+
+
+
+
+onMarkerDragEnd:_react.PropTypes.func});var
+
+
+
+MapView=function(_React$Component){babelHelpers.inherits(MapView,_React$Component);
+function MapView(props){babelHelpers.classCallCheck(this,MapView);var _this=babelHelpers.possibleConstructorReturn(this,(MapView.__proto__||Object.getPrototypeOf(MapView)).call(this,
+props));
+
+_this.state={
+isReady:_reactNative.Platform.OS==='ios'};
+
+
+_this._onMapReady=_this._onMapReady.bind(_this);
+_this._onChange=_this._onChange.bind(_this);
+_this._onLayout=_this._onLayout.bind(_this);return _this;
+}babelHelpers.createClass(MapView,[{key:'componentDidMount',value:function componentDidMount()
+
+{var _props=
+this.props;var region=_props.region;var initialRegion=_props.initialRegion;
+if(region&&this.state.isReady){
+this.map.setNativeProps({region:region});
+}else if(initialRegion&&this.state.isReady){
+this.map.setNativeProps({region:initialRegion});
+}
+}},{key:'componentWillUpdate',value:function componentWillUpdate(
+
+nextProps){
+var a=this.__lastRegion;
+var b=nextProps.region;
+if(!a||!b)return;
+if(
+a.latitude!==b.latitude||
+a.longitude!==b.longitude||
+a.latitudeDelta!==b.latitudeDelta||
+a.longitudeDelta!==b.longitudeDelta)
+{
+this.map.setNativeProps({region:b});
+}
+}},{key:'_onMapReady',value:function _onMapReady()
+
+{var _props2=
+this.props;var region=_props2.region;var initialRegion=_props2.initialRegion;
+if(region){
+this.map.setNativeProps({region:region});
+}else if(initialRegion){
+this.map.setNativeProps({region:initialRegion});
+}
+this.setState({isReady:true});
+}},{key:'_onLayout',value:function _onLayout(
+
+e){var _props3=
+this.props;var region=_props3.region;var initialRegion=_props3.initialRegion;var onLayout=_props3.onLayout;var
+isReady=this.state.isReady;
+if(region&&isReady&&!this.__layoutCalled){
+this.__layoutCalled=true;
+this.map.setNativeProps({region:region});
+}else if(initialRegion&&isReady&&!this.__layoutCalled){
+this.__layoutCalled=true;
+this.map.setNativeProps({region:initialRegion});
+}
+if(onLayout){
+onLayout(e);
+}
+}},{key:'_onChange',value:function _onChange(
+
+event){
+this.__lastRegion=event.nativeEvent.region;
+if(event.nativeEvent.continuous){
+if(this.props.onRegionChange){
+this.props.onRegionChange(event.nativeEvent.region);
+}
+}else if(this.props.onRegionChangeComplete){
+this.props.onRegionChangeComplete(event.nativeEvent.region);
+}
+}},{key:'animateToRegion',value:function animateToRegion(
+
+region,duration){
+this._runCommand('animateToRegion',[region,duration||500]);
+}},{key:'animateToCoordinate',value:function animateToCoordinate(
+
+latLng,duration){
+this._runCommand('animateToCoordinate',[latLng,duration||500]);
+}},{key:'fitToElements',value:function fitToElements(
+
+animated){
+this._runCommand('fitToElements',[animated]);
+}},{key:'fitToSuppliedMarkers',value:function fitToSuppliedMarkers(
+
+markers,animated){
+this._runCommand('fitToSuppliedMarkers',[markers,animated]);
+}},{key:'takeSnapshot',value:function takeSnapshot(
+
+width,height,region,callback){
+var finalRegion=region||this.props.region||this.props.initialRegion;
+this._runCommand('takeSnapshot',[width,height,finalRegion,callback]);
+}},{key:'_getHandle',value:function _getHandle()
+
+{
+return(0,_reactNative.findNodeHandle)(this.map);
+}},{key:'_runCommand',value:function _runCommand(
+
+name,args){
+switch(_reactNative.Platform.OS){
+case'android':
+_reactNative.NativeModules.UIManager.dispatchViewManagerCommand(
+this._getHandle(),
+_reactNative.NativeModules.UIManager.AIRMap.Commands[name],
+args);
+
+break;
+
+case'ios':
+_reactNative.NativeModules.AIRMapManager[name].apply(
+_reactNative.NativeModules.AIRMapManager[name],[
+this._getHandle()].concat(babelHelpers.toConsumableArray(args)));
+
+break;
+
+default:
+break;}
+
+}},{key:'render',value:function render()
+
+{var _this2=this;
+var props=void 0;
+
+if(this.state.isReady){
+props=babelHelpers.extends({},
+this.props,{
+region:null,
+initialRegion:null,
+onChange:this._onChange,
+onMapReady:this._onMapReady,
+onLayout:this._onLayout});
+
+if(_reactNative.Platform.OS==='ios'&&props.mapType==='terrain'){
+props.mapType='standard';
+}
+props.handlePanDrag=!!props.onPanDrag;
+}else{
+props={
+style:this.props.style,
+region:null,
+initialRegion:null,
+onChange:this._onChange,
+onMapReady:this._onMapReady,
+onLayout:this._onLayout};
+
+}
+
+return(
+_react2.default.createElement(AIRMap,babelHelpers.extends({
+ref:function ref(_ref){_this2.map=_ref;}},
+props)));
+
+
+}}]);return MapView;}(_react2.default.Component);
+
+
+MapView.propTypes=propTypes;
+MapView.viewConfig=viewConfig;
+
+var AIRMap=(0,_reactNative.requireNativeComponent)('AIRMap',MapView,{
+nativeOnly:{
+onChange:true,
+onMapReady:true,
+handlePanDrag:true}});
+
+
+
+MapView.Marker=_MapMarker2.default;
+MapView.Polyline=_MapPolyline2.default;
+MapView.Polygon=_MapPolygon2.default;
+MapView.Circle=_MapCircle2.default;
+MapView.Callout=_MapCallout2.default;
+
+MapView.Animated=_reactNative.Animated.createAnimatedComponent(MapView);
+
+module.exports=MapView;
+}, "react-native-maps/components/MapView.js");
+__d(777 /* react-native-maps/components/MapMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+
+
+
+
+
+var _resolveAssetSource=require(310 /* react-native/Libraries/Image/resolveAssetSource */);var _resolveAssetSource2=babelHelpers.interopRequireDefault(_resolveAssetSource);
+
+var viewConfig={
+uiViewClassName:'AIRMapMarker',
+validAttributes:{
+coordinate:true}};
+
+
+
+var propTypes=babelHelpers.extends({},
+_reactNative.View.propTypes,{
+
+
+identifier:_react.PropTypes.string,
+reuseIdentifier:_react.PropTypes.string,
+
+
+
+
+
+
+title:_react.PropTypes.string,
+
+
+
+
+
+
+description:_react.PropTypes.string,
+
+
+
+
+
+image:_react.PropTypes.any,
+
+
+
+
+
+pinColor:_react.PropTypes.string,
+
+
+
+
+coordinate:_react.PropTypes.shape({
+
+
+
+latitude:_react.PropTypes.number.isRequired,
+longitude:_react.PropTypes.number.isRequired}).
+isRequired,
+
+
+
+
+
+
+
+
+
+
+
+
+
+centerOffset:_react.PropTypes.shape({
+
+
+
+x:_react.PropTypes.number.isRequired,
+y:_react.PropTypes.number.isRequired}),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+calloutOffset:_react.PropTypes.shape({
+
+
+
+x:_react.PropTypes.number.isRequired,
+y:_react.PropTypes.number.isRequired}),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+anchor:_react.PropTypes.shape({
+
+
+
+x:_react.PropTypes.number.isRequired,
+y:_react.PropTypes.number.isRequired}),
+
+
+
+
+
+
+
+
+
+
+
+
+
+calloutAnchor:_react.PropTypes.shape({
+
+
+
+x:_react.PropTypes.number.isRequired,
+y:_react.PropTypes.number.isRequired}),
+
+
+
+
+
+
+
+
+flat:_react.PropTypes.bool,
+
+draggable:_react.PropTypes.bool,
+
+
+
+
+onPress:_react.PropTypes.func,
+
+
+
+
+
+
+onSelect:_react.PropTypes.func,
+
+
+
+
+
+
+onDeselect:_react.PropTypes.func,
+
+
+
+
+onCalloutPress:_react.PropTypes.func,
+
+
+
+
+onDragStart:_react.PropTypes.func,
+
+
+
+
+onDrag:_react.PropTypes.func,
+
+
+
+
+
+onDragEnd:_react.PropTypes.func});
+
+
+var defaultProps={
+onPress:function onPress(){}};var
+
+
+MapMarker=function(_React$Component){babelHelpers.inherits(MapMarker,_React$Component);
+function MapMarker(props){babelHelpers.classCallCheck(this,MapMarker);var _this=babelHelpers.possibleConstructorReturn(this,(MapMarker.__proto__||Object.getPrototypeOf(MapMarker)).call(this,
+props));
+
+_this.showCallout=_this.showCallout.bind(_this);
+_this.hideCallout=_this.hideCallout.bind(_this);return _this;
+}babelHelpers.createClass(MapMarker,[{key:'showCallout',value:function showCallout()
+
+{
+this._runCommand('showCallout',[]);
+}},{key:'hideCallout',value:function hideCallout()
+
+{
+this._runCommand('hideCallout',[]);
+}},{key:'_getHandle',value:function _getHandle()
+
+{
+return(0,_reactNative.findNodeHandle)(this.marker);
+}},{key:'_runCommand',value:function _runCommand(
+
+name,args){
+switch(_reactNative.Platform.OS){
+case'android':
+_reactNative.NativeModules.UIManager.dispatchViewManagerCommand(
+this._getHandle(),
+_reactNative.NativeModules.UIManager.AIRMapMarker.Commands[name],
+args);
+
+break;
+
+case'ios':
+_reactNative.NativeModules.AIRMapMarkerManager[name].apply(
+_reactNative.NativeModules.AIRMapMarkerManager[name],[
+this._getHandle()].concat(babelHelpers.toConsumableArray(args)));
+
+break;
+
+default:
+break;}
+
+}},{key:'render',value:function render()
+
+{var _this2=this;
+var image=void 0;
+if(this.props.image){
+image=(0,_resolveAssetSource2.default)(this.props.image)||{};
+image=image.uri;
+}
+
+return(
+_react2.default.createElement(AIRMapMarker,babelHelpers.extends({
+ref:function ref(_ref){_this2.marker=_ref;}},
+this.props,{
+image:image,
+style:[styles.marker,this.props.style]})));
+
+
+}}]);return MapMarker;}(_react2.default.Component);
+
+
+MapMarker.propTypes=propTypes;
+MapMarker.defaultProps=defaultProps;
+MapMarker.viewConfig=viewConfig;
+
+var styles=_reactNative.StyleSheet.create({
+marker:{
+position:'absolute',
+backgroundColor:'transparent'}});
+
+
+
+var AIRMapMarker=(0,_reactNative.requireNativeComponent)('AIRMapMarker',MapMarker);
+
+MapMarker.Animated=_reactNative.Animated.createAnimatedComponent(MapMarker);
+
+module.exports=MapMarker;
+}, "react-native-maps/components/MapMarker.js");
+__d(778 /* react-native-maps/components/MapPolyline.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+var propTypes=babelHelpers.extends({},
+_reactNative.View.propTypes,{
+
+
+
+
+coordinates:_react.PropTypes.arrayOf(_react.PropTypes.shape({
+
+
+
+latitude:_react.PropTypes.number.isRequired,
+longitude:_react.PropTypes.number.isRequired})),
+
+
+
+
+
+onPress:_react.PropTypes.func,
+
+
+
+
+strokeWidth:_react.PropTypes.number,
+
+
+
+
+strokeColor:_react.PropTypes.string,
+
+
+
+
+
+
+
+
+zIndex:_react.PropTypes.number,
+
+
+
+
+
+
+
+lineCap:_react.PropTypes.oneOf([
+'butt',
+'round',
+'square']),
+
+
+
+
+
+
+
+
+lineJoin:_react.PropTypes.oneOf([
+'miter',
+'round',
+'bevel']),
+
+
+
+
+
+
+
+
+
+
+
+
+miterLimit:_react.PropTypes.number,
+
+
+
+
+
+
+
+
+
+geodesic:_react.PropTypes.bool,
+
+
+
+
+
+
+
+
+
+
+
+
+lineDashPhase:_react.PropTypes.number,
+
+
+
+
+
+
+
+
+
+
+
+
+
+lineDashPattern:_react.PropTypes.arrayOf(_react.PropTypes.number)});
+
+
+var defaultProps={
+strokeColor:'#000',
+strokeWidth:1};var
+
+
+MapPolyline=function(_React$Component){babelHelpers.inherits(MapPolyline,_React$Component);function MapPolyline(){babelHelpers.classCallCheck(this,MapPolyline);return babelHelpers.possibleConstructorReturn(this,(MapPolyline.__proto__||Object.getPrototypeOf(MapPolyline)).apply(this,arguments));}babelHelpers.createClass(MapPolyline,[{key:'render',value:function render()
+{
+return(
+_react2.default.createElement(AIRMapPolyline,this.props));
+
+}}]);return MapPolyline;}(_react2.default.Component);
+
+
+MapPolyline.propTypes=propTypes;
+MapPolyline.defaultProps=defaultProps;
+
+var AIRMapPolyline=(0,_reactNative.requireNativeComponent)('AIRMapPolyline',MapPolyline);
+
+module.exports=MapPolyline;
+}, "react-native-maps/components/MapPolyline.js");
+__d(779 /* react-native-maps/components/MapPolygon.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+var propTypes=babelHelpers.extends({},
+_reactNative.View.propTypes,{
+
+
+
+
+coordinates:_react.PropTypes.arrayOf(_react.PropTypes.shape({
+
+
+
+latitude:_react.PropTypes.number.isRequired,
+longitude:_react.PropTypes.number.isRequired})),
+
+
+
+
+
+onPress:_react.PropTypes.func,
+
+
+
+
+strokeWidth:_react.PropTypes.number,
+
+
+
+
+strokeColor:_react.PropTypes.string,
+
+
+
+
+fillColor:_react.PropTypes.string,
+
+
+
+
+
+
+
+
+zIndex:_react.PropTypes.number,
+
+
+
+
+
+
+
+lineCap:_react.PropTypes.oneOf([
+'butt',
+'round',
+'square']),
+
+
+
+
+
+
+
+
+lineJoin:_react.PropTypes.oneOf([
+'miter',
+'round',
+'bevel']),
+
+
+
+
+
+
+
+
+
+
+
+
+miterLimit:_react.PropTypes.number,
+
+
+
+
+
+
+
+
+
+geodesic:_react.PropTypes.bool,
+
+
+
+
+
+
+
+
+
+
+
+
+lineDashPhase:_react.PropTypes.number,
+
+
+
+
+
+
+
+
+
+
+
+
+
+lineDashPattern:_react.PropTypes.arrayOf(_react.PropTypes.number)});
+
+
+var defaultProps={
+strokeColor:'#000',
+strokeWidth:1};var
+
+
+MapPolygon=function(_React$Component){babelHelpers.inherits(MapPolygon,_React$Component);function MapPolygon(){babelHelpers.classCallCheck(this,MapPolygon);return babelHelpers.possibleConstructorReturn(this,(MapPolygon.__proto__||Object.getPrototypeOf(MapPolygon)).apply(this,arguments));}babelHelpers.createClass(MapPolygon,[{key:'render',value:function render()
+{
+return(
+_react2.default.createElement(AIRMapPolygon,this.props));
+
+}}]);return MapPolygon;}(_react2.default.Component);
+
+
+MapPolygon.propTypes=propTypes;
+MapPolygon.defaultProps=defaultProps;
+
+var AIRMapPolygon=(0,_reactNative.requireNativeComponent)('AIRMapPolygon',MapPolygon);
+
+module.exports=MapPolygon;
+}, "react-native-maps/components/MapPolygon.js");
+__d(780 /* react-native-maps/components/MapCircle.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+var propTypes=babelHelpers.extends({},
+_reactNative.View.propTypes,{
+
+
+
+
+center:_react.PropTypes.shape({
+
+
+
+latitude:_react.PropTypes.number.isRequired,
+longitude:_react.PropTypes.number.isRequired}).
+isRequired,
+
+
+
+
+radius:_react.PropTypes.number.isRequired,
+
+
+
+
+onPress:_react.PropTypes.func,
+
+
+
+
+strokeWidth:_react.PropTypes.number,
+
+
+
+
+strokeColor:_react.PropTypes.string,
+
+
+
+
+fillColor:_react.PropTypes.string,
+
+
+
+
+
+
+
+
+zIndex:_react.PropTypes.number,
+
+
+
+
+
+
+
+lineCap:_react.PropTypes.oneOf([
+'butt',
+'round',
+'square']),
+
+
+
+
+
+
+
+
+lineJoin:_react.PropTypes.oneOf([
+'miter',
+'round',
+'bevel']),
+
+
+
+
+
+
+
+
+
+
+
+
+miterLimit:_react.PropTypes.number,
+
+
+
+
+
+
+
+
+
+
+
+
+lineDashPhase:_react.PropTypes.number,
+
+
+
+
+
+
+
+
+
+
+
+
+
+lineDashPattern:_react.PropTypes.arrayOf(_react.PropTypes.number)});
+
+
+var defaultProps={
+strokeColor:'#000',
+strokeWidth:1};var
+
+
+MapCircle=function(_React$Component){babelHelpers.inherits(MapCircle,_React$Component);function MapCircle(){babelHelpers.classCallCheck(this,MapCircle);return babelHelpers.possibleConstructorReturn(this,(MapCircle.__proto__||Object.getPrototypeOf(MapCircle)).apply(this,arguments));}babelHelpers.createClass(MapCircle,[{key:'render',value:function render()
+{
+return(
+_react2.default.createElement(AIRMapCircle,this.props));
+
+}}]);return MapCircle;}(_react2.default.Component);
+
+
+MapCircle.propTypes=propTypes;
+MapCircle.defaultProps=defaultProps;
+
+var AIRMapCircle=(0,_reactNative.requireNativeComponent)('AIRMapCircle',MapCircle);
+
+module.exports=MapCircle;
+}, "react-native-maps/components/MapCircle.js");
+__d(781 /* react-native-maps/components/MapCallout.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+
+var propTypes=babelHelpers.extends({},
+_reactNative.View.propTypes,{
+tooltip:_react.PropTypes.bool,
+onPress:_react.PropTypes.func});
+
+
+var defaultProps={
+tooltip:false};var
+
+
+MapCallout=function(_React$Component){babelHelpers.inherits(MapCallout,_React$Component);function MapCallout(){babelHelpers.classCallCheck(this,MapCallout);return babelHelpers.possibleConstructorReturn(this,(MapCallout.__proto__||Object.getPrototypeOf(MapCallout)).apply(this,arguments));}babelHelpers.createClass(MapCallout,[{key:'render',value:function render()
+{
+return _react2.default.createElement(AIRMapCallout,babelHelpers.extends({},this.props,{style:[styles.callout,this.props.style]}));
+}}]);return MapCallout;}(_react2.default.Component);
+
+
+MapCallout.propTypes=propTypes;
+MapCallout.defaultProps=defaultProps;
+
+var styles=_reactNative.StyleSheet.create({
+callout:{
+position:'absolute'}});
+
+
+
+var AIRMapCallout=(0,_reactNative.requireNativeComponent)('AIRMapCallout',MapCallout);
+
+module.exports=MapCallout;
+}, "react-native-maps/components/MapCallout.js");
+__d(782 /* ddpapp61/App/containers/route/PageTwo.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
@@ -94966,7 +96224,7 @@ var _reactNative=require(12 /* react-native */);
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 
-var _reactNativeActionButton=require(776 /* react-native-action-button */);var _reactNativeActionButton2=babelHelpers.interopRequireDefault(_reactNativeActionButton);
+var _reactNativeActionButton=require(783 /* react-native-action-button */);var _reactNativeActionButton2=babelHelpers.interopRequireDefault(_reactNativeActionButton);
 var _Ionicons=require(727 /* react-native-vector-icons/Ionicons */);var _Ionicons2=babelHelpers.interopRequireDefault(_Ionicons);var
 
 
@@ -95001,9 +96259,9 @@ color:'white'}});exports.default=
 
 (0,_reactRedux.connect)()(PageTwo);
 }, "ddpapp61/App/containers/route/PageTwo.js");
-__d(776 /* react-native-action-button/ActionButton.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(783 /* react-native-action-button/ActionButton.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
-var _ActionButtonItem=require(777 /* ./ActionButtonItem */);var _ActionButtonItem2=babelHelpers.interopRequireDefault(_ActionButtonItem);
+var _ActionButtonItem=require(784 /* ./ActionButtonItem */);var _ActionButtonItem2=babelHelpers.interopRequireDefault(_ActionButtonItem);
 
 var alignItemsMap={
 "center":"center",
@@ -95322,7 +96580,7 @@ actionsVertical:{
 flex:1,
 justifyContent:'flex-end'}});
 }, "react-native-action-button/ActionButton.js");
-__d(777 /* react-native-action-button/ActionButtonItem.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(784 /* react-native-action-button/ActionButtonItem.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);var _Dimensions$get=
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;
 
@@ -95474,7 +96732,7 @@ actionText:{
 flex:1,
 fontSize:14}});
 }, "react-native-action-button/ActionButtonItem.js");
-__d(778 /* ddpapp61/App/containers/route/PageThree.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(785 /* ddpapp61/App/containers/route/PageThree.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
@@ -95507,7 +96765,47 @@ color:'white'}});exports.default=
 
 (0,_reactRedux.connect)()(PageThree);
 }, "ddpapp61/App/containers/route/PageThree.js");
-__d(779 /* ddpapp61/App/containers/route/PageEditor.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(786 /* ddpapp61/App/containers/route/PageWebView.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+
+
+var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
+var _reactRedux=require(647 /* react-redux */);var
+
+PageWebView=function(_Component){babelHelpers.inherits(PageWebView,_Component);
+function PageWebView(props){babelHelpers.classCallCheck(this,PageWebView);var _this=babelHelpers.possibleConstructorReturn(this,(PageWebView.__proto__||Object.getPrototypeOf(PageWebView)).call(this,
+props));
+console.log("webVeiw:",props);return _this;
+
+
+}babelHelpers.createClass(PageWebView,[{key:'render',value:function render()
+
+{
+return(
+_react2.default.createElement(_reactNative.WebView,{
+source:{uri:this.props.uri},
+style:{marginTop:20},
+javaScriptEnabled:true,
+domStorageEnabled:true,
+decelerationRate:'normal',
+startInLoadingState:true}));
+
+
+}}]);return PageWebView;}(_react.Component);
+
+
+var styles=_reactNative.StyleSheet.create({
+actionButtonIcon:{
+fontSize:20,
+height:22,
+color:'white'}});exports.default=
+
+
+
+(0,_reactRedux.connect)()(PageWebView);
+}, "ddpapp61/App/containers/route/PageWebView.js");
+__d(787 /* ddpapp61/App/containers/route/PageEditor.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
@@ -95571,7 +96869,7 @@ _react2.default.createElement(_reactNative.Text,null,'Editor'));
 
 (0,_reactRedux.connect)()(pageEditor);
 }, "ddpapp61/App/containers/route/PageEditor.js");
-__d(780 /* ddpapp61/App/mainApp.js */, function(global, require, module, exports) {
+__d(788 /* ddpapp61/App/mainApp.js */, function(global, require, module, exports) {
 
 
 'use strict';Object.defineProperty(exports,"__esModule",{value:true});
@@ -95588,13 +96886,13 @@ var _reactNative=require(12 /* react-native */);
 
 var _reactRedux=require(647 /* react-redux */);
 var _redux=require(654 /* redux */);
-var _actions=require(781 /* ./actions */);var actions=babelHelpers.interopRequireWildcard(_actions);
+var _actions=require(789 /* ./actions */);var actions=babelHelpers.interopRequireWildcard(_actions);
 
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactNativeElements=require(749 /* react-native-elements */);
 
-var _productlistview=require(783 /* ./containers/product/productlistview */);var _productlistview2=babelHelpers.interopRequireDefault(_productlistview);
-var _BottomBar=require(786 /* ./containers/route/components/BottomBar */);var _BottomBar2=babelHelpers.interopRequireDefault(_BottomBar);var
+var _productlistview=require(791 /* ./containers/product/productlistview */);var _productlistview2=babelHelpers.interopRequireDefault(_productlistview);
+var _BottomBar=require(794 /* ./containers/route/components/BottomBar */);var _BottomBar2=babelHelpers.interopRequireDefault(_BottomBar);var
 
 
 MainApp=function(_Component){babelHelpers.inherits(MainApp,_Component);
@@ -95673,14 +96971,14 @@ color:'#fff'}});exports.default=
 
 (0,_reactRedux.connect)()(MainApp);
 }, "ddpapp61/App/mainApp.js");
-__d(781 /* ddpapp61/App/actions/index.js */, function(global, require, module, exports) {'use strict';
+__d(789 /* ddpapp61/App/actions/index.js */, function(global, require, module, exports) {'use strict';
 
-var userActions=require(782 /* ./userActions */);
+var userActions=require(790 /* ./userActions */);
 
 module.exports=babelHelpers.extends({},
 userActions);
 }, "ddpapp61/App/actions/index.js");
-__d(782 /* ddpapp61/App/actions/userActions.js */, function(global, require, module, exports) {
+__d(790 /* ddpapp61/App/actions/userActions.js */, function(global, require, module, exports) {
 'use strict';
 
 
@@ -95719,7 +97017,7 @@ userLogin:userLogin,
 userLogout:userLogout,
 userSkippedLogin:userSkippedLogin};
 }, "ddpapp61/App/actions/userActions.js");
-__d(783 /* ddpapp61/App/containers/product/productlistview.js */, function(global, require, module, exports) {
+__d(791 /* ddpapp61/App/containers/product/productlistview.js */, function(global, require, module, exports) {
 
 
 "use strict";Object.defineProperty(exports,"__esModule",{value:true});
@@ -95741,8 +97039,8 @@ var _reactRedux=require(647 /* react-redux */);
 var _reactNativeElements=require(749 /* react-native-elements */);
 
 
-var _reactNativeImageProgress=require(784 /* react-native-image-progress */);var _reactNativeImageProgress2=babelHelpers.interopRequireDefault(_reactNativeImageProgress);
-var _Bar=require(785 /* react-native-progress/Bar */);var _Bar2=babelHelpers.interopRequireDefault(_Bar);
+var _reactNativeImageProgress=require(792 /* react-native-image-progress */);var _reactNativeImageProgress2=babelHelpers.interopRequireDefault(_reactNativeImageProgress);
+var _Bar=require(793 /* react-native-progress/Bar */);var _Bar2=babelHelpers.interopRequireDefault(_Bar);
 
 
 
@@ -96085,7 +97383,7 @@ marginBottom:15}});exports.default=
 
 (0,_reactRedux.connect)()(Product);
 }, "ddpapp61/App/containers/product/productlistview.js");
-__d(784 /* react-native-image-progress/index.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(792 /* react-native-image-progress/index.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
 
 
@@ -96240,7 +97538,7 @@ content));
 
 module.exports=ImageProgress;
 }, "react-native-image-progress/index.js");
-__d(785 /* react-native-progress/Bar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(793 /* react-native-progress/Bar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
 
 
@@ -96379,7 +97677,7 @@ children));
 
 }}]);return ProgressBar;}(_react.Component);ProgressBar.propTypes={animated:_react.PropTypes.bool,borderColor:_react.PropTypes.string,borderRadius:_react.PropTypes.number,borderWidth:_react.PropTypes.number,color:_react.PropTypes.string,height:_react.PropTypes.number,indeterminate:_react.PropTypes.bool,progress:_react.PropTypes.number,unfilledColor:_react.PropTypes.string,width:_react.PropTypes.number};ProgressBar.defaultProps={animated:true,borderRadius:4,borderWidth:1,color:'rgba(0, 122, 255, 1)',height:6,indeterminate:false,progress:0,width:150};exports.default=ProgressBar;
 }, "react-native-progress/Bar.js");
-__d(786 /* ddpapp61/App/containers/route/components/BottomBar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(794 /* ddpapp61/App/containers/route/components/BottomBar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
@@ -96489,7 +97787,7 @@ color:'#fff'}});exports.default=
 
 BottomBar;
 }, "ddpapp61/App/containers/route/components/BottomBar.js");
-__d(787 /* ddpapp61/App/containers/product/productDetail.js */, function(global, require, module, exports) {"use strict";Object.defineProperty(exports,"__esModule",{value:true});
+__d(795 /* ddpapp61/App/containers/product/productDetail.js */, function(global, require, module, exports) {"use strict";Object.defineProperty(exports,"__esModule",{value:true});
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
@@ -96560,7 +97858,7 @@ listView:{
 paddingTop:20,
 backgroundColor:'#F5FCFF'}});
 }, "ddpapp61/App/containers/product/productDetail.js");
-__d(788 /* ddpapp61/App/containers/route/PageImagePicker.js */, function(global, require, module, exports) {
+__d(796 /* ddpapp61/App/containers/route/PageImagePicker.js */, function(global, require, module, exports) {
 
 
 
@@ -96579,7 +97877,7 @@ var _reactNative=require(12 /* react-native */);
 
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
-var _reactNativeImagePicker=require(789 /* react-native-image-picker */);var _reactNativeImagePicker2=babelHelpers.interopRequireDefault(_reactNativeImagePicker);var
+var _reactNativeImagePicker=require(797 /* react-native-image-picker */);var _reactNativeImagePicker2=babelHelpers.interopRequireDefault(_reactNativeImagePicker);var
 
 PageImagePicker=function(_React$Component){babelHelpers.inherits(PageImagePicker,_React$Component);function PageImagePicker(){var _ref;var _temp,_this,_ret;babelHelpers.classCallCheck(this,PageImagePicker);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=babelHelpers.possibleConstructorReturn(this,(_ref=PageImagePicker.__proto__||Object.getPrototypeOf(PageImagePicker)).call.apply(_ref,[this].concat(args))),_this),_this.
 
@@ -96706,7 +98004,7 @@ height:150}});exports.default=
 
 (0,_reactRedux.connect)()(PageImagePicker);
 }, "ddpapp61/App/containers/route/PageImagePicker.js");
-__d(789 /* react-native-image-picker/index.js */, function(global, require, module, exports) {'use strict';var _require=
+__d(797 /* react-native-image-picker/index.js */, function(global, require, module, exports) {'use strict';var _require=
 
 require(12 /* react-native */);var NativeModules=_require.NativeModules;var
 ImagePickerManager=NativeModules.ImagePickerManager;
@@ -96729,7 +98027,7 @@ options={};
 return ImagePickerManager.showImagePicker(babelHelpers.extends({},DEFAULT_OPTIONS,options),callback);
 }});
 }, "react-native-image-picker/index.js");
-__d(790 /* ddpapp61/App/containers/route/cameraRollPicker.js */, function(global, require, module, exports) {
+__d(798 /* ddpapp61/App/containers/route/cameraRollPicker.js */, function(global, require, module, exports) {
 
 
 'use strict';Object.defineProperty(exports,"__esModule",{value:true});
@@ -96851,7 +98149,7 @@ this.props;var selectedMarker=_props4.selectedMarker;var imageMargin=_props4.ima
 var marker=selectedMarker?selectedMarker:
 _react2.default.createElement(_reactNative.Image,{
 style:[styles.marker,{width:25,height:25,right:imageMargin+5}],
-source:require(791 /* ../../images/icon/circle-check.png */)});
+source:require(799 /* ../../images/icon/circle-check.png */)});
 
 
 return(
@@ -97004,9 +98302,9 @@ console.log(selectedImages);
 
 (0,_reactRedux.connect)()(CameraRollPicker);
 }, "ddpapp61/App/containers/route/cameraRollPicker.js");
-__d(791 /* ddpapp61/App/images/icon/circle-check.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/icon","width":100,"height":100,"scales":[1],"hash":"7d5f64628aa6613f2e0878cd5d3bdc56","name":"circle-check","type":"png"});
+__d(799 /* ddpapp61/App/images/icon/circle-check.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/icon","width":100,"height":100,"scales":[1],"hash":"7d5f64628aa6613f2e0878cd5d3bdc56","name":"circle-check","type":"png"});
 }, "ddpapp61/App/images/icon/circle-check.png");
-__d(792 /* ddpapp61/App/containers/route/PageCameraRollPicker.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(800 /* ddpapp61/App/containers/route/PageCameraRollPicker.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
@@ -97014,15 +98312,15 @@ var _reactNative=require(12 /* react-native */);
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 var _Dimensions=require(247 /* Dimensions */);var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions);
-var _lodash=require(793 /* lodash */);var _lodash2=babelHelpers.interopRequireDefault(_lodash);
-var _path=require(794 /* path */);var _path2=babelHelpers.interopRequireDefault(_path);
-var _reactNativeActionButton=require(776 /* react-native-action-button */);var _reactNativeActionButton2=babelHelpers.interopRequireDefault(_reactNativeActionButton);
-var _reactNativeCameraRollPicker=require(798 /* react-native-camera-roll-picker */);var _reactNativeCameraRollPicker2=babelHelpers.interopRequireDefault(_reactNativeCameraRollPicker);
+var _lodash=require(801 /* lodash */);var _lodash2=babelHelpers.interopRequireDefault(_lodash);
+var _path=require(802 /* path */);var _path2=babelHelpers.interopRequireDefault(_path);
+var _reactNativeActionButton=require(783 /* react-native-action-button */);var _reactNativeActionButton2=babelHelpers.interopRequireDefault(_reactNativeActionButton);
+var _reactNativeCameraRollPicker=require(806 /* react-native-camera-roll-picker */);var _reactNativeCameraRollPicker2=babelHelpers.interopRequireDefault(_reactNativeCameraRollPicker);
 
 
 var _reactNativeElements=require(749 /* react-native-elements */);
-var _reactNativeFetchBlob=require(800 /* react-native-fetch-blob */);var _reactNativeFetchBlob2=babelHelpers.interopRequireDefault(_reactNativeFetchBlob);
-var _base=require(808 /* base-64 */);var _base2=babelHelpers.interopRequireDefault(_base);
+var _reactNativeFetchBlob=require(808 /* react-native-fetch-blob */);var _reactNativeFetchBlob2=babelHelpers.interopRequireDefault(_reactNativeFetchBlob);
+var _base=require(816 /* base-64 */);var _base2=babelHelpers.interopRequireDefault(_base);
 
 
 var UPLOAD_URL='http://app.ddpstyle.com/common/awsfileuploadTest';
@@ -97282,7 +98580,7 @@ color:'white'}});exports.default=
 
 (0,_reactRedux.connect)()(PageCameraRollPicker);
 }, "ddpapp61/App/containers/route/PageCameraRollPicker.js");
-__d(793 /* lodash/lodash.js */, function(global, require, module, exports) {/**
+__d(801 /* lodash/lodash.js */, function(global, require, module, exports) {/**
  * @license
  * lodash <https://lodash.com/>
  * Copyright jQuery Foundation and other contributors <https://jquery.org/>
@@ -97296,13 +98594,14 @@ __d(793 /* lodash/lodash.js */, function(global, require, module, exports) {/**
 var undefined;
 
 
-var VERSION='4.16.1';
+var VERSION='4.16.2';
 
 
 var LARGE_ARRAY_SIZE=200;
 
 
-var FUNC_ERROR_TEXT='Expected a function';
+var CORE_ERROR_TEXT='Unsupported core-js use. Try https://github.com/es-shims.',
+FUNC_ERROR_TEXT='Expected a function';
 
 
 var HASH_UNDEFINED='__lodash_hash_undefined__';
@@ -98751,6 +100050,7 @@ replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,'$1.*?')+'$');
 var Buffer=moduleExports?context.Buffer:undefined,
 Symbol=context.Symbol,
 Uint8Array=context.Uint8Array,
+allocUnsafe=Buffer?Buffer.allocUnsafe:undefined,
 defineProperty=Object.defineProperty,
 getPrototype=overArg(Object.getPrototypeOf,Object),
 iteratorSymbol=Symbol?typeof Symbol==='function'?Symbol.iterator:'@@iterator':undefined,
@@ -98936,6 +100236,30 @@ return wrapperClone(value);
 }
 return new LodashWrapper(value);
 }
+
+
+
+
+
+
+
+
+
+var baseCreate=function(){
+function object(){}
+return function(proto){
+if(!isObject(proto)){
+return{};
+}
+if(objectCreate){
+return objectCreate(proto);
+}
+object.prototype=prototype;
+var result=new object();
+object.prototype=undefined;
+return result;
+};
+}();
 
 
 
@@ -99663,7 +100987,6 @@ return result;
 
 
 
-
 function arraySample(array){
 var length=array.length;
 return length?array[baseRandom(0,length-1)]:undefined;
@@ -99678,9 +101001,7 @@ return length?array[baseRandom(0,length-1)]:undefined;
 
 
 function arraySampleSize(array,n){
-var result=arrayShuffle(array);
-result.length=baseClamp(n,0,result.length);
-return result;
+return shuffleSelf(copyArray(array),n);
 }
 
 
@@ -99968,18 +101289,6 @@ return false;
 }
 }
 return true;
-}
-
-
-
-
-
-
-
-
-
-function baseCreate(proto){
-return isObject(proto)?objectCreate(proto):{};
 }
 
 
@@ -101180,6 +102489,29 @@ return setToString(overRest(func,start,identity),func+'');
 
 
 
+function baseSample(collection){
+return arraySample(values(collection));
+}
+
+
+
+
+
+
+
+
+
+function baseSampleSize(collection,n){
+return shuffleSelf(values(collection),n);
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -101242,6 +102574,17 @@ return nativeDefineProperty(func,'toString',{
 'writable':true});
 
 };
+
+
+
+
+
+
+
+
+function baseShuffle(collection){
+return shuffleSelf(values(collection));
+}
 
 
 
@@ -101705,7 +103048,9 @@ function cloneBuffer(buffer,isDeep){
 if(isDeep){
 return buffer.slice();
 }
-var result=new buffer.constructor(buffer.length);
+var length=buffer.length,
+result=allocUnsafe?allocUnsafe(length):new buffer.constructor(length);
+
 buffer.copy(result);
 return result;
 }
@@ -103823,18 +105168,21 @@ return func.apply(undefined,arguments);
 
 
 
-function shuffleSelf(array){
+
+function shuffleSelf(array,size){
 var index=-1,
 length=array.length,
 lastIndex=length-1;
 
-while(++index<length){
+size=size===undefined?length:baseClamp(size,0,length);
+while(++index<size){
 var rand=baseRandom(index,lastIndex),
 value=array[rand];
 
 array[rand]=array[index];
 array[index]=value;
 }
+array.length=size;
 return array;
 }
 
@@ -106912,7 +108260,8 @@ return func(collection,negate(getIteratee(predicate,3)));
 
 
 function sample(collection){
-return arraySample(isArrayLike(collection)?collection:values(collection));
+var func=isArray(collection)?arraySample:baseSample;
+return func(collection);
 }
 
 
@@ -106941,7 +108290,8 @@ n=1;
 }else{
 n=toInteger(n);
 }
-return arraySampleSize(isArrayLike(collection)?collection:values(collection),n);
+var func=isArray(collection)?arraySampleSize:baseSampleSize;
+return func(collection,n);
 }
 
 
@@ -106960,10 +108310,8 @@ return arraySampleSize(isArrayLike(collection)?collection:values(collection),n);
 
 
 function shuffle(collection){
-return shuffleSelf(isArrayLike(collection)?
-copyArray(collection):
-values(collection));
-
+var func=isArray(collection)?arrayShuffle:baseShuffle;
+return func(collection);
 }
 
 
@@ -109062,7 +110410,7 @@ return isNumber(value)&&value!=+value;
 
 function isNative(value){
 if(isMaskable(value)){
-throw new Error('This method is not supported with core-js. Try https://github.com/es-shims.');
+throw new Error(CORE_ERROR_TEXT);
 }
 return baseIsNative(value);
 }
@@ -111555,7 +112903,7 @@ radix=0;
 }else if(radix){
 radix=+radix;
 }
-return nativeParseInt(toString(string),radix||0);
+return nativeParseInt(toString(string).replace(reTrimStart,''),radix||0);
 }
 
 
@@ -114178,7 +115526,7 @@ root._=_;
 }
 }).call(this);
 }, "lodash/lodash.js");
-__d(794 /* path/path.js */, function(global, require, module, exports) {
+__d(802 /* path/path.js */, function(global, require, module, exports) {
 
 
 
@@ -114203,7 +115551,7 @@ __d(794 /* path/path.js */, function(global, require, module, exports) {
 
 
 var isWindows=process.platform==='win32';
-var util=require(795 /* util */);
+var util=require(803 /* util */);
 
 
 
@@ -114807,7 +116155,7 @@ module.exports=posix;
 module.exports.posix=posix;
 module.exports.win32=win32;
 }, "path/path.js");
-__d(795 /* util/util.js */, function(global, require, module, exports) {
+__d(803 /* util/util.js */, function(global, require, module, exports) {
 
 
 
@@ -115332,7 +116680,7 @@ typeof arg==='undefined';
 }
 exports.isPrimitive=isPrimitive;
 
-exports.isBuffer=require(796 /* ./support/isBuffer */);
+exports.isBuffer=require(804 /* ./support/isBuffer */);
 
 function objectToString(o){
 return Object.prototype.toString.call(o);
@@ -115376,7 +116724,7 @@ console.log('%s - %s',timestamp(),exports.format.apply(exports,arguments));
 
 
 
-exports.inherits=require(797 /* inherits */);
+exports.inherits=require(805 /* inherits */);
 
 exports._extend=function(origin,add){
 
@@ -115394,11 +116742,11 @@ function hasOwnProperty(obj,prop){
 return Object.prototype.hasOwnProperty.call(obj,prop);
 }
 }, "util/util.js");
-__d(796 /* util/support/isBuffer.js */, function(global, require, module, exports) {module.exports=function isBuffer(arg){
+__d(804 /* util/support/isBuffer.js */, function(global, require, module, exports) {module.exports=function isBuffer(arg){
 return arg instanceof Buffer;
 };
 }, "util/support/isBuffer.js");
-__d(797 /* inherits/inherits_browser.js */, function(global, require, module, exports) {if(typeof Object.create==='function'){
+__d(805 /* inherits/inherits_browser.js */, function(global, require, module, exports) {if(typeof Object.create==='function'){
 
 module.exports=function inherits(ctor,superCtor){
 ctor.super_=superCtor;
@@ -115422,7 +116770,7 @@ ctor.prototype.constructor=ctor;
 };
 }
 }, "inherits/inherits_browser.js");
-__d(798 /* react-native-camera-roll-picker/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(806 /* react-native-camera-roll-picker/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);var
 
 
@@ -115542,7 +116890,7 @@ this.props;var selectedMarker=_props4.selectedMarker;var imageMargin=_props4.ima
 var marker=selectedMarker?selectedMarker:
 _react2.default.createElement(_reactNative.Image,{
 style:[styles.marker,{width:25,height:25,right:imageMargin+5}],
-source:require(799 /* ./circle-check.png */)});
+source:require(807 /* ./circle-check.png */)});
 
 
 return(
@@ -115703,9 +117051,9 @@ console.log(selectedImages);
 
 CameraRollPicker;
 }, "react-native-camera-roll-picker/index.js");
-__d(799 /* react-native-camera-roll-picker/circle-check.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-camera-roll-picker","width":100,"height":100,"scales":[1],"hash":"e0d7ccd9791d804a9bfb3a30f0ff0cd4","name":"circle-check","type":"png"});
+__d(807 /* react-native-camera-roll-picker/circle-check.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-camera-roll-picker","width":100,"height":100,"scales":[1],"hash":"e0d7ccd9791d804a9bfb3a30f0ff0cd4","name":"circle-check","type":"png"});
 }, "react-native-camera-roll-picker/circle-check.png");
-__d(800 /* react-native-fetch-blob/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(808 /* react-native-fetch-blob/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -115723,12 +117071,12 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _StatefulPromise=require(801 /* ./class/StatefulPromise.js */);var _StatefulPromise2=babelHelpers.interopRequireDefault(_StatefulPromise);
-var _fs=require(802 /* ./fs */);var _fs2=babelHelpers.interopRequireDefault(_fs);
-var _uuid=require(806 /* ./utils/uuid */);var _uuid2=babelHelpers.interopRequireDefault(_uuid);
-var _base=require(808 /* base-64 */);var _base2=babelHelpers.interopRequireDefault(_base);
-var _polyfill=require(809 /* ./polyfill */);var _polyfill2=babelHelpers.interopRequireDefault(_polyfill);
-var _android=require(821 /* ./android */);var _android2=babelHelpers.interopRequireDefault(_android);var
+var _StatefulPromise=require(809 /* ./class/StatefulPromise.js */);var _StatefulPromise2=babelHelpers.interopRequireDefault(_StatefulPromise);
+var _fs=require(810 /* ./fs */);var _fs2=babelHelpers.interopRequireDefault(_fs);
+var _uuid=require(814 /* ./utils/uuid */);var _uuid2=babelHelpers.interopRequireDefault(_uuid);
+var _base=require(816 /* base-64 */);var _base2=babelHelpers.interopRequireDefault(_base);
+var _polyfill=require(817 /* ./polyfill */);var _polyfill2=babelHelpers.interopRequireDefault(_polyfill);
+var _android=require(829 /* ./android */);var _android2=babelHelpers.interopRequireDefault(_android);var
 
 RNFetchBlobSession=_fs2.default.RNFetchBlobSession;var
 readStream=_fs2.default.readStream;var
@@ -116095,14 +117443,14 @@ fs:_fs2.default,
 wrap:wrap,
 polyfill:_polyfill2.default};
 }, "react-native-fetch-blob/index.js");
-__d(801 /* react-native-fetch-blob/class/StatefulPromise.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var
+__d(809 /* react-native-fetch-blob/class/StatefulPromise.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var
 
 
 
 
 StatefulPromise=function(_Promise){babelHelpers.inherits(StatefulPromise,_Promise);function StatefulPromise(){babelHelpers.classCallCheck(this,StatefulPromise);return babelHelpers.possibleConstructorReturn(this,(StatefulPromise.__proto__||Object.getPrototypeOf(StatefulPromise)).apply(this,arguments));}return StatefulPromise;}(Promise);exports.default=StatefulPromise;
 }, "react-native-fetch-blob/class/StatefulPromise.js");
-__d(802 /* react-native-fetch-blob/fs.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(810 /* react-native-fetch-blob/fs.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -116113,10 +117461,10 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _RNFetchBlobSession=require(803 /* ./class/RNFetchBlobSession */);var _RNFetchBlobSession2=babelHelpers.interopRequireDefault(_RNFetchBlobSession);
-var _RNFetchBlobWriteStream=require(804 /* ./class/RNFetchBlobWriteStream */);var _RNFetchBlobWriteStream2=babelHelpers.interopRequireDefault(_RNFetchBlobWriteStream);
-var _RNFetchBlobReadStream=require(805 /* ./class/RNFetchBlobReadStream */);var _RNFetchBlobReadStream2=babelHelpers.interopRequireDefault(_RNFetchBlobReadStream);
-var _RNFetchBlobFile=require(807 /* ./class/RNFetchBlobFile */);var _RNFetchBlobFile2=babelHelpers.interopRequireDefault(_RNFetchBlobFile);
+var _RNFetchBlobSession=require(811 /* ./class/RNFetchBlobSession */);var _RNFetchBlobSession2=babelHelpers.interopRequireDefault(_RNFetchBlobSession);
+var _RNFetchBlobWriteStream=require(812 /* ./class/RNFetchBlobWriteStream */);var _RNFetchBlobWriteStream2=babelHelpers.interopRequireDefault(_RNFetchBlobWriteStream);
+var _RNFetchBlobReadStream=require(813 /* ./class/RNFetchBlobReadStream */);var _RNFetchBlobReadStream2=babelHelpers.interopRequireDefault(_RNFetchBlobReadStream);
+var _RNFetchBlobFile=require(815 /* ./class/RNFetchBlobFile */);var _RNFetchBlobFile2=babelHelpers.interopRequireDefault(_RNFetchBlobFile);
 
 
 
@@ -116464,7 +117812,7 @@ dirs:dirs,
 slice:slice,
 asset:asset};
 }, "react-native-fetch-blob/fs.js");
-__d(803 /* react-native-fetch-blob/class/RNFetchBlobSession.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(811 /* react-native-fetch-blob/class/RNFetchBlobSession.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -116543,7 +117891,7 @@ resolve();
 });
 }}]);return RNFetchBlobSession;}();exports.default=RNFetchBlobSession;
 }, "react-native-fetch-blob/class/RNFetchBlobSession.js");
-__d(804 /* react-native-fetch-blob/class/RNFetchBlobWriteStream.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(812 /* react-native-fetch-blob/class/RNFetchBlobWriteStream.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -116601,7 +117949,7 @@ reject(err);
 });
 }}]);return RNFetchBlobWriteStream;}();exports.default=RNFetchBlobWriteStream;
 }, "react-native-fetch-blob/class/RNFetchBlobWriteStream.js");
-__d(805 /* react-native-fetch-blob/class/RNFetchBlobReadStream.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(813 /* react-native-fetch-blob/class/RNFetchBlobReadStream.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -116611,7 +117959,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _uuid=require(806 /* ../utils/uuid */);var _uuid2=babelHelpers.interopRequireDefault(_uuid);
+var _uuid=require(814 /* ../utils/uuid */);var _uuid2=babelHelpers.interopRequireDefault(_uuid);
 
 var RNFetchBlob=_reactNative.NativeModules.RNFetchBlob;
 var emitter=_reactNative.DeviceEventEmitter;var
@@ -116681,14 +118029,14 @@ fn){
 this._onEnd=fn;
 }}]);return RNFetchBlobReadStream;}();exports.default=RNFetchBlobReadStream;
 }, "react-native-fetch-blob/class/RNFetchBlobReadStream.js");
-__d(806 /* react-native-fetch-blob/utils/uuid.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default=getUUID;function getUUID(){
+__d(814 /* react-native-fetch-blob/utils/uuid.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default=getUUID;function getUUID(){
 return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
 var r=Math.random()*16|0,v=c=='x'?r:r&0x3|0x8;
 return v.toString(16);
 });
 }
 }, "react-native-fetch-blob/utils/uuid.js");
-__d(807 /* react-native-fetch-blob/class/RNFetchBlobFile.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(815 /* react-native-fetch-blob/class/RNFetchBlobFile.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -116705,7 +118053,7 @@ var emitter=_reactNative.DeviceEventEmitter;var
 
 RNFetchBlobFile=function RNFetchBlobFile(){babelHelpers.classCallCheck(this,RNFetchBlobFile);};exports.default=RNFetchBlobFile;
 }, "react-native-fetch-blob/class/RNFetchBlobFile.js");
-__d(808 /* base-64/base64.js */, function(global, require, module, exports) {
+__d(816 /* base-64/base64.js */, function(global, require, module, exports) {
 ;(function(root){
 
 
@@ -116871,26 +118219,26 @@ root.base64=base64;
 
 })(this);
 }, "base-64/base64.js");
-__d(809 /* react-native-fetch-blob/polyfill/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _Blob=require(810 /* ./Blob.js */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
-var _File=require(813 /* ./File.js */);var _File2=babelHelpers.interopRequireDefault(_File);
-var _XMLHttpRequest=require(814 /* ./XMLHttpRequest.js */);var _XMLHttpRequest2=babelHelpers.interopRequireDefault(_XMLHttpRequest);
-var _ProgressEvent=require(816 /* ./ProgressEvent */);var _ProgressEvent2=babelHelpers.interopRequireDefault(_ProgressEvent);
-var _Event=require(817 /* ./Event */);var _Event2=babelHelpers.interopRequireDefault(_Event);
-var _FileReader=require(818 /* ./FileReader */);var _FileReader2=babelHelpers.interopRequireDefault(_FileReader);
-var _Fetch=require(819 /* ./Fetch */);var _Fetch2=babelHelpers.interopRequireDefault(_Fetch);exports.default=
+__d(817 /* react-native-fetch-blob/polyfill/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _Blob=require(818 /* ./Blob.js */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
+var _File=require(821 /* ./File.js */);var _File2=babelHelpers.interopRequireDefault(_File);
+var _XMLHttpRequest=require(822 /* ./XMLHttpRequest.js */);var _XMLHttpRequest2=babelHelpers.interopRequireDefault(_XMLHttpRequest);
+var _ProgressEvent=require(824 /* ./ProgressEvent */);var _ProgressEvent2=babelHelpers.interopRequireDefault(_ProgressEvent);
+var _Event=require(825 /* ./Event */);var _Event2=babelHelpers.interopRequireDefault(_Event);
+var _FileReader=require(826 /* ./FileReader */);var _FileReader2=babelHelpers.interopRequireDefault(_FileReader);
+var _Fetch=require(827 /* ./Fetch */);var _Fetch2=babelHelpers.interopRequireDefault(_Fetch);exports.default=
 
 {
 Blob:_Blob2.default,File:_File2.default,XMLHttpRequest:_XMLHttpRequest2.default,ProgressEvent:_ProgressEvent2.default,Event:_Event2.default,FileReader:_FileReader2.default,Fetch:_Fetch2.default};
 }, "react-native-fetch-blob/polyfill/index.js");
-__d(810 /* react-native-fetch-blob/polyfill/Blob.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(818 /* react-native-fetch-blob/polyfill/Blob.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _index=require(800 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
-var _fs=require(802 /* ../fs.js */);var _fs2=babelHelpers.interopRequireDefault(_fs);
-var _uuid=require(806 /* ../utils/uuid */);var _uuid2=babelHelpers.interopRequireDefault(_uuid);
-var _log=require(811 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
-var _EventTarget2=require(812 /* ./EventTarget */);var _EventTarget3=babelHelpers.interopRequireDefault(_EventTarget2);
+var _index=require(808 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
+var _fs=require(810 /* ../fs.js */);var _fs2=babelHelpers.interopRequireDefault(_fs);
+var _uuid=require(814 /* ../utils/uuid */);var _uuid2=babelHelpers.interopRequireDefault(_uuid);
+var _log=require(819 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
+var _EventTarget2=require(820 /* ./EventTarget */);var _EventTarget3=babelHelpers.interopRequireDefault(_EventTarget2);
 
 var log=new _log2.default('Blob');
 var blobCacheDir=_fs2.default.dirs.DocumentDir+'/RNFetchBlob-blobs/';
@@ -117218,7 +118566,7 @@ return _fs2.default.appendFile.apply(_fs2.default,babelHelpers.toConsumableArray
 return p.then(function(){return Promise.resolve(size);});
 }
 }, "react-native-fetch-blob/polyfill/Blob.js");
-__d(811 /* react-native-fetch-blob/utils/log.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var Log=function(){
+__d(819 /* react-native-fetch-blob/utils/log.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var Log=function(){
 
 
 
@@ -117257,11 +118605,11 @@ this._isEnable&&this._level>0&&(_console3=console).log.apply(_console3,[this._na
 this._isEnable&&this._level>-1&&(_console4=console).warn.apply(_console4,[this._name,'error:'].concat(args));
 }}]);return Log;}();exports.default=Log;
 }, "react-native-fetch-blob/utils/log.js");
-__d(812 /* react-native-fetch-blob/polyfill/EventTarget.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(820 /* react-native-fetch-blob/polyfill/EventTarget.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _log=require(811 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
+var _log=require(819 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
 
 var log=new _log2.default('EventTarget');
 
@@ -117334,12 +118682,12 @@ delete listeners[i];
 }
 }}]);return EventTarget;}();exports.default=EventTarget;
 }, "react-native-fetch-blob/polyfill/EventTarget.js");
-__d(813 /* react-native-fetch-blob/polyfill/File.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(821 /* react-native-fetch-blob/polyfill/File.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _fs=require(802 /* ../fs.js */);var _fs2=babelHelpers.interopRequireDefault(_fs);
-var _Blob2=require(810 /* ./Blob.js */);var _Blob3=babelHelpers.interopRequireDefault(_Blob2);var
+var _fs=require(810 /* ../fs.js */);var _fs2=babelHelpers.interopRequireDefault(_fs);
+var _Blob2=require(818 /* ./Blob.js */);var _Blob3=babelHelpers.interopRequireDefault(_Blob2);var
 
 File=function(_Blob){babelHelpers.inherits(File,_Blob);babelHelpers.createClass(File,null,[{key:'build',value:function build(
 
@@ -117358,15 +118706,15 @@ function File(data,cType){babelHelpers.classCallCheck(this,File);var _this=babel
 data,cType));_this.name='';return _this;
 }return File;}(_Blob3.default);exports.default=File;
 }, "react-native-fetch-blob/polyfill/File.js");
-__d(814 /* react-native-fetch-blob/polyfill/XMLHttpRequest.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(822 /* react-native-fetch-blob/polyfill/XMLHttpRequest.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _index=require(800 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
-var _XMLHttpRequestEventTarget=require(815 /* ./XMLHttpRequestEventTarget.js */);var _XMLHttpRequestEventTarget2=babelHelpers.interopRequireDefault(_XMLHttpRequestEventTarget);
-var _log=require(811 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
-var _Blob=require(810 /* ./Blob.js */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
-var _ProgressEvent=require(816 /* ./ProgressEvent.js */);var _ProgressEvent2=babelHelpers.interopRequireDefault(_ProgressEvent);
+var _index=require(808 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
+var _XMLHttpRequestEventTarget=require(823 /* ./XMLHttpRequestEventTarget.js */);var _XMLHttpRequestEventTarget2=babelHelpers.interopRequireDefault(_XMLHttpRequestEventTarget);
+var _log=require(819 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
+var _Blob=require(818 /* ./Blob.js */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
+var _ProgressEvent=require(824 /* ./ProgressEvent.js */);var _ProgressEvent2=babelHelpers.interopRequireDefault(_ProgressEvent);
 
 var log=new _log2.default('XMLHttpRequest');
 
@@ -117775,12 +119123,12 @@ return this._responseType;
 return true;
 }}]);return XMLHttpRequest;}(_XMLHttpRequestEventTarget2.default);XMLHttpRequest.binaryContentTypes=['image/','video/','audio/'];exports.default=XMLHttpRequest;
 }, "react-native-fetch-blob/polyfill/XMLHttpRequest.js");
-__d(815 /* react-native-fetch-blob/polyfill/XMLHttpRequestEventTarget.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(823 /* react-native-fetch-blob/polyfill/XMLHttpRequestEventTarget.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _EventTarget2=require(812 /* ./EventTarget.js */);var _EventTarget3=babelHelpers.interopRequireDefault(_EventTarget2);
-var _log=require(811 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
+var _EventTarget2=require(820 /* ./EventTarget.js */);var _EventTarget3=babelHelpers.interopRequireDefault(_EventTarget2);
+var _log=require(819 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
 
 var log=new _log2.default('XMLHttpRequestEventTarget');
 
@@ -117892,11 +119240,11 @@ this._onloadend=fn;
 return this._onloadend;
 }}]);return XMLHttpRequestEventTarget;}(_EventTarget3.default);exports.default=XMLHttpRequestEventTarget;
 }, "react-native-fetch-blob/polyfill/XMLHttpRequestEventTarget.js");
-__d(816 /* react-native-fetch-blob/polyfill/ProgressEvent.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(824 /* react-native-fetch-blob/polyfill/ProgressEvent.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _Event2=require(817 /* ./Event */);var _Event3=babelHelpers.interopRequireDefault(_Event2);var
+var _Event2=require(825 /* ./Event */);var _Event3=babelHelpers.interopRequireDefault(_Event2);var
 
 ProgressEvent=function(_Event){babelHelpers.inherits(ProgressEvent,_Event);
 
@@ -117923,7 +119271,7 @@ return this._loaded;
 return this._total;
 }}]);return ProgressEvent;}(_Event3.default);exports.default=ProgressEvent;
 }, "react-native-fetch-blob/polyfill/ProgressEvent.js");
-__d(817 /* react-native-fetch-blob/polyfill/Event.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var
+__d(825 /* react-native-fetch-blob/polyfill/Event.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var
 
 
 
@@ -117933,16 +119281,16 @@ function Event(){babelHelpers.classCallCheck(this,Event);
 
 };exports.default=Event;
 }, "react-native-fetch-blob/polyfill/Event.js");
-__d(818 /* react-native-fetch-blob/polyfill/FileReader.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(826 /* react-native-fetch-blob/polyfill/FileReader.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
-var _index=require(800 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
-var _ProgressEvent=require(816 /* ./ProgressEvent.js */);var _ProgressEvent2=babelHelpers.interopRequireDefault(_ProgressEvent);
-var _EventTarget2=require(812 /* ./EventTarget */);var _EventTarget3=babelHelpers.interopRequireDefault(_EventTarget2);
-var _Blob=require(810 /* ./Blob */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
-var _log=require(811 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
-var _fs=require(802 /* ../fs */);var _fs2=babelHelpers.interopRequireDefault(_fs);
+var _index=require(808 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
+var _ProgressEvent=require(824 /* ./ProgressEvent.js */);var _ProgressEvent2=babelHelpers.interopRequireDefault(_ProgressEvent);
+var _EventTarget2=require(820 /* ./EventTarget */);var _EventTarget3=babelHelpers.interopRequireDefault(_EventTarget2);
+var _Blob=require(818 /* ./Blob */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
+var _log=require(819 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
+var _fs=require(810 /* ../fs */);var _fs2=babelHelpers.interopRequireDefault(_fs);
 
 var log=new _log2.default('FileReader');
 
@@ -118021,11 +119369,11 @@ return this._readyState;
 return this._result;
 }}]);return FileReader;}(_EventTarget3.default);exports.default=FileReader;
 }, "react-native-fetch-blob/polyfill/FileReader.js");
-__d(819 /* react-native-fetch-blob/polyfill/Fetch.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _index=require(800 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
-var _log=require(811 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
-var _fs=require(802 /* ../fs */);var _fs2=babelHelpers.interopRequireDefault(_fs);
-var _unicode=require(820 /* ../utils/unicode */);var _unicode2=babelHelpers.interopRequireDefault(_unicode);
-var _Blob=require(810 /* ./Blob */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
+__d(827 /* react-native-fetch-blob/polyfill/Fetch.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _index=require(808 /* ../index.js */);var _index2=babelHelpers.interopRequireDefault(_index);
+var _log=require(819 /* ../utils/log.js */);var _log2=babelHelpers.interopRequireDefault(_log);
+var _fs=require(810 /* ../fs */);var _fs2=babelHelpers.interopRequireDefault(_fs);
+var _unicode=require(828 /* ../utils/unicode */);var _unicode2=babelHelpers.interopRequireDefault(_unicode);
+var _Blob=require(818 /* ./Blob */);var _Blob2=babelHelpers.interopRequireDefault(_Blob);
 
 var log=new _log2.default('FetchPolyfill');
 
@@ -118223,7 +119571,7 @@ return Promise.resolve(resp.json());}
 
 }
 }, "react-native-fetch-blob/polyfill/Fetch.js");
-__d(820 /* react-native-fetch-blob/utils/unicode.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default=function(x){
+__d(828 /* react-native-fetch-blob/utils/unicode.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default=function(x){
 var r=/\\u([\d\w]{4})/gi;
 x=x.replace(r,function(match,grp){
 return String.fromCharCode(parseInt(grp,16));
@@ -118231,7 +119579,7 @@ return String.fromCharCode(parseInt(grp,16));
 return unescape(x);
 };
 }, "react-native-fetch-blob/utils/unicode.js");
-__d(821 /* react-native-fetch-blob/android.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(829 /* react-native-fetch-blob/android.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -118262,7 +119610,7 @@ return Promise.reject('RNFetchBlob.actionViewIntent only supports Android.');
 {
 actionViewIntent:actionViewIntent};
 }, "react-native-fetch-blob/android.js");
-__d(822 /* ddpapp61/App/containers/route/PageCameraRollPickerUpload.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(830 /* ddpapp61/App/containers/route/PageCameraRollPickerUpload.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
@@ -118270,15 +119618,15 @@ var _reactNative=require(12 /* react-native */);
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 var _Dimensions=require(247 /* Dimensions */);var _Dimensions2=babelHelpers.interopRequireDefault(_Dimensions);
-var _lodash=require(793 /* lodash */);var _lodash2=babelHelpers.interopRequireDefault(_lodash);
-var _path=require(794 /* path */);var _path2=babelHelpers.interopRequireDefault(_path);
-var _reactNativeActionButton=require(776 /* react-native-action-button */);var _reactNativeActionButton2=babelHelpers.interopRequireDefault(_reactNativeActionButton);
-var _reactNativeCameraRollPicker=require(798 /* react-native-camera-roll-picker */);var _reactNativeCameraRollPicker2=babelHelpers.interopRequireDefault(_reactNativeCameraRollPicker);
+var _lodash=require(801 /* lodash */);var _lodash2=babelHelpers.interopRequireDefault(_lodash);
+var _path=require(802 /* path */);var _path2=babelHelpers.interopRequireDefault(_path);
+var _reactNativeActionButton=require(783 /* react-native-action-button */);var _reactNativeActionButton2=babelHelpers.interopRequireDefault(_reactNativeActionButton);
+var _reactNativeCameraRollPicker=require(806 /* react-native-camera-roll-picker */);var _reactNativeCameraRollPicker2=babelHelpers.interopRequireDefault(_reactNativeCameraRollPicker);
 
 
 var _reactNativeElements=require(749 /* react-native-elements */);
-var _reactNativeFetchBlob=require(800 /* react-native-fetch-blob */);var _reactNativeFetchBlob2=babelHelpers.interopRequireDefault(_reactNativeFetchBlob);
-var _base=require(808 /* base-64 */);var _base2=babelHelpers.interopRequireDefault(_base);
+var _reactNativeFetchBlob=require(808 /* react-native-fetch-blob */);var _reactNativeFetchBlob2=babelHelpers.interopRequireDefault(_reactNativeFetchBlob);
+var _base=require(816 /* base-64 */);var _base2=babelHelpers.interopRequireDefault(_base);
 
 var UPLOAD_URL='http://app.ddpstyle.com/common/awsfileupload';
 var prefix=_reactNative.Platform.OS==='android'?'file://':'';var
@@ -118525,7 +119873,7 @@ color:'white'}});exports.default=
 
 (0,_reactRedux.connect)()(PageCameraRollPicker);
 }, "ddpapp61/App/containers/route/PageCameraRollPickerUpload.js");
-__d(823 /* ddpapp61/App/containers/route/PagePhotoBrowser.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(831 /* ddpapp61/App/containers/route/PagePhotoBrowser.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -118545,7 +119893,7 @@ var _reactNative=require(12 /* react-native */);
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 
-var _reactNativePhotoBrowser=require(824 /* react-native-photo-browser */);var _reactNativePhotoBrowser2=babelHelpers.interopRequireDefault(_reactNativePhotoBrowser);
+var _reactNativePhotoBrowser=require(832 /* react-native-photo-browser */);var _reactNativePhotoBrowser2=babelHelpers.interopRequireDefault(_reactNativePhotoBrowser);
 
 var EXAMPLES=[
 {
@@ -118553,7 +119901,7 @@ title:'Single photo',
 description:'with caption, no grid button',
 enableGrid:false,
 media:[{
-photo:require(853 /* ../../images/media/hare-1634318__340.jpg */),
+photo:require(861 /* ../../images/media/hare-1634318__340.jpg */),
 caption:'media local image... hare...'}]},
 
 {
@@ -118562,15 +119910,15 @@ description:'with captions and nav arrows',
 displayNavArrows:true,
 displayActionButton:true,
 media:[{
-photo:require(854 /* ../../images/media/peacock-1576780__340.jpg */),
+photo:require(862 /* ../../images/media/peacock-1576780__340.jpg */),
 selected:true,
 caption:'image image image...'},
 {
-photo:require(855 /* ../../images/media/grizzly-1640452__340.jpg */),
+photo:require(863 /* ../../images/media/grizzly-1640452__340.jpg */),
 caption:'grizzly Scene'},
 {
-photo:require(856 /* ../../images/media/sun-1654458__340.jpg */),
-thumb:require(857 /* ../../images/media/hoverfly-1484870__340.jpg */),
+photo:require(864 /* ../../images/media/sun-1654458__340.jpg */),
+thumb:require(865 /* ../../images/media/hoverfly-1484870__340.jpg */),
 selected:false,
 caption:'Beautiful Eyes'}]},
 
@@ -118724,7 +120072,7 @@ fontSize:12}});exports.default=
 
 (0,_reactRedux.connect)()(PagePhotoBrowser);
 }, "ddpapp61/App/containers/route/PagePhotoBrowser.js");
-__d(824 /* react-native-photo-browser/lib/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(832 /* react-native-photo-browser/lib/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -118733,11 +120081,11 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _constants=require(825 /* ./constants */);var _constants2=babelHelpers.interopRequireDefault(_constants);
-var _bar=require(826 /* ./bar */);
+var _constants=require(833 /* ./constants */);var _constants2=babelHelpers.interopRequireDefault(_constants);
+var _bar=require(834 /* ./bar */);
 
-var _GridContainer=require(835 /* ./GridContainer */);var _GridContainer2=babelHelpers.interopRequireDefault(_GridContainer);
-var _FullScreenContainer=require(852 /* ./FullScreenContainer */);var _FullScreenContainer2=babelHelpers.interopRequireDefault(_FullScreenContainer);
+var _GridContainer=require(843 /* ./GridContainer */);var _GridContainer2=babelHelpers.interopRequireDefault(_GridContainer);
+var _FullScreenContainer=require(860 /* ./FullScreenContainer */);var _FullScreenContainer2=babelHelpers.interopRequireDefault(_FullScreenContainer);
 
 var TOOLBAR_HEIGHT=_constants2.default.TOOLBAR_HEIGHT;var
 
@@ -118997,15 +120345,15 @@ container:{
 flex:1,
 backgroundColor:'black'}});
 }, "react-native-photo-browser/lib/index.js");
-__d(825 /* react-native-photo-browser/lib/constants.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default={
+__d(833 /* react-native-photo-browser/lib/constants.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default={
 TOOLBAR_HEIGHT:70};
 }, "react-native-photo-browser/lib/constants.js");
-__d(826 /* react-native-photo-browser/lib/bar/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.BottomBar=exports.TopBar=undefined;var _TopBar=require(827 /* ./TopBar */);var _TopBar2=babelHelpers.interopRequireDefault(_TopBar);
-var _BottomBar=require(830 /* ./BottomBar */);var _BottomBar2=babelHelpers.interopRequireDefault(_BottomBar);exports.
+__d(834 /* react-native-photo-browser/lib/bar/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.BottomBar=exports.TopBar=undefined;var _TopBar=require(835 /* ./TopBar */);var _TopBar2=babelHelpers.interopRequireDefault(_TopBar);
+var _BottomBar=require(838 /* ./BottomBar */);var _BottomBar2=babelHelpers.interopRequireDefault(_BottomBar);exports.
 
 TopBar=_TopBar2.default;exports.BottomBar=_BottomBar2.default;
 }, "react-native-photo-browser/lib/bar/index.js");
-__d(827 /* react-native-photo-browser/lib/bar/TopBar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(835 /* react-native-photo-browser/lib/bar/TopBar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -119014,7 +120362,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _BarContainer=require(828 /* ./BarContainer */);var
+var _BarContainer=require(836 /* ./BarContainer */);var
 
 TopBar=function(_React$Component){babelHelpers.inherits(TopBar,_React$Component);
 
@@ -119049,7 +120397,7 @@ displayed:displayed,
 height:height},
 
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:styles.backContainer,onPress:onBack},
-_react2.default.createElement(_reactNative.Image,{source:require(829 /* ../../Assets/angle-left.png */)}),
+_react2.default.createElement(_reactNative.Image,{source:require(837 /* ../../Assets/angle-left.png */)}),
 
 _reactNative.Platform.OS==='ios'&&
 _react2.default.createElement(_reactNative.Text,{style:[styles.text,styles.backText]},'Back')),
@@ -119082,7 +120430,7 @@ backText:{
 paddingTop:14,
 marginLeft:-10}});
 }, "react-native-photo-browser/lib/bar/TopBar.js");
-__d(828 /* react-native-photo-browser/lib/bar/BarContainer.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.BAR_POSITIONS=exports.BarContainer=undefined;var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(836 /* react-native-photo-browser/lib/bar/BarContainer.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.BAR_POSITIONS=exports.BarContainer=undefined;var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -119173,9 +120521,9 @@ bottom:0}});exports.
 BarContainer=BarContainer;exports.
 BAR_POSITIONS=BAR_POSITIONS;
 }, "react-native-photo-browser/lib/bar/BarContainer.js");
-__d(829 /* react-native-photo-browser/Assets/angle-left.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":48,"height":48,"scales":[1,2,3],"hash":"dd57ae126ad763cf2f8890e09c0e5f13","name":"angle-left","type":"png"});
+__d(837 /* react-native-photo-browser/Assets/angle-left.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":48,"height":48,"scales":[1,2,3],"hash":"dd57ae126ad763cf2f8890e09c0e5f13","name":"angle-left","type":"png"});
 }, "react-native-photo-browser/Assets/angle-left.png");
-__d(830 /* react-native-photo-browser/lib/bar/BottomBar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(838 /* react-native-photo-browser/lib/bar/BottomBar.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -119184,7 +120532,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _BarContainer=require(828 /* ./BarContainer */);
+var _BarContainer=require(836 /* ./BarContainer */);
 
 var BUTTON_WIDTH=40;var
 
@@ -119240,7 +120588,7 @@ style:styles.button,
 onPress:onPrev},
 
 _react2.default.createElement(_reactNative.Image,{
-source:require(831 /* ../../Assets/arrow-left.png */),
+source:require(839 /* ../../Assets/arrow-left.png */),
 style:styles.buttonImage}));
 
 
@@ -119252,7 +120600,7 @@ style:styles.button,
 onPress:onNext},
 
 _react2.default.createElement(_reactNative.Image,{
-source:require(832 /* ../../Assets/arrow-right.png */),
+source:require(840 /* ../../Assets/arrow-right.png */),
 style:styles.buttonImage}));
 
 
@@ -119277,7 +120625,7 @@ if(displayGridButton){
 return(
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:[styles.button,{flex:0}],onPress:onGrid},
 _react2.default.createElement(_reactNative.Image,{
-source:require(833 /* ../../Assets/grid-button.png */),
+source:require(841 /* ../../Assets/grid-button.png */),
 style:styles.buttonImage})));
 
 
@@ -119293,7 +120641,7 @@ if(displayActionButton){
 return(
 _react2.default.createElement(_reactNative.TouchableOpacity,{style:[styles.button,{flex:0}],onPress:onAction},
 _react2.default.createElement(_reactNative.Image,{
-source:require(834 /* ../../Assets/share-button.png */),
+source:require(842 /* ../../Assets/share-button.png */),
 style:styles.buttonImage})));
 
 
@@ -119359,15 +120707,15 @@ width:BUTTON_WIDTH},
 buttonImage:{
 marginTop:8}});
 }, "react-native-photo-browser/lib/bar/BottomBar.js");
-__d(831 /* react-native-photo-browser/Assets/arrow-left.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":14,"height":17,"scales":[2,3],"hash":"b7ec02478e418bab982e87f87788fc5a","name":"arrow-left","type":"png"});
+__d(839 /* react-native-photo-browser/Assets/arrow-left.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":14,"height":17,"scales":[2,3],"hash":"b7ec02478e418bab982e87f87788fc5a","name":"arrow-left","type":"png"});
 }, "react-native-photo-browser/Assets/arrow-left.png");
-__d(832 /* react-native-photo-browser/Assets/arrow-right.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":14,"height":17,"scales":[2,3],"hash":"621613af5506a96f69271bc4e6a4f019","name":"arrow-right","type":"png"});
+__d(840 /* react-native-photo-browser/Assets/arrow-right.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":14,"height":17,"scales":[2,3],"hash":"621613af5506a96f69271bc4e6a4f019","name":"arrow-right","type":"png"});
 }, "react-native-photo-browser/Assets/arrow-right.png");
-__d(833 /* react-native-photo-browser/Assets/grid-button.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":20,"height":20,"scales":[2,3],"hash":"b93aba9fb2a96b32c96e0f57d96d3199","name":"grid-button","type":"png"});
+__d(841 /* react-native-photo-browser/Assets/grid-button.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":20,"height":20,"scales":[2,3],"hash":"b93aba9fb2a96b32c96e0f57d96d3199","name":"grid-button","type":"png"});
 }, "react-native-photo-browser/Assets/grid-button.png");
-__d(834 /* react-native-photo-browser/Assets/share-button.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":20,"height":20,"scales":[2,3],"hash":"818688a52656337a489ac268bb721723","name":"share-button","type":"png"});
+__d(842 /* react-native-photo-browser/Assets/share-button.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":20,"height":20,"scales":[2,3],"hash":"818688a52656337a489ac268bb721723","name":"share-button","type":"png"});
 }, "react-native-photo-browser/Assets/share-button.png");
-__d(835 /* react-native-photo-browser/lib/GridContainer.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(843 /* react-native-photo-browser/lib/GridContainer.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -119376,8 +120724,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _constants=require(825 /* ./constants */);var _constants2=babelHelpers.interopRequireDefault(_constants);
-var _media=require(836 /* ./media */);
+var _constants=require(833 /* ./constants */);var _constants2=babelHelpers.interopRequireDefault(_constants);
+var _media=require(844 /* ./media */);
 
 var ITEM_PER_ROW=3;
 
@@ -119427,7 +120775,7 @@ width:photoWidth,
 height:100,
 resizeMode:'cover',
 thumbnail:true,
-progressImage:require(851 /* ../Assets/hourglass.png */),
+progressImage:require(859 /* ../Assets/hourglass.png */),
 displaySelectionButtons:displaySelectionButtons,
 uri:media.thumb||media.photo,
 selected:media.selected,
@@ -119477,11 +120825,11 @@ alignItems:'center',
 borderWidth:1,
 borderRadius:1}});
 }, "react-native-photo-browser/lib/GridContainer.js");
-__d(836 /* react-native-photo-browser/lib/media/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.Photo=undefined;var _Photo=require(837 /* ./Photo */);var _Photo2=babelHelpers.interopRequireDefault(_Photo);exports.
+__d(844 /* react-native-photo-browser/lib/media/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.Photo=undefined;var _Photo=require(845 /* ./Photo */);var _Photo2=babelHelpers.interopRequireDefault(_Photo);exports.
 
 Photo=_Photo2.default;
 }, "react-native-photo-browser/lib/media/index.js");
-__d(837 /* react-native-photo-browser/lib/media/Photo.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(845 /* react-native-photo-browser/lib/media/Photo.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -119492,7 +120840,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeProgress=require(838 /* react-native-progress */);var Progress=babelHelpers.interopRequireWildcard(_reactNativeProgress);var
+var _reactNativeProgress=require(846 /* react-native-progress */);var Progress=babelHelpers.interopRequireWildcard(_reactNativeProgress);var
 
 Photo=function(_Component){babelHelpers.inherits(Photo,_Component);
 
@@ -119651,7 +120999,7 @@ return null;
 {
 return(
 _react2.default.createElement(_reactNative.Image,{
-source:require(846 /* ../../Assets/image-error.png */)}));
+source:require(854 /* ../../Assets/image-error.png */)}));
 
 
 }},{key:'_renderSelectionButton',value:function _renderSelectionButton()
@@ -119667,9 +121015,9 @@ return null;
 
 var buttonImage=void 0;
 if(thumbnail){
-var icon=require(847 /* ../../Assets/small-selected-off.png */);
+var icon=require(855 /* ../../Assets/small-selected-off.png */);
 if(selected){
-icon=require(848 /* ../../Assets/small-selected-on.png */);
+icon=require(856 /* ../../Assets/small-selected-on.png */);
 }
 
 buttonImage=
@@ -119679,9 +121027,9 @@ style:styles.thumbnailSelectionIcon});
 
 
 }else{
-var _icon=require(849 /* ../../Assets/selected-off.png */);
+var _icon=require(857 /* ../../Assets/selected-off.png */);
 if(selected){
-_icon=require(850 /* ../../Assets/selected-on.png */);
+_icon=require(858 /* ../../Assets/selected-on.png */);
 }
 
 buttonImage=
@@ -119759,16 +121107,16 @@ position:'absolute',
 top:60,
 right:16}});
 }, "react-native-photo-browser/lib/media/Photo.js");
-__d(838 /* react-native-progress/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.Pie=exports.CircleSnail=exports.Circle=exports.Bar=undefined;var _Bar=require(785 /* ./Bar */);Object.defineProperty(exports,'Bar',{enumerable:true,get:function get(){return babelHelpers.interopRequireDefault(_Bar).
+__d(846 /* react-native-progress/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.Pie=exports.CircleSnail=exports.Circle=exports.Bar=undefined;var _Bar=require(793 /* ./Bar */);Object.defineProperty(exports,'Bar',{enumerable:true,get:function get(){return babelHelpers.interopRequireDefault(_Bar).
 
 
 
-default;}});var _CircleSnail=require(839 /* ./CircleSnail */);Object.defineProperty(exports,'CircleSnail',{enumerable:true,get:function get(){return babelHelpers.interopRequireDefault(_CircleSnail).
+default;}});var _CircleSnail=require(847 /* ./CircleSnail */);Object.defineProperty(exports,'CircleSnail',{enumerable:true,get:function get(){return babelHelpers.interopRequireDefault(_CircleSnail).
 
-default;}});var _Circle=require(841 /* ./Circle */);var _Circle2=babelHelpers.interopRequireDefault(_Circle);var _Pie=require(842 /* ./Pie */);var _Pie2=babelHelpers.interopRequireDefault(_Pie);var _makeAnimatable=require(845 /* ./makeAnimatable */);var _makeAnimatable2=babelHelpers.interopRequireDefault(_makeAnimatable);var Circle=exports.Circle=(0,_makeAnimatable2.default)(_Circle2.default);
+default;}});var _Circle=require(849 /* ./Circle */);var _Circle2=babelHelpers.interopRequireDefault(_Circle);var _Pie=require(850 /* ./Pie */);var _Pie2=babelHelpers.interopRequireDefault(_Pie);var _makeAnimatable=require(853 /* ./makeAnimatable */);var _makeAnimatable2=babelHelpers.interopRequireDefault(_makeAnimatable);var Circle=exports.Circle=(0,_makeAnimatable2.default)(_Circle2.default);
 var Pie=exports.Pie=(0,_makeAnimatable2.default)(_Pie2.default,0.2);
 }, "react-native-progress/index.js");
-__d(839 /* react-native-progress/CircleSnail.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(847 /* react-native-progress/CircleSnail.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
 
 
@@ -119779,7 +121127,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _Arc=require(840 /* ./Shapes/Arc */);var _Arc2=babelHelpers.interopRequireDefault(_Arc);
+var _Arc=require(848 /* ./Shapes/Arc */);var _Arc2=babelHelpers.interopRequireDefault(_Arc);
 
 var AnimatedArc=_reactNative.Animated.createAnimatedComponent(_Arc2.default);
 
@@ -119940,7 +121288,7 @@ children));
 
 }}]);return CircleSnail;}(_react.Component);CircleSnail.propTypes={animating:_react.PropTypes.bool,color:_react.PropTypes.oneOfType([_react.PropTypes.string,_react.PropTypes.arrayOf(_react.PropTypes.string)]),direction:_react.PropTypes.oneOf(['clockwise','counter-clockwise']),hidesWhenStopped:_react.PropTypes.bool,size:_react.PropTypes.number,thickness:_react.PropTypes.number};CircleSnail.defaultProps={animating:true,color:'rgba(0, 122, 255, 1)',direction:'counter-clockwise',hidesWhenStopped:false,size:40,thickness:3};exports.default=CircleSnail;
 }, "react-native-progress/CircleSnail.js");
-__d(840 /* react-native-progress/Shapes/Arc.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(848 /* react-native-progress/Shapes/Arc.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
@@ -120027,7 +121375,7 @@ restProps)));
 
 }}]);return Arc;}(_react.Component);Arc.propTypes={startAngle:_react.PropTypes.number.isRequired,endAngle:_react.PropTypes.number.isRequired,radius:_react.PropTypes.number.isRequired,offset:_react.PropTypes.shape({top:_react.PropTypes.number,left:_react.PropTypes.number}),strokeWidth:_react.PropTypes.number,direction:_react.PropTypes.oneOf(['clockwise','counter-clockwise'])};Arc.defaultProps={startAngle:0,offset:{top:0,left:0},strokeWidth:0,direction:'clockwise'};exports.default=Arc;
 }, "react-native-progress/Shapes/Arc.js");
-__d(841 /* react-native-progress/Circle.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(849 /* react-native-progress/Circle.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
 
 
@@ -120038,7 +121386,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _Arc=require(840 /* ./Shapes/Arc */);var _Arc2=babelHelpers.interopRequireDefault(_Arc);var
+var _Arc=require(848 /* ./Shapes/Arc */);var _Arc2=babelHelpers.interopRequireDefault(_Arc);var
 
 ProgressCircle=function(_Component){babelHelpers.inherits(ProgressCircle,_Component);function ProgressCircle(){babelHelpers.classCallCheck(this,ProgressCircle);return babelHelpers.possibleConstructorReturn(this,(ProgressCircle.__proto__||Object.getPrototypeOf(ProgressCircle)).apply(this,arguments));}babelHelpers.createClass(ProgressCircle,[{key:'render',value:function render()
 
@@ -120147,7 +121495,7 @@ children));
 
 }}]);return ProgressCircle;}(_react.Component);ProgressCircle.propTypes={borderColor:_react.PropTypes.string,borderWidth:_react.PropTypes.number,color:_react.PropTypes.string,direction:_react.PropTypes.oneOf(['clockwise','counter-clockwise']),formatText:_react.PropTypes.func,indeterminate:_react.PropTypes.bool,progress:_react.PropTypes.number,showsText:_react.PropTypes.bool,size:_react.PropTypes.number,textStyle:_react.PropTypes.any,thickness:_react.PropTypes.number,unfilledColor:_react.PropTypes.string};ProgressCircle.defaultProps={borderWidth:1,color:'rgba(0, 122, 255, 1)',direction:'clockwise',formatText:function formatText(progress){return Math.round(progress*100)+'%';},progress:0,showsText:false,size:40,thickness:3};exports.default=ProgressCircle;
 }, "react-native-progress/Circle.js");
-__d(842 /* react-native-progress/Pie.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(850 /* react-native-progress/Pie.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
 
 
@@ -120157,8 +121505,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _Circle=require(843 /* ./Shapes/Circle */);var _Circle2=babelHelpers.interopRequireDefault(_Circle);
-var _Sector=require(844 /* ./Shapes/Sector */);var _Sector2=babelHelpers.interopRequireDefault(_Sector);var
+var _Circle=require(851 /* ./Shapes/Circle */);var _Circle2=babelHelpers.interopRequireDefault(_Circle);
+var _Sector=require(852 /* ./Shapes/Sector */);var _Sector2=babelHelpers.interopRequireDefault(_Sector);var
 
 ProgressPie=function(_Component){babelHelpers.inherits(ProgressPie,_Component);function ProgressPie(){babelHelpers.classCallCheck(this,ProgressPie);return babelHelpers.possibleConstructorReturn(this,(ProgressPie.__proto__||Object.getPrototypeOf(ProgressPie)).apply(this,arguments));}babelHelpers.createClass(ProgressPie,[{key:'render',value:function render()
 
@@ -120222,7 +121570,7 @@ children));
 
 }}]);return ProgressPie;}(_react.Component);ProgressPie.propTypes={borderColor:_react.PropTypes.string,borderWidth:_react.PropTypes.number,color:_react.PropTypes.string,progress:_react.PropTypes.number,size:_react.PropTypes.number,unfilledColor:_react.PropTypes.string};ProgressPie.defaultProps={borderWidth:1,color:'rgba(0, 122, 255, 1)',progress:0,size:40};exports.default=ProgressPie;
 }, "react-native-progress/Pie.js");
-__d(843 /* react-native-progress/Shapes/Circle.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(851 /* react-native-progress/Shapes/Circle.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
@@ -120277,7 +121625,7 @@ restProps)));
 
 }}]);return Circle;}(_react.Component);Circle.propTypes={radius:_react.PropTypes.number.isRequired,offset:_react.PropTypes.shape({top:_react.PropTypes.number,left:_react.PropTypes.number}),strokeWidth:_react.PropTypes.number,direction:_react.PropTypes.oneOf(['clockwise','counter-clockwise'])};Circle.defaultProps={offset:{top:0,left:0},strokeWidth:0,direction:'clockwise'};exports.default=Circle;
 }, "react-native-progress/Shapes/Circle.js");
-__d(844 /* react-native-progress/Shapes/Sector.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(852 /* react-native-progress/Shapes/Sector.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 
@@ -120337,7 +121685,7 @@ _react2.default.createElement(_reactNative.ART.Shape,babelHelpers.extends({d:pat
 
 }}]);return Sector;}(_react.Component);Sector.propTypes={angle:_react.PropTypes.number.isRequired,radius:_react.PropTypes.number.isRequired,offset:_react.PropTypes.shape({top:_react.PropTypes.number,left:_react.PropTypes.number})};Sector.defaultProps={offset:{top:0,left:0}};exports.default=Sector;
 }, "react-native-progress/Shapes/Sector.js");
-__d(845 /* react-native-progress/makeAnimatable.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default=
+__d(853 /* react-native-progress/makeAnimatable.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});exports.default=
 
 
 
@@ -120454,19 +121802,19 @@ props),children);
 
 }
 }, "react-native-progress/makeAnimatable.js");
-__d(846 /* react-native-photo-browser/Assets/image-error.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":40,"height":40,"scales":[1,2,3],"hash":"48974c50282fbf689175f074eee43494","name":"image-error","type":"png"});
+__d(854 /* react-native-photo-browser/Assets/image-error.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":40,"height":40,"scales":[1,2,3],"hash":"48974c50282fbf689175f074eee43494","name":"image-error","type":"png"});
 }, "react-native-photo-browser/Assets/image-error.png");
-__d(847 /* react-native-photo-browser/Assets/small-selected-off.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":31,"height":31,"scales":[1,2,3],"hash":"b7b4e3bff8aa2122c0323e8952522ce3","name":"small-selected-off","type":"png"});
+__d(855 /* react-native-photo-browser/Assets/small-selected-off.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":31,"height":31,"scales":[1,2,3],"hash":"b7b4e3bff8aa2122c0323e8952522ce3","name":"small-selected-off","type":"png"});
 }, "react-native-photo-browser/Assets/small-selected-off.png");
-__d(848 /* react-native-photo-browser/Assets/small-selected-on.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":31,"height":31,"scales":[1,2,3],"hash":"b7324de0b3cdd8fce9236dcc1e710f47","name":"small-selected-on","type":"png"});
+__d(856 /* react-native-photo-browser/Assets/small-selected-on.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":31,"height":31,"scales":[1,2,3],"hash":"b7324de0b3cdd8fce9236dcc1e710f47","name":"small-selected-on","type":"png"});
 }, "react-native-photo-browser/Assets/small-selected-on.png");
-__d(849 /* react-native-photo-browser/Assets/selected-off.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":44,"height":44,"scales":[1,2,3],"hash":"18933e8247ec58c77a616300762330b5","name":"selected-off","type":"png"});
+__d(857 /* react-native-photo-browser/Assets/selected-off.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":44,"height":44,"scales":[1,2,3],"hash":"18933e8247ec58c77a616300762330b5","name":"selected-off","type":"png"});
 }, "react-native-photo-browser/Assets/selected-off.png");
-__d(850 /* react-native-photo-browser/Assets/selected-on.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":44,"height":44,"scales":[1,2,3],"hash":"1657341a1045efd644170e1cec905707","name":"selected-on","type":"png"});
+__d(858 /* react-native-photo-browser/Assets/selected-on.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":44,"height":44,"scales":[1,2,3],"hash":"1657341a1045efd644170e1cec905707","name":"selected-on","type":"png"});
 }, "react-native-photo-browser/Assets/selected-on.png");
-__d(851 /* react-native-photo-browser/Assets/hourglass.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":24,"height":24,"scales":[1,2,3],"hash":"068bcaa2f846936ca0604cfafe9cfa7e","name":"hourglass","type":"png"});
+__d(859 /* react-native-photo-browser/Assets/hourglass.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-native-photo-browser/Assets","width":24,"height":24,"scales":[1,2,3],"hash":"068bcaa2f846936ca0604cfafe9cfa7e","name":"hourglass","type":"png"});
 }, "react-native-photo-browser/Assets/hourglass.png");
-__d(852 /* react-native-photo-browser/lib/FullScreenContainer.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(860 /* react-native-photo-browser/lib/FullScreenContainer.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -120479,9 +121827,9 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _constants=require(825 /* ./constants */);var _constants2=babelHelpers.interopRequireDefault(_constants);
-var _bar=require(826 /* ./bar */);
-var _media=require(836 /* ./media */);var
+var _constants=require(833 /* ./constants */);var _constants2=babelHelpers.interopRequireDefault(_constants);
+var _bar=require(834 /* ./bar */);
+var _media=require(844 /* ./media */);var
 
 FullScreenContainer=function(_React$Component){babelHelpers.inherits(FullScreenContainer,_React$Component);
 
@@ -120767,26 +122115,32 @@ var styles=_reactNative.StyleSheet.create({
 flex:{
 flex:1}});
 }, "react-native-photo-browser/lib/FullScreenContainer.js");
-__d(853 /* ddpapp61/App/images/media/hare-1634318__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":505,"height":340,"scales":[1],"hash":"dbcdd9e1c2e9253792023295beee84d1","name":"hare-1634318__340","type":"jpg"});
+__d(861 /* ddpapp61/App/images/media/hare-1634318__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":505,"height":340,"scales":[1],"hash":"dbcdd9e1c2e9253792023295beee84d1","name":"hare-1634318__340","type":"jpg"});
 }, "ddpapp61/App/images/media/hare-1634318__340.jpg");
-__d(854 /* ddpapp61/App/images/media/peacock-1576780__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":513,"height":340,"scales":[1],"hash":"21d1fc68b733e0717a8f84efa235adac","name":"peacock-1576780__340","type":"jpg"});
+__d(862 /* ddpapp61/App/images/media/peacock-1576780__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":513,"height":340,"scales":[1],"hash":"21d1fc68b733e0717a8f84efa235adac","name":"peacock-1576780__340","type":"jpg"});
 }, "ddpapp61/App/images/media/peacock-1576780__340.jpg");
-__d(855 /* ddpapp61/App/images/media/grizzly-1640452__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":512,"height":340,"scales":[1],"hash":"578b7e08780fbe269bb0c726f1af2d98","name":"grizzly-1640452__340","type":"jpg"});
+__d(863 /* ddpapp61/App/images/media/grizzly-1640452__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":512,"height":340,"scales":[1],"hash":"578b7e08780fbe269bb0c726f1af2d98","name":"grizzly-1640452__340","type":"jpg"});
 }, "ddpapp61/App/images/media/grizzly-1640452__340.jpg");
-__d(856 /* ddpapp61/App/images/media/sun-1654458__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":511,"height":340,"scales":[1],"hash":"ea9a17ce747f0607abefc1115ca664a4","name":"sun-1654458__340","type":"jpg"});
+__d(864 /* ddpapp61/App/images/media/sun-1654458__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":511,"height":340,"scales":[1],"hash":"ea9a17ce747f0607abefc1115ca664a4","name":"sun-1654458__340","type":"jpg"});
 }, "ddpapp61/App/images/media/sun-1654458__340.jpg");
-__d(857 /* ddpapp61/App/images/media/hoverfly-1484870__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":513,"height":340,"scales":[1],"hash":"7a93d748a34ac137bf8c09f8b0002942","name":"hoverfly-1484870__340","type":"jpg"});
+__d(865 /* ddpapp61/App/images/media/hoverfly-1484870__340.jpg */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/images/media","width":513,"height":340,"scales":[1],"hash":"7a93d748a34ac137bf8c09f8b0002942","name":"hoverfly-1484870__340","type":"jpg"});
 }, "ddpapp61/App/images/media/hoverfly-1484870__340.jpg");
-__d(858 /* ddpapp61/App/containers/route/map/PageMaps.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(866 /* ddpapp61/App/containers/route/map/PageMaps.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
+
+
+
+
+
+
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -120797,42 +122151,69 @@ var LATITUDE_DELTA=10.0;
 var LONGITUDE_DELTA=LATITUDE_DELTA*ASPECT_RATIO;var
 
 PageMaps=function(_Component){babelHelpers.inherits(PageMaps,_Component);
-
 function PageMaps(props){babelHelpers.classCallCheck(this,PageMaps);var _this=babelHelpers.possibleConstructorReturn(this,(PageMaps.__proto__||Object.getPrototypeOf(PageMaps)).call(this,
 props));
+
 _this.state={
 region:{
 latitude:LATITUDE,
 longitude:LONGITUDE,
 latitudeDelta:LATITUDE_DELTA,
-longitudeDelta:LONGITUDE_DELTA},
-
-initialPosition:_this.region,
-lastPosition:_this.region};
+longitudeDelta:LONGITUDE_DELTA}};return _this;
 
 
-console.log("map:",_this.props,_this.state);return _this;
-}babelHelpers.createClass(PageMaps,[{key:'render',value:function render()
+}babelHelpers.createClass(PageMaps,[{key:'onRegionChange',value:function onRegionChange(
+
+region){
+this.setState({region:region});
+}},{key:'jumpRandom',value:function jumpRandom()
 
 {
+this.setState({region:this.randomRegion()});
+}},{key:'animateRandom',value:function animateRandom()
+
+{
+this.map.animateToRegion(this.randomRegion());
+}},{key:'randomRegion',value:function randomRegion()
+
+{var
+region=this.state.region;
+return babelHelpers.extends({},
+this.state.region,{
+latitude:region.latitude+(Math.random()-0.5)*(region.latitudeDelta/2),
+longitude:region.longitude+(Math.random()-0.5)*(region.longitudeDelta/2)});
+
+}},{key:'render',value:function render()
+
+{var _this2=this;
 return(
-_react2.default.createElement(_reactNative.View,null,
-_react2.default.createElement(_reactNative.ScrollView,null,
+_react2.default.createElement(_reactNative.View,{style:styles.container},
 _react2.default.createElement(_reactNativeMaps2.default,{
-initialRegion:{
-latitude:LATITUDE,
-longitude:LONGITUDE,
-latitudeDelta:LATITUDE_DELTA,
-longitudeDelta:LONGITUDE_DELTA}}),
+provider:_reactNativeMaps.PROVIDER_GOOGLE,
+ref:function ref(_ref){_this2.map=_ref;},
+mapType:_reactNativeMaps.MAP_TYPES.TERRAIN,
+style:styles.map,
+initialRegion:this.state.region,
+onRegionChange:function onRegionChange(region){return _this2.onRegionChange(region);}}),
+
+_react2.default.createElement(_reactNative.View,{style:[styles.bubble,styles.latlng]},
+_react2.default.createElement(_reactNative.Text,{style:{textAlign:'center'}},
+this.state.region.latitude.toPrecision(7),',',
+this.state.region.longitude.toPrecision(7))),
 
 
-_react2.default.createElement(_reactNative.Text,null,
-_react2.default.createElement(_reactNative.Text,{style:styles.title},'Initial position: '),
-this.state.initialPosition),
+_react2.default.createElement(_reactNative.View,{style:styles.buttonContainer},
+_react2.default.createElement(_reactNative.TouchableOpacity,{
+onPress:function onPress(){return _this2.jumpRandom();},
+style:[styles.bubble,styles.button]},
 
-_react2.default.createElement(_reactNative.Text,null,
-_react2.default.createElement(_reactNative.Text,{style:styles.title},'Current position: '),
-this.state.lastPosition))));
+_react2.default.createElement(_reactNative.Text,null,'Jump')),
+
+_react2.default.createElement(_reactNative.TouchableOpacity,{
+onPress:function onPress(){return _this2.animateRandom();},
+style:[styles.bubble,styles.button]},
+
+_react2.default.createElement(_reactNative.Text,null,'Animate')))));
 
 
 
@@ -120840,19 +122221,52 @@ this.state.lastPosition))));
 }}]);return PageMaps;}(_react.Component);
 
 
+PageMaps.propTypes={
+provider:_reactNativeMaps2.default.ProviderPropType};
+
+
 var styles=_reactNative.StyleSheet.create({
-title:{
-fontWeight:'500'}});exports.default=
+container:babelHelpers.extends({},
+_reactNative.StyleSheet.absoluteFillObject,{
+justifyContent:'flex-end',
+alignItems:'center'}),
+
+map:babelHelpers.extends({},
+_reactNative.StyleSheet.absoluteFillObject),
+
+bubble:{
+backgroundColor:'rgba(255,255,255,0.7)',
+paddingHorizontal:18,
+paddingVertical:12,
+borderRadius:20},
+
+latlng:{
+width:200,
+alignItems:'stretch'},
+
+button:{
+width:80,
+paddingHorizontal:12,
+alignItems:'center',
+marginHorizontal:10},
+
+buttonContainer:{
+flexDirection:'row',
+marginVertical:20,
+backgroundColor:'transparent'}});exports.default=
+
+
+
 
 
 
 (0,_reactRedux.connect)()(PageMaps);
 }, "ddpapp61/App/containers/route/map/PageMaps.js");
-__d(859 /* react-native-maps/index.js */, function(global, require, module, exports) {var _MapView=require(860 /* ./components/MapView */);var _MapView2=babelHelpers.interopRequireDefault(_MapView);
+__d(867 /* ddpapp61/App/containers/route/map/PageAmapLocation.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
-module.exports=_MapView2.default;
-}, "react-native-maps/index.js");
-__d(860 /* react-native-maps/components/MapView.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+
+
+var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -120861,1258 +122275,209 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-
-
-var _MapMarker=require(861 /* ./MapMarker */);var _MapMarker2=babelHelpers.interopRequireDefault(_MapMarker);
-var _MapPolyline=require(862 /* ./MapPolyline */);var _MapPolyline2=babelHelpers.interopRequireDefault(_MapPolyline);
-var _MapPolygon=require(863 /* ./MapPolygon */);var _MapPolygon2=babelHelpers.interopRequireDefault(_MapPolygon);
-var _MapCircle=require(864 /* ./MapCircle */);var _MapCircle2=babelHelpers.interopRequireDefault(_MapCircle);
-var _MapCallout=require(865 /* ./MapCallout */);var _MapCallout2=babelHelpers.interopRequireDefault(_MapCallout);
-
-var viewConfig={
-uiViewClassName:'AIRMap',
-validAttributes:{
-region:true}};
-
-
-
-var propTypes=babelHelpers.extends({},
-_reactNative.View.propTypes,{
-
-
-
-
-style:_reactNative.View.propTypes.style,
-
-
-
-
-
-
-
-
-
-showsUserLocation:_react.PropTypes.bool,
-
-
-
-
-
-
-
-showsMyLocationButton:_react.PropTypes.bool,
-
-
-
-
-
-
-
-
-followsUserLocation:_react.PropTypes.bool,
-
-
-
-
-
-
-showsPointsOfInterest:_react.PropTypes.bool,
-
-
-
-
-
-
-
-showsCompass:_react.PropTypes.bool,
-
-
-
-
-
-
-zoomEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-rotateEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-cacheEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-loadingEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-loadingBackgroundColor:_reactNative.ColorPropType,
-
-
-
-
-
-
-loadingIndicatorColor:_reactNative.ColorPropType,
-
-
-
-
-
-
-scrollEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-pitchEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-
-toolbarEnabled:_react.PropTypes.bool,
-
-
-
-
-
-
-showsScale:_react.PropTypes.bool,
-
-
-
-
-
-showsBuildings:_react.PropTypes.bool,
-
-
-
-
-
-showsTraffic:_react.PropTypes.bool,
-
-
-
-
-
-
-
-showsIndoors:_react.PropTypes.bool,
-
-
-
-
-
-
-
-
-
-mapType:_react.PropTypes.oneOf([
-'standard',
-'satellite',
-'hybrid',
-'terrain']),
-
-
-
-
-
-
-
-
-region:_react.PropTypes.shape({
-
-
-
-latitude:_react.PropTypes.number.isRequired,
-longitude:_react.PropTypes.number.isRequired,
-
-
-
-
-
-latitudeDelta:_react.PropTypes.number.isRequired,
-longitudeDelta:_react.PropTypes.number.isRequired}),
-
-
-
-
-
-
-
-
-
-
-initialRegion:_react.PropTypes.shape({
-
-
-
-latitude:_react.PropTypes.number.isRequired,
-longitude:_react.PropTypes.number.isRequired,
-
-
-
-
-
-latitudeDelta:_react.PropTypes.number.isRequired,
-longitudeDelta:_react.PropTypes.number.isRequired}),
-
-
-
-
-
-
-
-maxDelta:_react.PropTypes.number,
-
-
-
-
-
-
-minDelta:_react.PropTypes.number,
-
-
-
-
-
-legalLabelInsets:_reactNative.EdgeInsetsPropType,
-
-
-
-
-onRegionChange:_react.PropTypes.func,
-
-
-
-
-onRegionChangeComplete:_react.PropTypes.func,
-
-
-
-
-onPress:_react.PropTypes.func,
-
-
-
-
-onLongPress:_react.PropTypes.func,
-
-
-
-
-onPanDrag:_react.PropTypes.func,
-
-
-
-
-onMarkerPress:_react.PropTypes.func,
-
-
-
-
-
-
-
-onMarkerSelect:_react.PropTypes.func,
-
-
-
-
-
-
-
-onMarkerDeselect:_react.PropTypes.func,
-
-
-
-
-onCalloutPress:_react.PropTypes.func,
-
-
-
-
-onMarkerDragStart:_react.PropTypes.func,
-
-
-
-
-onMarkerDrag:_react.PropTypes.func,
-
-
-
-
-
-onMarkerDragEnd:_react.PropTypes.func});var
-
-
-
-MapView=function(_React$Component){babelHelpers.inherits(MapView,_React$Component);
-function MapView(props){babelHelpers.classCallCheck(this,MapView);var _this=babelHelpers.possibleConstructorReturn(this,(MapView.__proto__||Object.getPrototypeOf(MapView)).call(this,
-props));
-
-_this.state={
-isReady:_reactNative.Platform.OS==='ios'};
-
-
-_this._onMapReady=_this._onMapReady.bind(_this);
-_this._onChange=_this._onChange.bind(_this);
-_this._onLayout=_this._onLayout.bind(_this);return _this;
-}babelHelpers.createClass(MapView,[{key:'componentDidMount',value:function componentDidMount()
-
-{var _props=
-this.props;var region=_props.region;var initialRegion=_props.initialRegion;
-if(region&&this.state.isReady){
-this.map.setNativeProps({region:region});
-}else if(initialRegion&&this.state.isReady){
-this.map.setNativeProps({region:initialRegion});
-}
-}},{key:'componentWillUpdate',value:function componentWillUpdate(
-
-nextProps){
-var a=this.__lastRegion;
-var b=nextProps.region;
-if(!a||!b)return;
-if(
-a.latitude!==b.latitude||
-a.longitude!==b.longitude||
-a.latitudeDelta!==b.latitudeDelta||
-a.longitudeDelta!==b.longitudeDelta)
-{
-this.map.setNativeProps({region:b});
-}
-}},{key:'_onMapReady',value:function _onMapReady()
-
-{var _props2=
-this.props;var region=_props2.region;var initialRegion=_props2.initialRegion;
-if(region){
-this.map.setNativeProps({region:region});
-}else if(initialRegion){
-this.map.setNativeProps({region:initialRegion});
-}
-this.setState({isReady:true});
-}},{key:'_onLayout',value:function _onLayout(
-
-e){var _props3=
-this.props;var region=_props3.region;var initialRegion=_props3.initialRegion;var onLayout=_props3.onLayout;var
-isReady=this.state.isReady;
-if(region&&isReady&&!this.__layoutCalled){
-this.__layoutCalled=true;
-this.map.setNativeProps({region:region});
-}else if(initialRegion&&isReady&&!this.__layoutCalled){
-this.__layoutCalled=true;
-this.map.setNativeProps({region:initialRegion});
-}
-if(onLayout){
-onLayout(e);
-}
-}},{key:'_onChange',value:function _onChange(
-
-event){
-this.__lastRegion=event.nativeEvent.region;
-if(event.nativeEvent.continuous){
-if(this.props.onRegionChange){
-this.props.onRegionChange(event.nativeEvent.region);
-}
-}else if(this.props.onRegionChangeComplete){
-this.props.onRegionChangeComplete(event.nativeEvent.region);
-}
-}},{key:'animateToRegion',value:function animateToRegion(
-
-region,duration){
-this._runCommand('animateToRegion',[region,duration||500]);
-}},{key:'animateToCoordinate',value:function animateToCoordinate(
-
-latLng,duration){
-this._runCommand('animateToCoordinate',[latLng,duration||500]);
-}},{key:'fitToElements',value:function fitToElements(
-
-animated){
-this._runCommand('fitToElements',[animated]);
-}},{key:'fitToSuppliedMarkers',value:function fitToSuppliedMarkers(
-
-markers,animated){
-this._runCommand('fitToSuppliedMarkers',[markers,animated]);
-}},{key:'takeSnapshot',value:function takeSnapshot(
-
-width,height,region,callback){
-var finalRegion=region||this.props.region||this.props.initialRegion;
-this._runCommand('takeSnapshot',[width,height,finalRegion,callback]);
-}},{key:'_getHandle',value:function _getHandle()
-
-{
-return(0,_reactNative.findNodeHandle)(this.map);
-}},{key:'_runCommand',value:function _runCommand(
-
-name,args){
-switch(_reactNative.Platform.OS){
-case'android':
-_reactNative.NativeModules.UIManager.dispatchViewManagerCommand(
-this._getHandle(),
-_reactNative.NativeModules.UIManager.AIRMap.Commands[name],
-args);
-
-break;
-
-case'ios':
-_reactNative.NativeModules.AIRMapManager[name].apply(
-_reactNative.NativeModules.AIRMapManager[name],[
-this._getHandle()].concat(babelHelpers.toConsumableArray(args)));
-
-break;
-
-default:
-break;}
-
-}},{key:'render',value:function render()
-
-{var _this2=this;
-var props=void 0;
-
-if(this.state.isReady){
-props=babelHelpers.extends({},
-this.props,{
-region:null,
-initialRegion:null,
-onChange:this._onChange,
-onMapReady:this._onMapReady,
-onLayout:this._onLayout});
-
-if(_reactNative.Platform.OS==='ios'&&props.mapType==='terrain'){
-props.mapType='standard';
-}
-props.handlePanDrag=!!props.onPanDrag;
-}else{
-props={
-style:this.props.style,
-region:null,
-initialRegion:null,
-onChange:this._onChange,
-onMapReady:this._onMapReady,
-onLayout:this._onLayout};
-
-}
-
-return(
-_react2.default.createElement(AIRMap,babelHelpers.extends({
-ref:function ref(_ref){_this2.map=_ref;}},
-props)));
-
-
-}}]);return MapView;}(_react2.default.Component);
-
-
-MapView.propTypes=propTypes;
-MapView.viewConfig=viewConfig;
-
-var AIRMap=(0,_reactNative.requireNativeComponent)('AIRMap',MapView,{
-nativeOnly:{
-onChange:true,
-onMapReady:true,
-handlePanDrag:true}});
-
-
-
-MapView.Marker=_MapMarker2.default;
-MapView.Polyline=_MapPolyline2.default;
-MapView.Polygon=_MapPolygon2.default;
-MapView.Circle=_MapCircle2.default;
-MapView.Callout=_MapCallout2.default;
-
-MapView.Animated=_reactNative.Animated.createAnimatedComponent(MapView);
-
-module.exports=MapView;
-}, "react-native-maps/components/MapView.js");
-__d(861 /* react-native-maps/components/MapMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
-var _reactNative=require(12 /* react-native */);
-
-
-
-
-
-
-
-
-
-var _resolveAssetSource=require(310 /* react-native/Libraries/Image/resolveAssetSource */);var _resolveAssetSource2=babelHelpers.interopRequireDefault(_resolveAssetSource);
-
-var viewConfig={
-uiViewClassName:'AIRMapMarker',
-validAttributes:{
-coordinate:true}};
-
-
-
-var propTypes=babelHelpers.extends({},
-_reactNative.View.propTypes,{
-
-
-identifier:_react.PropTypes.string,
-reuseIdentifier:_react.PropTypes.string,
-
-
-
-
-
-
-title:_react.PropTypes.string,
-
-
-
-
-
-
-description:_react.PropTypes.string,
-
-
-
-
-
-image:_react.PropTypes.any,
-
-
-
-
-
-pinColor:_react.PropTypes.string,
-
-
-
-
-coordinate:_react.PropTypes.shape({
-
-
-
-latitude:_react.PropTypes.number.isRequired,
-longitude:_react.PropTypes.number.isRequired}).
-isRequired,
-
-
-
-
-
-
-
-
-
-
-
-
-
-centerOffset:_react.PropTypes.shape({
-
-
-
-x:_react.PropTypes.number.isRequired,
-y:_react.PropTypes.number.isRequired}),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-calloutOffset:_react.PropTypes.shape({
-
-
-
-x:_react.PropTypes.number.isRequired,
-y:_react.PropTypes.number.isRequired}),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-anchor:_react.PropTypes.shape({
-
-
-
-x:_react.PropTypes.number.isRequired,
-y:_react.PropTypes.number.isRequired}),
-
-
-
-
-
-
-
-
-
-
-
-
-
-calloutAnchor:_react.PropTypes.shape({
-
-
-
-x:_react.PropTypes.number.isRequired,
-y:_react.PropTypes.number.isRequired}),
-
-
-
-
-
-
-
-
-flat:_react.PropTypes.bool,
-
-draggable:_react.PropTypes.bool,
-
-
-
-
-onPress:_react.PropTypes.func,
-
-
-
-
-
-
-onSelect:_react.PropTypes.func,
-
-
-
-
-
-
-onDeselect:_react.PropTypes.func,
-
-
-
-
-onCalloutPress:_react.PropTypes.func,
-
-
-
-
-onDragStart:_react.PropTypes.func,
-
-
-
-
-onDrag:_react.PropTypes.func,
-
-
-
-
-
-onDragEnd:_react.PropTypes.func});
-
-
-var defaultProps={
-onPress:function onPress(){}};var
-
-
-MapMarker=function(_React$Component){babelHelpers.inherits(MapMarker,_React$Component);
-function MapMarker(props){babelHelpers.classCallCheck(this,MapMarker);var _this=babelHelpers.possibleConstructorReturn(this,(MapMarker.__proto__||Object.getPrototypeOf(MapMarker)).call(this,
-props));
-
-_this.showCallout=_this.showCallout.bind(_this);
-_this.hideCallout=_this.hideCallout.bind(_this);return _this;
-}babelHelpers.createClass(MapMarker,[{key:'showCallout',value:function showCallout()
-
-{
-this._runCommand('showCallout',[]);
-}},{key:'hideCallout',value:function hideCallout()
-
-{
-this._runCommand('hideCallout',[]);
-}},{key:'_getHandle',value:function _getHandle()
-
-{
-return(0,_reactNative.findNodeHandle)(this.marker);
-}},{key:'_runCommand',value:function _runCommand(
-
-name,args){
-switch(_reactNative.Platform.OS){
-case'android':
-_reactNative.NativeModules.UIManager.dispatchViewManagerCommand(
-this._getHandle(),
-_reactNative.NativeModules.UIManager.AIRMapMarker.Commands[name],
-args);
-
-break;
-
-case'ios':
-_reactNative.NativeModules.AIRMapMarkerManager[name].apply(
-_reactNative.NativeModules.AIRMapMarkerManager[name],[
-this._getHandle()].concat(babelHelpers.toConsumableArray(args)));
-
-break;
-
-default:
-break;}
-
-}},{key:'render',value:function render()
-
-{var _this2=this;
-var image=void 0;
-if(this.props.image){
-image=(0,_resolveAssetSource2.default)(this.props.image)||{};
-image=image.uri;
-}
-
-return(
-_react2.default.createElement(AIRMapMarker,babelHelpers.extends({
-ref:function ref(_ref){_this2.marker=_ref;}},
-this.props,{
-image:image,
-style:[styles.marker,this.props.style]})));
-
-
-}}]);return MapMarker;}(_react2.default.Component);
-
-
-MapMarker.propTypes=propTypes;
-MapMarker.defaultProps=defaultProps;
-MapMarker.viewConfig=viewConfig;
-
-var styles=_reactNative.StyleSheet.create({
-marker:{
-position:'absolute',
-backgroundColor:'transparent'}});
-
-
-
-var AIRMapMarker=(0,_reactNative.requireNativeComponent)('AIRMapMarker',MapMarker);
-
-MapMarker.Animated=_reactNative.Animated.createAnimatedComponent(MapMarker);
-
-module.exports=MapMarker;
-}, "react-native-maps/components/MapMarker.js");
-__d(862 /* react-native-maps/components/MapPolyline.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
-var _reactNative=require(12 /* react-native */);
-
-
-
-
-var propTypes=babelHelpers.extends({},
-_reactNative.View.propTypes,{
-
-
-
-
-coordinates:_react.PropTypes.arrayOf(_react.PropTypes.shape({
-
-
-
-latitude:_react.PropTypes.number.isRequired,
-longitude:_react.PropTypes.number.isRequired})),
-
-
-
-
-
-onPress:_react.PropTypes.func,
-
-
-
-
-strokeWidth:_react.PropTypes.number,
-
-
-
-
-strokeColor:_react.PropTypes.string,
-
-
-
-
-
-
-
-
-zIndex:_react.PropTypes.number,
-
-
-
-
-
-
-
-lineCap:_react.PropTypes.oneOf([
-'butt',
-'round',
-'square']),
-
-
-
-
-
-
-
-
-lineJoin:_react.PropTypes.oneOf([
-'miter',
-'round',
-'bevel']),
-
-
-
-
-
-
-
-
-
-
-
-
-miterLimit:_react.PropTypes.number,
-
-
-
-
-
-
-
-
-
-geodesic:_react.PropTypes.bool,
-
-
-
-
-
-
-
-
-
-
-
-
-lineDashPhase:_react.PropTypes.number,
-
-
-
-
-
-
-
-
-
-
-
-
-
-lineDashPattern:_react.PropTypes.arrayOf(_react.PropTypes.number)});
-
-
-var defaultProps={
-strokeColor:'#000',
-strokeWidth:1};var
-
-
-MapPolyline=function(_React$Component){babelHelpers.inherits(MapPolyline,_React$Component);function MapPolyline(){babelHelpers.classCallCheck(this,MapPolyline);return babelHelpers.possibleConstructorReturn(this,(MapPolyline.__proto__||Object.getPrototypeOf(MapPolyline)).apply(this,arguments));}babelHelpers.createClass(MapPolyline,[{key:'render',value:function render()
-{
-return(
-_react2.default.createElement(AIRMapPolyline,this.props));
-
-}}]);return MapPolyline;}(_react2.default.Component);
-
-
-MapPolyline.propTypes=propTypes;
-MapPolyline.defaultProps=defaultProps;
-
-var AIRMapPolyline=(0,_reactNative.requireNativeComponent)('AIRMapPolyline',MapPolyline);
-
-module.exports=MapPolyline;
-}, "react-native-maps/components/MapPolyline.js");
-__d(863 /* react-native-maps/components/MapPolygon.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
-var _reactNative=require(12 /* react-native */);
-
-
-
-
-var propTypes=babelHelpers.extends({},
-_reactNative.View.propTypes,{
-
-
-
-
-coordinates:_react.PropTypes.arrayOf(_react.PropTypes.shape({
-
-
-
-latitude:_react.PropTypes.number.isRequired,
-longitude:_react.PropTypes.number.isRequired})),
-
-
-
-
-
-onPress:_react.PropTypes.func,
-
-
-
-
-strokeWidth:_react.PropTypes.number,
-
-
-
-
-strokeColor:_react.PropTypes.string,
-
-
-
-
-fillColor:_react.PropTypes.string,
-
-
-
-
-
-
-
-
-zIndex:_react.PropTypes.number,
-
-
-
-
-
-
-
-lineCap:_react.PropTypes.oneOf([
-'butt',
-'round',
-'square']),
-
-
-
-
-
-
-
-
-lineJoin:_react.PropTypes.oneOf([
-'miter',
-'round',
-'bevel']),
-
-
-
-
-
-
-
-
-
-
-
-
-miterLimit:_react.PropTypes.number,
-
-
-
-
-
-
-
-
-
-geodesic:_react.PropTypes.bool,
-
-
-
-
-
-
-
-
-
-
-
-
-lineDashPhase:_react.PropTypes.number,
-
-
-
-
-
-
-
-
-
-
-
-
-
-lineDashPattern:_react.PropTypes.arrayOf(_react.PropTypes.number)});
-
-
-var defaultProps={
-strokeColor:'#000',
-strokeWidth:1};var
-
-
-MapPolygon=function(_React$Component){babelHelpers.inherits(MapPolygon,_React$Component);function MapPolygon(){babelHelpers.classCallCheck(this,MapPolygon);return babelHelpers.possibleConstructorReturn(this,(MapPolygon.__proto__||Object.getPrototypeOf(MapPolygon)).apply(this,arguments));}babelHelpers.createClass(MapPolygon,[{key:'render',value:function render()
-{
-return(
-_react2.default.createElement(AIRMapPolygon,this.props));
-
-}}]);return MapPolygon;}(_react2.default.Component);
-
-
-MapPolygon.propTypes=propTypes;
-MapPolygon.defaultProps=defaultProps;
-
-var AIRMapPolygon=(0,_reactNative.requireNativeComponent)('AIRMapPolygon',MapPolygon);
-
-module.exports=MapPolygon;
-}, "react-native-maps/components/MapPolygon.js");
-__d(864 /* react-native-maps/components/MapCircle.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
-var _reactNative=require(12 /* react-native */);
-
-
-
-
-var propTypes=babelHelpers.extends({},
-_reactNative.View.propTypes,{
-
-
-
-
-center:_react.PropTypes.shape({
-
-
-
-latitude:_react.PropTypes.number.isRequired,
-longitude:_react.PropTypes.number.isRequired}).
-isRequired,
-
-
-
-
-radius:_react.PropTypes.number.isRequired,
-
-
-
-
-onPress:_react.PropTypes.func,
-
-
-
-
-strokeWidth:_react.PropTypes.number,
-
-
-
-
-strokeColor:_react.PropTypes.string,
-
-
-
-
-fillColor:_react.PropTypes.string,
-
-
-
-
-
-
-
-
-zIndex:_react.PropTypes.number,
-
-
-
-
-
-
-
-lineCap:_react.PropTypes.oneOf([
-'butt',
-'round',
-'square']),
-
-
-
-
-
-
-
-
-lineJoin:_react.PropTypes.oneOf([
-'miter',
-'round',
-'bevel']),
-
-
-
-
-
-
-
-
-
-
-
-
-miterLimit:_react.PropTypes.number,
-
-
-
-
-
-
-
-
-
-
-
-
-lineDashPhase:_react.PropTypes.number,
-
-
-
-
-
-
-
-
-
-
-
-
-
-lineDashPattern:_react.PropTypes.arrayOf(_react.PropTypes.number)});
-
-
-var defaultProps={
-strokeColor:'#000',
-strokeWidth:1};var
-
-
-MapCircle=function(_React$Component){babelHelpers.inherits(MapCircle,_React$Component);function MapCircle(){babelHelpers.classCallCheck(this,MapCircle);return babelHelpers.possibleConstructorReturn(this,(MapCircle.__proto__||Object.getPrototypeOf(MapCircle)).apply(this,arguments));}babelHelpers.createClass(MapCircle,[{key:'render',value:function render()
-{
-return(
-_react2.default.createElement(AIRMapCircle,this.props));
-
-}}]);return MapCircle;}(_react2.default.Component);
-
-
-MapCircle.propTypes=propTypes;
-MapCircle.defaultProps=defaultProps;
-
-var AIRMapCircle=(0,_reactNative.requireNativeComponent)('AIRMapCircle',MapCircle);
-
-module.exports=MapCircle;
-}, "react-native-maps/components/MapCircle.js");
-__d(865 /* react-native-maps/components/MapCallout.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
-var _reactNative=require(12 /* react-native */);
-
-
-
-
-
-var propTypes=babelHelpers.extends({},
-_reactNative.View.propTypes,{
-tooltip:_react.PropTypes.bool,
-onPress:_react.PropTypes.func});
-
-
-var defaultProps={
-tooltip:false};var
-
-
-MapCallout=function(_React$Component){babelHelpers.inherits(MapCallout,_React$Component);function MapCallout(){babelHelpers.classCallCheck(this,MapCallout);return babelHelpers.possibleConstructorReturn(this,(MapCallout.__proto__||Object.getPrototypeOf(MapCallout)).apply(this,arguments));}babelHelpers.createClass(MapCallout,[{key:'render',value:function render()
-{
-return _react2.default.createElement(AIRMapCallout,babelHelpers.extends({},this.props,{style:[styles.callout,this.props.style]}));
-}}]);return MapCallout;}(_react2.default.Component);
-
-
-MapCallout.propTypes=propTypes;
-MapCallout.defaultProps=defaultProps;
-
-var styles=_reactNative.StyleSheet.create({
-callout:{
-position:'absolute'}});
-
-
-
-var AIRMapCallout=(0,_reactNative.requireNativeComponent)('AIRMapCallout',MapCallout);
-
-module.exports=MapCallout;
-}, "react-native-maps/components/MapCallout.js");
-__d(866 /* ddpapp61/App/containers/route/map/PageMapExamples.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
-var _reactNative=require(12 /* react-native */);
-
-
-
-
-
-
-
-var _DisplayLatLng=require(867 /* ./examples/DisplayLatLng */);var _DisplayLatLng2=babelHelpers.interopRequireDefault(_DisplayLatLng);
-var _ViewsAsMarkers=require(868 /* ./examples/ViewsAsMarkers */);var _ViewsAsMarkers2=babelHelpers.interopRequireDefault(_ViewsAsMarkers);
-var _EventListener=require(870 /* ./examples/EventListener */);var _EventListener2=babelHelpers.interopRequireDefault(_EventListener);
-var _MarkerTypes=require(871 /* ./examples/MarkerTypes */);var _MarkerTypes2=babelHelpers.interopRequireDefault(_MarkerTypes);
-var _DraggableMarkers=require(874 /* ./examples/DraggableMarkers */);var _DraggableMarkers2=babelHelpers.interopRequireDefault(_DraggableMarkers);
-var _PolygonCreator=require(875 /* ./examples/PolygonCreator */);var _PolygonCreator2=babelHelpers.interopRequireDefault(_PolygonCreator);
-var _PolylineCreator=require(876 /* ./examples/PolylineCreator */);var _PolylineCreator2=babelHelpers.interopRequireDefault(_PolylineCreator);
-var _AnimatedViews=require(877 /* ./examples/AnimatedViews */);var _AnimatedViews2=babelHelpers.interopRequireDefault(_AnimatedViews);
-var _AnimatedMarkers=require(880 /* ./examples/AnimatedMarkers */);var _AnimatedMarkers2=babelHelpers.interopRequireDefault(_AnimatedMarkers);
-var _Callouts=require(881 /* ./examples/Callouts */);var _Callouts2=babelHelpers.interopRequireDefault(_Callouts);
-var _Overlays=require(883 /* ./examples/Overlays */);var _Overlays2=babelHelpers.interopRequireDefault(_Overlays);
-var _DefaultMarkers=require(884 /* ./examples/DefaultMarkers */);var _DefaultMarkers2=babelHelpers.interopRequireDefault(_DefaultMarkers);
-var _CachedMap=require(885 /* ./examples/CachedMap */);var _CachedMap2=babelHelpers.interopRequireDefault(_CachedMap);
-var _LoadingMap=require(886 /* ./examples/LoadingMap */);var _LoadingMap2=babelHelpers.interopRequireDefault(_LoadingMap);
-var _TakeSnapshot=require(887 /* ./examples/TakeSnapshot */);var _TakeSnapshot2=babelHelpers.interopRequireDefault(_TakeSnapshot);
-var _FitToSuppliedMarkers=require(888 /* ./examples/FitToSuppliedMarkers */);var _FitToSuppliedMarkers2=babelHelpers.interopRequireDefault(_FitToSuppliedMarkers);
-var _LiteMapView=require(889 /* ./examples/LiteMapView */);var _LiteMapView2=babelHelpers.interopRequireDefault(_LiteMapView);
-var _CustomTiles=require(890 /* ./examples/CustomTiles */);var _CustomTiles2=babelHelpers.interopRequireDefault(_CustomTiles);
 
 var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
-var _reactRedux=require(647 /* react-redux */);var
+var _reactRedux=require(647 /* react-redux */);
+
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+
+var _reactNativeAmapLocation=require(868 /* react-native-amap-location */);var _reactNativeAmapLocation2=babelHelpers.interopRequireDefault(_reactNativeAmapLocation);var _Dimensions$get=
+
+_reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
+
+var ASPECT_RATIO=width/height;
+var LATITUDE=35.907757;
+var LONGITUDE=127.766922;
+var LATITUDE_DELTA=10.0;
+var LONGITUDE_DELTA=LATITUDE_DELTA*ASPECT_RATIO;
+
+var id=0;var
+
+PageAmapLocation=function(_Component){babelHelpers.inherits(PageAmapLocation,_Component);
+function PageAmapLocation(props){babelHelpers.classCallCheck(this,PageAmapLocation);var _this=babelHelpers.possibleConstructorReturn(this,(PageAmapLocation.__proto__||Object.getPrototypeOf(PageAmapLocation)).call(this,
+props));
+_this.state={
+currentlocation:{
+accuracy:29,
+adCode:"",
+address:"",
+altitude:0,
+bearing:0,
+city:"",
+cityCode:"",
+country:"",
+district:"",
+latitude:LATITUDE,
+locationDetail:"-1",
+locationType:4,
+longitude:LONGITUDE,
+poiName:"",
+provider:"lbs",
+province:"",
+satellites:0,
+speed:0,
+street:"",
+streetNum:""}};
+
+
+console.log("PageAmapLocation:",props,_this.state);return _this;
+}babelHelpers.createClass(PageAmapLocation,[{key:'locationMapping',value:function locationMapping(
+
+data){
+console.log('locationMapping :',data);
+this.setState({currentlocation:data});
+}},{key:'componentDidMount',value:function componentDidMount()
+
+{var _this2=this;
+this.listener=_reactNativeAmapLocation2.default.addEventListener(function(data){return _this2.locationMapping.bind();});
+_reactNativeAmapLocation2.default.startLocation({
+accuracy:'HighAccuracy',
+interval:5000,
+
+killProcess:true,
+needDetail:true});
+
+}},{key:'componentWillUnmount',value:function componentWillUnmount()
+
+{
+_reactNativeAmapLocation2.default.stopLocation();
+this.listener.remove();
+}},{key:'render',value:function render()
+
+{
+return(
+_react2.default.createElement(_reactNative.View,{style:styles.container},
+_react2.default.createElement(_reactNative.Text,null,
+_react2.default.createElement(_reactNative.Text,{style:styles.title},'Initial position: '),
+LATITUDE,', ',LONGITUDE),
+
+_react2.default.createElement(_reactNative.Text,null,
+_react2.default.createElement(_reactNative.Text,{style:styles.title},'Current position: '),'lat:',
+this.state.currentlocation.latitude,', lon:',this.state.currentlocation.longitude)));
+
+
+
+}}]);return PageAmapLocation;}(_react.Component);
+
+
+var styles=_reactNative.StyleSheet.create({
+container:babelHelpers.extends({},
+_reactNative.StyleSheet.absoluteFillObject,{
+justifyContent:'flex-end',
+alignItems:'center'}),
+
+map:babelHelpers.extends({},
+_reactNative.StyleSheet.absoluteFillObject),
+
+bubble:{
+backgroundColor:'rgba(255,255,255,0.7)',
+paddingHorizontal:18,
+paddingVertical:12,
+borderRadius:20},
+
+latlng:{
+width:200,
+alignItems:'stretch'},
+
+button:{
+width:80,
+paddingHorizontal:12,
+alignItems:'center',
+marginHorizontal:10},
+
+buttonContainer:{
+flexDirection:'row',
+marginVertical:20,
+backgroundColor:'transparent'},
+
+title:{
+fontWeight:'500'}});exports.default=
+
+
+
+
+(0,_reactRedux.connect)()(PageAmapLocation);
+}, "ddpapp61/App/containers/route/map/PageAmapLocation.js");
+__d(868 /* react-native-amap-location/index.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _reactNative=require(12 /* react-native */);
+
+var AMapLocation=_reactNative.NativeModules.AMapLocation;
+var onLocationChanged='onLocationChangedAMAPLOCATION';var
+
+
+ALocation=function(){function ALocation(){babelHelpers.classCallCheck(this,ALocation);}babelHelpers.createClass(ALocation,null,[{key:'startLocation',value:function startLocation(
+
+options){
+AMapLocation.startLocation(options);
+}},{key:'stopLocation',value:function stopLocation()
+
+{
+AMapLocation.stopLocation();
+}},{key:'addEventListener',value:function addEventListener(
+
+handler){
+
+var listener=_reactNative.DeviceEventEmitter.addListener(
+onLocationChanged,
+handler);
+
+return listener;
+}}]);return ALocation;}();exports.default=ALocation;
+}, "react-native-amap-location/index.js");
+__d(869 /* ddpapp61/App/containers/route/map/PageMapExamples.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+
+
+
+
+var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
+var _reactRedux=require(647 /* react-redux */);
+
+var _reactNativeMaps=require(775 /* react-native-maps */);
+var _DisplayLatLng=require(870 /* ./examples/DisplayLatLng */);var _DisplayLatLng2=babelHelpers.interopRequireDefault(_DisplayLatLng);
+var _ViewsAsMarkers=require(871 /* ./examples/ViewsAsMarkers */);var _ViewsAsMarkers2=babelHelpers.interopRequireDefault(_ViewsAsMarkers);
+var _EventListener=require(873 /* ./examples/EventListener */);var _EventListener2=babelHelpers.interopRequireDefault(_EventListener);
+var _MarkerTypes=require(874 /* ./examples/MarkerTypes */);var _MarkerTypes2=babelHelpers.interopRequireDefault(_MarkerTypes);
+var _DraggableMarkers=require(877 /* ./examples/DraggableMarkers */);var _DraggableMarkers2=babelHelpers.interopRequireDefault(_DraggableMarkers);
+var _PolygonCreator=require(878 /* ./examples/PolygonCreator */);var _PolygonCreator2=babelHelpers.interopRequireDefault(_PolygonCreator);
+var _PolylineCreator=require(879 /* ./examples/PolylineCreator */);var _PolylineCreator2=babelHelpers.interopRequireDefault(_PolylineCreator);
+var _AnimatedViews=require(880 /* ./examples/AnimatedViews */);var _AnimatedViews2=babelHelpers.interopRequireDefault(_AnimatedViews);
+var _AnimatedMarkers=require(883 /* ./examples/AnimatedMarkers */);var _AnimatedMarkers2=babelHelpers.interopRequireDefault(_AnimatedMarkers);
+var _Callouts=require(884 /* ./examples/Callouts */);var _Callouts2=babelHelpers.interopRequireDefault(_Callouts);
+var _Overlays=require(886 /* ./examples/Overlays */);var _Overlays2=babelHelpers.interopRequireDefault(_Overlays);
+var _DefaultMarkers=require(887 /* ./examples/DefaultMarkers */);var _DefaultMarkers2=babelHelpers.interopRequireDefault(_DefaultMarkers);
+var _CachedMap=require(888 /* ./examples/CachedMap */);var _CachedMap2=babelHelpers.interopRequireDefault(_CachedMap);
+var _LoadingMap=require(889 /* ./examples/LoadingMap */);var _LoadingMap2=babelHelpers.interopRequireDefault(_LoadingMap);
+var _TakeSnapshot=require(890 /* ./examples/TakeSnapshot */);var _TakeSnapshot2=babelHelpers.interopRequireDefault(_TakeSnapshot);
+var _FitToSuppliedMarkers=require(891 /* ./examples/FitToSuppliedMarkers */);var _FitToSuppliedMarkers2=babelHelpers.interopRequireDefault(_FitToSuppliedMarkers);
+
+var _LiteMapView=require(892 /* ./examples/LiteMapView */);var _LiteMapView2=babelHelpers.interopRequireDefault(_LiteMapView);
+var _CustomTiles=require(893 /* ./examples/CustomTiles */);var _CustomTiles2=babelHelpers.interopRequireDefault(_CustomTiles);
+
+
+var IOS=_reactNative.Platform.OS==='ios';
+var ANDROID=_reactNative.Platform.OS==='android';
+
+function makeExampleMapper(useGoogleMaps){
+if(useGoogleMaps){
+return function(example){return[
+example[0],
+[example[1],example[3]].filter(Boolean).join(' ')];};
+
+}
+return function(example){return example;};
+}var
 
 PageMapExamples=function(_React$Component){babelHelpers.inherits(PageMapExamples,_React$Component);
 function PageMapExamples(props){babelHelpers.classCallCheck(this,PageMapExamples);var _this=babelHelpers.possibleConstructorReturn(this,(PageMapExamples.__proto__||Object.getPrototypeOf(PageMapExamples)).call(this,
 props));
 
 _this.state={
-Component:null};return _this;
+Component:null,
+useGoogleMaps:ANDROID};return _this;
 
 }babelHelpers.createClass(PageMapExamples,[{key:'renderExample',value:function renderExample(_ref)
 
@@ -122137,13 +122502,30 @@ onPress:function onPress(){return _this3.setState({Component:null});}},
 _react2.default.createElement(_reactNative.Text,{style:{fontWeight:'bold',fontSize:30}},'←')));
 
 
+}},{key:'renderGoogleSwitch',value:function renderGoogleSwitch()
+
+{var _this4=this;
+return(
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.Text,null,'Use GoogleMaps?'),
+_react2.default.createElement(_reactNative.Switch,{
+onValueChange:function onValueChange(value){return _this4.setState({useGoogleMaps:value});},
+style:{marginBottom:10},
+value:this.state.useGoogleMaps})));
+
+
+
 }},{key:'renderExamples',value:function renderExamples(
 
-examples){var _this4=this;var
-Component=this.state.Component;
+examples){var _this5=this;var _state=
+
+
+
+this.state;var Component=_state.Component;var useGoogleMaps=_state.useGoogleMaps;
+
 return(
 _react2.default.createElement(_reactNative.View,{style:styles.container},
-Component&&_react2.default.createElement(Component,null),
+Component&&_react2.default.createElement(Component,{provider:useGoogleMaps?_reactNativeMaps.PROVIDER_GOOGLE:_reactNativeMaps.PROVIDER_DEFAULT}),
 Component&&this.renderBackButton(),
 !Component&&
 _react2.default.createElement(_reactNative.ScrollView,{
@@ -122151,33 +122533,41 @@ style:_reactNative.StyleSheet.absoluteFill,
 contentContainerStyle:styles.scrollview,
 showsVerticalScrollIndicator:false},
 
-examples.map(function(example){return _this4.renderExample(example);}))));
+IOS&&this.renderGoogleSwitch(),
+examples.map(function(example){return _this5.renderExample(example);}))));
 
 
 
 
 }},{key:'render',value:function render()
 
-{
+{var _this6=this;
 return this.renderExamples([
-[_DisplayLatLng2.default,'Tracking Position'],
-[_ViewsAsMarkers2.default,'Arbitrary Views as Markers'],
-[_EventListener2.default,'Events'],
-[_MarkerTypes2.default,'Image Based Markers'],
-[_DraggableMarkers2.default,'Draggable Markers'],
+
+
+[_DisplayLatLng2.default,'Tracking Position',true,'(incomplete)'],
+[_ViewsAsMarkers2.default,'Arbitrary Views as Markers',true],
+[_EventListener2.default,'Events',true,'(incomplete)'],
+[_MarkerTypes2.default,'Image Based Markers',true],
+[_DraggableMarkers2.default,'Draggable Markers',true],
 [_PolygonCreator2.default,'Polygon Creator'],
 [_PolylineCreator2.default,'Polyline Creator'],
 [_AnimatedViews2.default,'Animating with MapViews'],
 [_AnimatedMarkers2.default,'Animated Marker Position'],
-[_Callouts2.default,'Custom Callouts'],
-[_Overlays2.default,'Circles, Polygons, and Polylines'],
-[_DefaultMarkers2.default,'Default Markers'],
-[_TakeSnapshot2.default,'Take Snapshot'],
+[_Callouts2.default,'Custom Callouts',true],
+[_Overlays2.default,'Circles, Polygons, and Polylines',true,'(ios error)'],
+[_DefaultMarkers2.default,'Default Markers',true],
+[_TakeSnapshot2.default,'Take Snapshot',true,'(incomplete)'],
 [_CachedMap2.default,'Cached Map'],
 [_LoadingMap2.default,'Map with loading'],
 [_FitToSuppliedMarkers2.default,'Focus Map On Markers'],
+
 [_LiteMapView2.default,'Android Lite MapView'],
-[_CustomTiles2.default,'Custom Tiles']]);
+[_CustomTiles2.default,'Custom Tiles']].
+
+
+filter(function(example){return ANDROID||IOS&&(example[2]||!_this6.state.useGoogleMaps);}).
+map(makeExampleMapper(IOS&&this.state.useGoogleMaps)));
 
 }}]);return PageMapExamples;}(_react2.default.Component);
 
@@ -122213,9 +122603,10 @@ justifyContent:'center'}});exports.default=
 
 
 
+
 (0,_reactRedux.connect)()(PageMapExamples);
 }, "ddpapp61/App/containers/route/map/PageMapExamples.js");
-__d(867 /* ddpapp61/App/containers/route/map/examples/DisplayLatLng.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(870 /* ddpapp61/App/containers/route/map/examples/DisplayLatLng.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122224,7 +122615,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -122338,7 +122729,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/DisplayLatLng.js");
-__d(868 /* ddpapp61/App/containers/route/map/examples/ViewsAsMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(871 /* ddpapp61/App/containers/route/map/examples/ViewsAsMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122347,8 +122738,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PriceMarker=require(869 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _PriceMarker=require(872 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -122449,7 +122840,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/ViewsAsMarkers.js");
-__d(869 /* ddpapp61/App/containers/route/map/examples/PriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(872 /* ddpapp61/App/containers/route/map/examples/PriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122527,7 +122918,7 @@ marginTop:-0.5}});
 
 module.exports=PriceMarker;
 }, "ddpapp61/App/containers/route/map/examples/PriceMarker.js");
-__d(870 /* ddpapp61/App/containers/route/map/examples/EventListener.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(873 /* ddpapp61/App/containers/route/map/examples/EventListener.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122536,8 +122927,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PriceMarker=require(869 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _PriceMarker=require(872 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -122709,7 +123100,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/EventListener.js");
-__d(871 /* ddpapp61/App/containers/route/map/examples/MarkerTypes.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(874 /* ddpapp61/App/containers/route/map/examples/MarkerTypes.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122717,9 +123108,9 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(872 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
-var _flagPink=require(873 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
+var _flagPink=require(876 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -122787,19 +123178,19 @@ fontWeight:'bold'}});
 
 module.exports=MarkerTypes;
 }, "ddpapp61/App/containers/route/map/examples/MarkerTypes.js");
-__d(872 /* ddpapp61/App/containers/route/map/examples/assets/flag-blue.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"ea43b45ee1611434b4febf7c009b090e","name":"flag-blue","type":"png"});
+__d(875 /* ddpapp61/App/containers/route/map/examples/assets/flag-blue.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"ea43b45ee1611434b4febf7c009b090e","name":"flag-blue","type":"png"});
 }, "ddpapp61/App/containers/route/map/examples/assets/flag-blue.png");
-__d(873 /* ddpapp61/App/containers/route/map/examples/assets/flag-pink.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"566aed7995a373f07f630c351a7279ad","name":"flag-pink","type":"png"});
+__d(876 /* ddpapp61/App/containers/route/map/examples/assets/flag-pink.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"566aed7995a373f07f630c351a7279ad","name":"flag-pink","type":"png"});
 }, "ddpapp61/App/containers/route/map/examples/assets/flag-pink.png");
-__d(874 /* ddpapp61/App/containers/route/map/examples/DraggableMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(877 /* ddpapp61/App/containers/route/map/examples/DraggableMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PriceMarker=require(869 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _PriceMarker=require(872 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -122877,7 +123268,7 @@ _reactNative.StyleSheet.absoluteFillObject)});
 
 module.exports=MarkerTypes;
 }, "ddpapp61/App/containers/route/map/examples/DraggableMarkers.js");
-__d(875 /* ddpapp61/App/containers/route/map/examples/PolygonCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(878 /* ddpapp61/App/containers/route/map/examples/PolygonCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122886,7 +123277,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -123028,7 +123419,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/PolygonCreator.js");
-__d(876 /* ddpapp61/App/containers/route/map/examples/PolylineCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(879 /* ddpapp61/App/containers/route/map/examples/PolylineCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123037,7 +123428,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -123171,7 +123562,7 @@ backgroundColor:'transparent'}});
 
 module.exports=PolylineCreator;
 }, "ddpapp61/App/containers/route/map/examples/PolylineCreator.js");
-__d(877 /* ddpapp61/App/containers/route/map/examples/AnimatedViews.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(880 /* ddpapp61/App/containers/route/map/examples/AnimatedViews.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123179,9 +123570,9 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PanController=require(878 /* ./PanController */);var _PanController2=babelHelpers.interopRequireDefault(_PanController);
-var _AnimatedPriceMarker=require(879 /* ./AnimatedPriceMarker */);var _AnimatedPriceMarker2=babelHelpers.interopRequireDefault(_AnimatedPriceMarker);
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _PanController=require(881 /* ./PanController */);var _PanController2=babelHelpers.interopRequireDefault(_PanController);
+var _AnimatedPriceMarker=require(882 /* ./AnimatedPriceMarker */);var _AnimatedPriceMarker2=babelHelpers.interopRequireDefault(_AnimatedPriceMarker);
 
 var screen=_reactNative.Dimensions.get('window');
 
@@ -123588,7 +123979,7 @@ borderColor:'#000'}});
 
 module.exports=AnimatedViews;
 }, "ddpapp61/App/containers/route/map/examples/AnimatedViews.js");
-__d(878 /* ddpapp61/App/containers/route/map/examples/PanController.js */, function(global, require, module, exports) {
+__d(881 /* ddpapp61/App/containers/route/map/examples/PanController.js */, function(global, require, module, exports) {
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
@@ -124017,7 +124408,7 @@ return _react2.default.createElement(_reactNative.View,babelHelpers.extends({},t
 
 module.exports=PanController;
 }, "ddpapp61/App/containers/route/map/examples/PanController.js");
-__d(879 /* ddpapp61/App/containers/route/map/examples/AnimatedPriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(882 /* ddpapp61/App/containers/route/map/examples/AnimatedPriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);var
 
 
@@ -124124,7 +124515,7 @@ borderTopColor:'#007a87'}});
 
 module.exports=AnimatedPriceMarker;
 }, "ddpapp61/App/containers/route/map/examples/AnimatedPriceMarker.js");
-__d(880 /* ddpapp61/App/containers/route/map/examples/AnimatedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(883 /* ddpapp61/App/containers/route/map/examples/AnimatedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124134,7 +124525,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
 
 var screen=_reactNative.Dimensions.get('window');
 
@@ -124228,7 +124619,7 @@ backgroundColor:'transparent'}});
 
 module.exports=AnimatedMarkers;
 }, "ddpapp61/App/containers/route/map/examples/AnimatedMarkers.js");
-__d(881 /* ddpapp61/App/containers/route/map/examples/Callouts.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(884 /* ddpapp61/App/containers/route/map/examples/Callouts.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124237,8 +124628,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _CustomCallout=require(882 /* ./CustomCallout */);var _CustomCallout2=babelHelpers.interopRequireDefault(_CustomCallout);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _CustomCallout=require(885 /* ./CustomCallout */);var _CustomCallout2=babelHelpers.interopRequireDefault(_CustomCallout);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -124379,7 +124770,7 @@ backgroundColor:'transparent'}});
 
 module.exports=Callouts;
 }, "ddpapp61/App/containers/route/map/examples/Callouts.js");
-__d(882 /* ddpapp61/App/containers/route/map/examples/CustomCallout.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(885 /* ddpapp61/App/containers/route/map/examples/CustomCallout.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124447,7 +124838,7 @@ marginTop:-0.5}});
 
 module.exports=CustomCallout;
 }, "ddpapp61/App/containers/route/map/examples/CustomCallout.js");
-__d(883 /* ddpapp61/App/containers/route/map/examples/Overlays.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(886 /* ddpapp61/App/containers/route/map/examples/Overlays.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124455,7 +124846,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -124591,7 +124982,7 @@ backgroundColor:'transparent'}});
 
 module.exports=Overlays;
 }, "ddpapp61/App/containers/route/map/examples/Overlays.js");
-__d(884 /* ddpapp61/App/containers/route/map/examples/DefaultMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(887 /* ddpapp61/App/containers/route/map/examples/DefaultMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124599,7 +124990,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -124702,7 +125093,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DefaultMarkers;
 }, "ddpapp61/App/containers/route/map/examples/DefaultMarkers.js");
-__d(885 /* ddpapp61/App/containers/route/map/examples/CachedMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(888 /* ddpapp61/App/containers/route/map/examples/CachedMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124712,8 +125103,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(872 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
 
 var HORIZONTAL_PADDING=12;
 var VERTICAL_PADDING=6;var
@@ -126533,7 +126924,7 @@ latitudeDelta:10.0}];
 
 module.exports=CachedMap;
 }, "ddpapp61/App/containers/route/map/examples/CachedMap.js");
-__d(886 /* ddpapp61/App/containers/route/map/examples/LoadingMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(889 /* ddpapp61/App/containers/route/map/examples/LoadingMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -126541,8 +126932,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(872 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -126636,7 +127027,7 @@ backgroundColor:'transparent'}});
 
 module.exports=LoadingMap;
 }, "ddpapp61/App/containers/route/map/examples/LoadingMap.js");
-__d(887 /* ddpapp61/App/containers/route/map/examples/TakeSnapshot.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(890 /* ddpapp61/App/containers/route/map/examples/TakeSnapshot.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -126646,9 +127037,9 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(872 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
-var _flagPink=require(873 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
+var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
+var _flagPink=require(876 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -126770,14 +127161,14 @@ justifyContent:'center'}});
 
 module.exports=MarkerTypes;
 }, "ddpapp61/App/containers/route/map/examples/TakeSnapshot.js");
-__d(888 /* ddpapp61/App/containers/route/map/examples/FitToSuppliedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(891 /* ddpapp61/App/containers/route/map/examples/FitToSuppliedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -126933,14 +127324,14 @@ _reactNative.StyleSheet.absoluteFillObject)});
 
 module.exports=FocusOnMarkers;
 }, "ddpapp61/App/containers/route/map/examples/FitToSuppliedMarkers.js");
-__d(889 /* ddpapp61/App/containers/route/map/examples/LiteMapView.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(892 /* ddpapp61/App/containers/route/map/examples/LiteMapView.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -126987,7 +127378,7 @@ marginVertical:50}});
 
 module.exports=LiteMapView;
 }, "ddpapp61/App/containers/route/map/examples/LiteMapView.js");
-__d(890 /* ddpapp61/App/containers/route/map/examples/CustomTiles.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(893 /* ddpapp61/App/containers/route/map/examples/CustomTiles.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -126995,7 +127386,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 
-var _reactNativeMaps=require(859 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
+var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 

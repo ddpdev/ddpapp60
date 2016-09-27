@@ -14,6 +14,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
+import com.xiaobu.amap.AMapLocationReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
             new VectorIconsPackage(),
             new ReactMaterialKitPackage(),
             new ImagePickerPackage(),
-            new RNFetchBlobPackage()
+            new RNFetchBlobPackage(),
+            new AMapLocationReactPackage()
       );
     }
   };

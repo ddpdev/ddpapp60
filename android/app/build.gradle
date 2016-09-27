@@ -151,6 +151,7 @@ dependencies {
     compile project(':react-native-material-kit')
     compile project(':react-native-fetch-blob')
     compile project(':react-native-maps')
+    compile project(':reactamaplocation')
     compile fileTree(dir: "libs", include: ["*.jar"])            // gradlew clean 수행해보기 바람. dexDebug오류시
     compile "com.android.support:appcompat-v7:23.0.1"             // 23.0.1 --> 24.2.0
     compile "com.facebook.react:react-native:+"  // From node_modules

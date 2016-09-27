@@ -11,6 +11,14 @@ import { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
 
 
 class PageOne extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isLoggedIn : false,
+        }
+        console.log("PageOne:",props,this.state);
+    }
+
   render() {
     const goToPageTwo = () => Actions.pageTwo({text: 'Hello World!'});
     const goToPageCameraRollPicker = () => Actions.pageCameraRollPicker();
@@ -19,6 +27,7 @@ class PageOne extends Component {
     const pageImagePicker = () => Actions.pageImagePicker();
     const pageMapExamples = () => Actions.pageMapExamples();
     const pageMaps = () => Actions.pageMaps();
+    const pageWebView = () => Actions.pageWebView({uri:'http://istarkov.github.io/google-map-react/map/main'});
     //const pageLocation = () => Actions.pageLocation();
 
     return (
@@ -44,14 +53,6 @@ class PageOne extends Component {
                 backgroundColor='#39fbf7'
                 onPress={goToPageCameraRollPicker}
             />
-            {/*<Button*/}
-                {/*raised*/}
-                {/*iconRight*/}
-                {/*icon={{name: 'collections'}}*/}
-                {/*title='기본 카메라롤'*/}
-                {/*color='#f50'*/}
-                {/*onPress={pageCameraRoll}*/}
-            {/*/>*/}
             <Button
               raised
               iconRight
@@ -73,35 +74,43 @@ class PageOne extends Component {
             <Button
               iconRight
               icon={{name: 'web'}}
-              title='Web View'
+              title='Web View(DDP)'
               color='#517fa4'
               backgroundColor='#89faf8'
               onPress={Actions.pageThree}
             />
             <Button
-                raised
                 iconRight
-                icon={{name: 'collections'}}
-                title='Map Examples'
-                color='#c93'
+                icon={{name: 'web'}}
+                title='google map 연동 테스트'
+                color='#317fc4'
                 backgroundColor='#89faf8'
-                onPress={pageMapExamples}
+                onPress={pageWebView}
             />
-          <Button
-            iconRight
-            icon={{name: 'web'}}
-            title='Current Geo Location '
-            color='#517fa4'
-            backgroundColor='#89faf8'
-            onPress={Actions.pageLocation}
-          />
             <Button
                 raised
                 iconRight
                 icon={{name: 'collections'}}
-                title='Map Location 테스트'
+                title='Map 예제모음'
+                color='#c93'
+                backgroundColor='#89faf8'
+                onPress={pageMapExamples}
+            />
+            <Button
+                 iconRight
+                 icon={{name: 'collections'}}
+                 title='현재 위치 조회(GPS,WIFI)'
+                 color='#517fa4'
+                 backgroundColor='#89faf8'
+                 onPress={Actions.pageAmapLocation}
+            />
+            <Button
+                raised
+                iconRight
+                icon={{name: 'collections'}}
+                title='지도 표시 테스트'
                 color='#d47'
-                backgroundColor='#39fbf7'
+                backgroundColor='#79f9b3'
                 onPress={pageMaps}
             />
             <Button
