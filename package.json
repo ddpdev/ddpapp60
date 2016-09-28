@@ -39,6 +39,7 @@
     "react-native-uploader": "0.0.9",
     "react-native-vector-icons": "*",
     "react-redux": "*",
+    "recompose": "^0.20.2",
     "redux": "*",
     "redux-logger": "*",
     "redux-persist": "*",

@@ -73,7 +73,7 @@ let id = 0;
      }
 
      componentDidMount() {
-         this.listener = AMapLocation.addEventListener((data) => this.locationMapping(data)); //console.log(data));
+         this.listener = AMapLocation.addEventListener(this.locationMapping(data)); //console.log(data));
          AMapLocation.startLocation({
              accuracy: 'HighAccuracy', //BatterySaving, HighAccuracy, DeviceSensors
              interval: 5000,
@@ -91,8 +91,9 @@ let id = 0;
 
      render() {
          return (
-             <ScrollView>
+
                    <View style={styles.container}>
+                     <ScrollView>
                          <Text>
                              <Text style={styles.title}>Initial position: </Text>
                              {LATITUDE}, {LONGITUDE}
@@ -101,8 +102,9 @@ let id = 0;
                              <Text style={styles.title}>Current position: </Text>
                              lat:{this.state.currentlocation.latitude}, lon:{this.state.currentlocation.longitude}
                          </Text>
+                     </ScrollView>
                    </View>
-             </ScrollView>
+
          );
      }
  }
