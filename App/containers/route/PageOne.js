@@ -105,6 +105,14 @@ class PageOne extends Component {
                  onPress={Actions.pageAmapLocation}
             />
             <Button
+                iconRight
+                icon={{name: 'collections'}}
+                title='현재 위치 조회(GPS,WIFI)-Android'
+                color='#737ad4'
+                backgroundColor='#c9fab8'
+                onPress={Actions.pageAndroidLocation}
+            />
+            <Button
                 raised
                 iconRight
                 icon={{name: 'collections'}}

@@ -56,20 +56,29 @@ let id = 0;
                 streetNum: ""
             }
         }
+        this.locationMapping = this.locationMapping.bind(this);
+
         console.log("PageAmapLocation:",props, this.state);
     }
 
      locationMapping(data) {
-         console.log('locationMapping :', data);
-         this.setState({currentlocation : data});
+
+         if (data.errorCode > 0) {
+             console.log('locationMapping Error:', data);
+         } else {
+             console.log('locationMapping :', data);
+             this.setState({currentlocation : data});
+         }
+
      }
 
      componentDidMount() {
-         this.listener = AMapLocation.addEventListener((data)=> this.locationMapping.bind()); //console.log(data));
+         this.listener = AMapLocation.addEventListener((data) => this.locationMapping(data)); //console.log(data));
          AMapLocation.startLocation({
              accuracy: 'HighAccuracy', //BatterySaving, HighAccuracy, DeviceSensors
              interval: 5000,
              //onceLocation: true,
+             wifiActiveScan: true,
              killProcess: true,
              needDetail: true,
          });
@@ -82,16 +91,18 @@ let id = 0;
 
      render() {
          return (
+             <ScrollView>
                    <View style={styles.container}>
-                     <Text>
-                         <Text style={styles.title}>Initial position: </Text>
-                         {LATITUDE}, {LONGITUDE}
-                     </Text>
-                     <Text>
-                         <Text style={styles.title}>Current position: </Text>
-                         lat:{this.state.currentlocation.latitude}, lon:{this.state.currentlocation.longitude}
-                     </Text>
+                         <Text>
+                             <Text style={styles.title}>Initial position: </Text>
+                             {LATITUDE}, {LONGITUDE}
+                         </Text>
+                         <Text>
+                             <Text style={styles.title}>Current position: </Text>
+                             lat:{this.state.currentlocation.latitude}, lon:{this.state.currentlocation.longitude}
+                         </Text>
                    </View>
+             </ScrollView>
          );
      }
  }

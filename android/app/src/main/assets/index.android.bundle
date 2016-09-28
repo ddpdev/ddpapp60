@@ -88336,7 +88336,8 @@ var _PageCameraRollPickerUpload=require(830 /* ./PageCameraRollPickerUpload */);
 var _PagePhotoBrowser=require(831 /* ./PagePhotoBrowser */);var _PagePhotoBrowser2=babelHelpers.interopRequireDefault(_PagePhotoBrowser);
 var _PageMaps=require(866 /* ./map/PageMaps */);var _PageMaps2=babelHelpers.interopRequireDefault(_PageMaps);
 var _PageAmapLocation=require(867 /* ./map/PageAmapLocation */);var _PageAmapLocation2=babelHelpers.interopRequireDefault(_PageAmapLocation);
-var _PageMapExamples=require(869 /* ./map/PageMapExamples */);var _PageMapExamples2=babelHelpers.interopRequireDefault(_PageMapExamples);
+var _PageAndroidLocation=require(869 /* ./map/PageAndroidLocation */);var _PageAndroidLocation2=babelHelpers.interopRequireDefault(_PageAndroidLocation);
+var _PageMapExamples=require(871 /* ./map/PageMapExamples */);var _PageMapExamples2=babelHelpers.interopRequireDefault(_PageMapExamples);
 
 
 var _EvilIcons=require(759 /* react-native-vector-icons/EvilIcons */);var _EvilIcons2=babelHelpers.interopRequireDefault(_EvilIcons);var
@@ -88405,6 +88406,10 @@ onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:
 rightTitle:'Main'}),
 
 _react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageAmapLocation',component:_PageAmapLocation2.default,title:'현재 위치(GPS,WIFI)',
+onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:_reactNativeRouterFlux.ActionConst.REPLACE});},
+rightTitle:'Main'}),
+
+_react2.default.createElement(_reactNativeRouterFlux.Scene,{key:'pageAndroidLocation',component:_PageAndroidLocation2.default,title:'현재 위치(GPS,WIFI)-Android',
 onRight:function onRight(){return _reactNativeRouterFlux.Actions.pageMain({type:_reactNativeRouterFlux.ActionConst.REPLACE});},
 rightTitle:'Main'}),
 
@@ -88820,6 +88825,14 @@ title:'현재 위치 조회(GPS,WIFI)',
 color:'#517fa4',
 backgroundColor:'#89faf8',
 onPress:_reactNativeRouterFlux.Actions.pageAmapLocation}),
+
+_react2.default.createElement(_reactNativeElements.Button,{
+iconRight:true,
+icon:{name:'collections'},
+title:'현재 위치 조회(GPS,WIFI)-Android',
+color:'#737ad4',
+backgroundColor:'#c9fab8',
+onPress:_reactNativeRouterFlux.Actions.pageAndroidLocation}),
 
 _react2.default.createElement(_reactNativeElements.Button,{
 raised:true,
@@ -122320,20 +122333,29 @@ street:"",
 streetNum:""}};
 
 
+_this.locationMapping=_this.locationMapping.bind(_this);
+
 console.log("PageAmapLocation:",props,_this.state);return _this;
 }babelHelpers.createClass(PageAmapLocation,[{key:'locationMapping',value:function locationMapping(
 
 data){
+
+if(data.errorCode>0){
+console.log('locationMapping Error:',data);
+}else{
 console.log('locationMapping :',data);
 this.setState({currentlocation:data});
+}
+
 }},{key:'componentDidMount',value:function componentDidMount()
 
 {var _this2=this;
-this.listener=_reactNativeAmapLocation2.default.addEventListener(function(data){return _this2.locationMapping.bind();});
+this.listener=_reactNativeAmapLocation2.default.addEventListener(function(data){return _this2.locationMapping(data);});
 _reactNativeAmapLocation2.default.startLocation({
 accuracy:'HighAccuracy',
 interval:5000,
 
+wifiActiveScan:true,
 killProcess:true,
 needDetail:true});
 
@@ -122346,6 +122368,7 @@ this.listener.remove();
 
 {
 return(
+_react2.default.createElement(_reactNative.ScrollView,null,
 _react2.default.createElement(_reactNative.View,{style:styles.container},
 _react2.default.createElement(_reactNative.Text,null,
 _react2.default.createElement(_reactNative.Text,{style:styles.title},'Initial position: '),
@@ -122353,7 +122376,8 @@ LATITUDE,', ',LONGITUDE),
 
 _react2.default.createElement(_reactNative.Text,null,
 _react2.default.createElement(_reactNative.Text,{style:styles.title},'Current position: '),'lat:',
-this.state.currentlocation.latitude,', lon:',this.state.currentlocation.longitude)));
+this.state.currentlocation.latitude,', lon:',this.state.currentlocation.longitude))));
+
 
 
 
@@ -122423,7 +122447,169 @@ handler);
 return listener;
 }}]);return ALocation;}();exports.default=ALocation;
 }, "react-native-amap-location/index.js");
-__d(869 /* ddpapp61/App/containers/route/map/PageMapExamples.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(869 /* ddpapp61/App/containers/route/map/PageAndroidLocation.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+
+
+
+var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+var _reactNative=require(12 /* react-native */);
+
+
+
+
+
+
+
+
+var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
+var _reactRedux=require(647 /* react-redux */);
+var _reactNativeElements=require(749 /* react-native-elements */);
+
+
+
+var _reactNativeAndroidLocation=require(870 /* react-native-android-location */);var _reactNativeAndroidLocation2=babelHelpers.interopRequireDefault(_reactNativeAndroidLocation);var _Dimensions$get=
+
+_reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
+
+var ASPECT_RATIO=width/height;
+var LATITUDE=35.907757;
+var LONGITUDE=127.766922;
+var LATITUDE_DELTA=10.0;
+var LONGITUDE_DELTA=LATITUDE_DELTA*ASPECT_RATIO;var
+
+PageAndroidLocation=function(_Component){babelHelpers.inherits(PageAndroidLocation,_Component);
+
+
+function PageAndroidLocation(props){babelHelpers.classCallCheck(this,PageAndroidLocation);var _this=babelHelpers.possibleConstructorReturn(this,(PageAndroidLocation.__proto__||Object.getPrototypeOf(PageAndroidLocation)).call(this,
+props));
+_this.state={
+
+lat:LATITUDE,
+lng:LONGITUDE,
+date:Date(),
+initialPosition:[],
+lastPosition:[],
+locData:'unkown'};
+
+
+
+_this.locationMapping=_this.locationMapping.bind(_this);
+_this.getFromGeoLocation=_this.getFromGeoLocation.bind(_this);
+
+console.log("PageAndroidLocation:",props,_this.state);return _this;
+}babelHelpers.createClass(PageAndroidLocation,[{key:'locationMapping',value:function locationMapping(
+
+data){
+if(data.errorCode>0){
+console.log('locationMapping Error:',data);
+}else{
+console.log('locationMapping :',data);
+var curPosition=JSON.stringify(data);
+this.setState({locData:curPosition,date:Date()});
+console.log('curPosition :',curPosition);
+}
+}},{key:'getFromGeoLocation',value:function getFromGeoLocation()
+
+{var _this2=this;
+
+var watchID;
+
+console.log("getFromGeoLocation Start");
+
+navigator.geolocation.getCurrentPosition(
+function(position){
+var initialPosition=JSON.stringify(position);
+_this2.setState({initialPosition:initialPosition});
+console.log("initialPosition:",initialPosition);
+},
+function(error){return alert(JSON.stringify(error));},
+{enableHighAccuracy:true,timeout:20000,maximumAge:1000});
+
+this.watchID=navigator.geolocation.watchPosition(function(position){
+var lastPosition=JSON.stringify(position);
+_this2.setState({lastPosition:position});
+console.log("lastPosition:",lastPosition);
+});
+
+console.log("watchID:",watchID);
+
+}},{key:'componentDidMount',value:function componentDidMount()
+
+{
+console.log("componentDidMount");
+_reactNative.DeviceEventEmitter.addListener('updateLocation',this.locationMapping.bind(this));
+
+_reactNativeAndroidLocation2.default.getLocation();
+console.log("componentDidMount RNALocation.getLocation");
+this.getFromGeoLocation();
+console.log("componentDidMount getFromGeoLocation");
+}},{key:'componentWillUnmount',value:function componentWillUnmount()
+
+{
+navigator.geolocation.clearWatch(this.watchID);
+}},{key:'render',value:function render()
+
+
+
+
+
+{
+return(
+_react2.default.createElement(_reactNative.View,{style:styles.container},
+_react2.default.createElement(_reactNative.ScrollView,null,
+_react2.default.createElement(_reactNative.Text,null,
+_react2.default.createElement(_reactNative.Text,{style:styles.location},'Default Position: '),
+LATITUDE,', ',LONGITUDE),
+
+_react2.default.createElement(_reactNative.Text,null,
+_react2.default.createElement(_reactNative.Text,{style:styles.location},'RNALocation : '),
+_react2.default.createElement(_reactNative.Text,null,this.state.locData)),
+
+_react2.default.createElement(_reactNative.Text,null,
+_react2.default.createElement(_reactNative.Text,{style:styles.location},'Current Geolocation: ',Date()),"\n",
+_react2.default.createElement(_reactNative.Text,{style:styles.location},'InitialPosition Position :',this.state.initialPosition),"\n",
+_react2.default.createElement(_reactNative.Text,{style:styles.location},'lastPosition Position :',this.state.lastPosition),"\n"),
+
+_react2.default.createElement(_reactNativeElements.Button,{
+raised:true,
+iconRight:true,
+icon:{name:'collections'},
+title:'Reload',
+color:'#f58',
+backgroundColor:'#89faf8',
+onPress:this.getFromGeoLocation}))));
+
+
+
+
+
+}}]);return PageAndroidLocation;}(_react.Component);
+
+
+var styles=_reactNative.StyleSheet.create({
+container:{
+flex:1,
+marginTop:130,
+justifyContent:'center',
+alignItems:'center'},
+
+location:{
+textAlign:'center'},
+
+title:{
+fontWeight:'500'}});exports.default=
+
+
+
+
+(0,_reactRedux.connect)()(PageAndroidLocation);
+}, "ddpapp61/App/containers/route/map/PageAndroidLocation.js");
+__d(870 /* react-native-android-location/index.js */, function(global, require, module, exports) {'use strict';var _require=
+
+require(12 /* react-native */);var NativeModules=_require.NativeModules;
+module.exports=NativeModules.RNALocation;
+}, "react-native-android-location/index.js");
+__d(871 /* ddpapp61/App/containers/route/map/PageMapExamples.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122437,25 +122623,25 @@ var _reactNativeRouterFlux=require(668 /* react-native-router-flux */);
 var _reactRedux=require(647 /* react-redux */);
 
 var _reactNativeMaps=require(775 /* react-native-maps */);
-var _DisplayLatLng=require(870 /* ./examples/DisplayLatLng */);var _DisplayLatLng2=babelHelpers.interopRequireDefault(_DisplayLatLng);
-var _ViewsAsMarkers=require(871 /* ./examples/ViewsAsMarkers */);var _ViewsAsMarkers2=babelHelpers.interopRequireDefault(_ViewsAsMarkers);
-var _EventListener=require(873 /* ./examples/EventListener */);var _EventListener2=babelHelpers.interopRequireDefault(_EventListener);
-var _MarkerTypes=require(874 /* ./examples/MarkerTypes */);var _MarkerTypes2=babelHelpers.interopRequireDefault(_MarkerTypes);
-var _DraggableMarkers=require(877 /* ./examples/DraggableMarkers */);var _DraggableMarkers2=babelHelpers.interopRequireDefault(_DraggableMarkers);
-var _PolygonCreator=require(878 /* ./examples/PolygonCreator */);var _PolygonCreator2=babelHelpers.interopRequireDefault(_PolygonCreator);
-var _PolylineCreator=require(879 /* ./examples/PolylineCreator */);var _PolylineCreator2=babelHelpers.interopRequireDefault(_PolylineCreator);
-var _AnimatedViews=require(880 /* ./examples/AnimatedViews */);var _AnimatedViews2=babelHelpers.interopRequireDefault(_AnimatedViews);
-var _AnimatedMarkers=require(883 /* ./examples/AnimatedMarkers */);var _AnimatedMarkers2=babelHelpers.interopRequireDefault(_AnimatedMarkers);
-var _Callouts=require(884 /* ./examples/Callouts */);var _Callouts2=babelHelpers.interopRequireDefault(_Callouts);
-var _Overlays=require(886 /* ./examples/Overlays */);var _Overlays2=babelHelpers.interopRequireDefault(_Overlays);
-var _DefaultMarkers=require(887 /* ./examples/DefaultMarkers */);var _DefaultMarkers2=babelHelpers.interopRequireDefault(_DefaultMarkers);
-var _CachedMap=require(888 /* ./examples/CachedMap */);var _CachedMap2=babelHelpers.interopRequireDefault(_CachedMap);
-var _LoadingMap=require(889 /* ./examples/LoadingMap */);var _LoadingMap2=babelHelpers.interopRequireDefault(_LoadingMap);
-var _TakeSnapshot=require(890 /* ./examples/TakeSnapshot */);var _TakeSnapshot2=babelHelpers.interopRequireDefault(_TakeSnapshot);
-var _FitToSuppliedMarkers=require(891 /* ./examples/FitToSuppliedMarkers */);var _FitToSuppliedMarkers2=babelHelpers.interopRequireDefault(_FitToSuppliedMarkers);
+var _DisplayLatLng=require(872 /* ./examples/DisplayLatLng */);var _DisplayLatLng2=babelHelpers.interopRequireDefault(_DisplayLatLng);
+var _ViewsAsMarkers=require(873 /* ./examples/ViewsAsMarkers */);var _ViewsAsMarkers2=babelHelpers.interopRequireDefault(_ViewsAsMarkers);
+var _EventListener=require(875 /* ./examples/EventListener */);var _EventListener2=babelHelpers.interopRequireDefault(_EventListener);
+var _MarkerTypes=require(876 /* ./examples/MarkerTypes */);var _MarkerTypes2=babelHelpers.interopRequireDefault(_MarkerTypes);
+var _DraggableMarkers=require(879 /* ./examples/DraggableMarkers */);var _DraggableMarkers2=babelHelpers.interopRequireDefault(_DraggableMarkers);
+var _PolygonCreator=require(880 /* ./examples/PolygonCreator */);var _PolygonCreator2=babelHelpers.interopRequireDefault(_PolygonCreator);
+var _PolylineCreator=require(881 /* ./examples/PolylineCreator */);var _PolylineCreator2=babelHelpers.interopRequireDefault(_PolylineCreator);
+var _AnimatedViews=require(882 /* ./examples/AnimatedViews */);var _AnimatedViews2=babelHelpers.interopRequireDefault(_AnimatedViews);
+var _AnimatedMarkers=require(885 /* ./examples/AnimatedMarkers */);var _AnimatedMarkers2=babelHelpers.interopRequireDefault(_AnimatedMarkers);
+var _Callouts=require(886 /* ./examples/Callouts */);var _Callouts2=babelHelpers.interopRequireDefault(_Callouts);
+var _Overlays=require(888 /* ./examples/Overlays */);var _Overlays2=babelHelpers.interopRequireDefault(_Overlays);
+var _DefaultMarkers=require(889 /* ./examples/DefaultMarkers */);var _DefaultMarkers2=babelHelpers.interopRequireDefault(_DefaultMarkers);
+var _CachedMap=require(890 /* ./examples/CachedMap */);var _CachedMap2=babelHelpers.interopRequireDefault(_CachedMap);
+var _LoadingMap=require(891 /* ./examples/LoadingMap */);var _LoadingMap2=babelHelpers.interopRequireDefault(_LoadingMap);
+var _TakeSnapshot=require(892 /* ./examples/TakeSnapshot */);var _TakeSnapshot2=babelHelpers.interopRequireDefault(_TakeSnapshot);
+var _FitToSuppliedMarkers=require(893 /* ./examples/FitToSuppliedMarkers */);var _FitToSuppliedMarkers2=babelHelpers.interopRequireDefault(_FitToSuppliedMarkers);
 
-var _LiteMapView=require(892 /* ./examples/LiteMapView */);var _LiteMapView2=babelHelpers.interopRequireDefault(_LiteMapView);
-var _CustomTiles=require(893 /* ./examples/CustomTiles */);var _CustomTiles2=babelHelpers.interopRequireDefault(_CustomTiles);
+var _LiteMapView=require(894 /* ./examples/LiteMapView */);var _LiteMapView2=babelHelpers.interopRequireDefault(_LiteMapView);
+var _CustomTiles=require(895 /* ./examples/CustomTiles */);var _CustomTiles2=babelHelpers.interopRequireDefault(_CustomTiles);
 
 
 var IOS=_reactNative.Platform.OS==='ios';
@@ -122606,7 +122792,7 @@ justifyContent:'center'}});exports.default=
 
 (0,_reactRedux.connect)()(PageMapExamples);
 }, "ddpapp61/App/containers/route/map/PageMapExamples.js");
-__d(870 /* ddpapp61/App/containers/route/map/examples/DisplayLatLng.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(872 /* ddpapp61/App/containers/route/map/examples/DisplayLatLng.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122729,7 +122915,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/DisplayLatLng.js");
-__d(871 /* ddpapp61/App/containers/route/map/examples/ViewsAsMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(873 /* ddpapp61/App/containers/route/map/examples/ViewsAsMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122739,7 +122925,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PriceMarker=require(872 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
+var _PriceMarker=require(874 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -122840,7 +123026,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/ViewsAsMarkers.js");
-__d(872 /* ddpapp61/App/containers/route/map/examples/PriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(874 /* ddpapp61/App/containers/route/map/examples/PriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122918,7 +123104,7 @@ marginTop:-0.5}});
 
 module.exports=PriceMarker;
 }, "ddpapp61/App/containers/route/map/examples/PriceMarker.js");
-__d(873 /* ddpapp61/App/containers/route/map/examples/EventListener.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(875 /* ddpapp61/App/containers/route/map/examples/EventListener.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -122928,7 +123114,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PriceMarker=require(872 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
+var _PriceMarker=require(874 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -123100,7 +123286,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/EventListener.js");
-__d(874 /* ddpapp61/App/containers/route/map/examples/MarkerTypes.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(876 /* ddpapp61/App/containers/route/map/examples/MarkerTypes.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123109,8 +123295,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
-var _flagPink=require(876 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
+var _flagBlue=require(877 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
+var _flagPink=require(878 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -123178,11 +123364,11 @@ fontWeight:'bold'}});
 
 module.exports=MarkerTypes;
 }, "ddpapp61/App/containers/route/map/examples/MarkerTypes.js");
-__d(875 /* ddpapp61/App/containers/route/map/examples/assets/flag-blue.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"ea43b45ee1611434b4febf7c009b090e","name":"flag-blue","type":"png"});
+__d(877 /* ddpapp61/App/containers/route/map/examples/assets/flag-blue.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"ea43b45ee1611434b4febf7c009b090e","name":"flag-blue","type":"png"});
 }, "ddpapp61/App/containers/route/map/examples/assets/flag-blue.png");
-__d(876 /* ddpapp61/App/containers/route/map/examples/assets/flag-pink.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"566aed7995a373f07f630c351a7279ad","name":"flag-pink","type":"png"});
+__d(878 /* ddpapp61/App/containers/route/map/examples/assets/flag-pink.png */, function(global, require, module, exports) {module.exports = require(311 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/App/containers/route/map/examples/assets","width":256,"height":256,"scales":[1],"hash":"566aed7995a373f07f630c351a7279ad","name":"flag-pink","type":"png"});
 }, "ddpapp61/App/containers/route/map/examples/assets/flag-pink.png");
-__d(877 /* ddpapp61/App/containers/route/map/examples/DraggableMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(879 /* ddpapp61/App/containers/route/map/examples/DraggableMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123190,7 +123376,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PriceMarker=require(872 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
+var _PriceMarker=require(874 /* ./PriceMarker */);var _PriceMarker2=babelHelpers.interopRequireDefault(_PriceMarker);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -123268,7 +123454,7 @@ _reactNative.StyleSheet.absoluteFillObject)});
 
 module.exports=MarkerTypes;
 }, "ddpapp61/App/containers/route/map/examples/DraggableMarkers.js");
-__d(878 /* ddpapp61/App/containers/route/map/examples/PolygonCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(880 /* ddpapp61/App/containers/route/map/examples/PolygonCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123419,7 +123605,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DisplayLatLng;
 }, "ddpapp61/App/containers/route/map/examples/PolygonCreator.js");
-__d(879 /* ddpapp61/App/containers/route/map/examples/PolylineCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(881 /* ddpapp61/App/containers/route/map/examples/PolylineCreator.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123562,7 +123748,7 @@ backgroundColor:'transparent'}});
 
 module.exports=PolylineCreator;
 }, "ddpapp61/App/containers/route/map/examples/PolylineCreator.js");
-__d(880 /* ddpapp61/App/containers/route/map/examples/AnimatedViews.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(882 /* ddpapp61/App/containers/route/map/examples/AnimatedViews.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -123571,8 +123757,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _PanController=require(881 /* ./PanController */);var _PanController2=babelHelpers.interopRequireDefault(_PanController);
-var _AnimatedPriceMarker=require(882 /* ./AnimatedPriceMarker */);var _AnimatedPriceMarker2=babelHelpers.interopRequireDefault(_AnimatedPriceMarker);
+var _PanController=require(883 /* ./PanController */);var _PanController2=babelHelpers.interopRequireDefault(_PanController);
+var _AnimatedPriceMarker=require(884 /* ./AnimatedPriceMarker */);var _AnimatedPriceMarker2=babelHelpers.interopRequireDefault(_AnimatedPriceMarker);
 
 var screen=_reactNative.Dimensions.get('window');
 
@@ -123979,7 +124165,7 @@ borderColor:'#000'}});
 
 module.exports=AnimatedViews;
 }, "ddpapp61/App/containers/route/map/examples/AnimatedViews.js");
-__d(881 /* ddpapp61/App/containers/route/map/examples/PanController.js */, function(global, require, module, exports) {
+__d(883 /* ddpapp61/App/containers/route/map/examples/PanController.js */, function(global, require, module, exports) {
 
 var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
@@ -124408,7 +124594,7 @@ return _react2.default.createElement(_reactNative.View,babelHelpers.extends({},t
 
 module.exports=PanController;
 }, "ddpapp61/App/containers/route/map/examples/PanController.js");
-__d(882 /* ddpapp61/App/containers/route/map/examples/AnimatedPriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(884 /* ddpapp61/App/containers/route/map/examples/AnimatedPriceMarker.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);var
 
 
@@ -124515,7 +124701,7 @@ borderTopColor:'#007a87'}});
 
 module.exports=AnimatedPriceMarker;
 }, "ddpapp61/App/containers/route/map/examples/AnimatedPriceMarker.js");
-__d(883 /* ddpapp61/App/containers/route/map/examples/AnimatedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(885 /* ddpapp61/App/containers/route/map/examples/AnimatedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124619,7 +124805,7 @@ backgroundColor:'transparent'}});
 
 module.exports=AnimatedMarkers;
 }, "ddpapp61/App/containers/route/map/examples/AnimatedMarkers.js");
-__d(884 /* ddpapp61/App/containers/route/map/examples/Callouts.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(886 /* ddpapp61/App/containers/route/map/examples/Callouts.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124629,7 +124815,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _CustomCallout=require(885 /* ./CustomCallout */);var _CustomCallout2=babelHelpers.interopRequireDefault(_CustomCallout);var _Dimensions$get=
+var _CustomCallout=require(887 /* ./CustomCallout */);var _CustomCallout2=babelHelpers.interopRequireDefault(_CustomCallout);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -124770,7 +124956,7 @@ backgroundColor:'transparent'}});
 
 module.exports=Callouts;
 }, "ddpapp61/App/containers/route/map/examples/Callouts.js");
-__d(885 /* ddpapp61/App/containers/route/map/examples/CustomCallout.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(887 /* ddpapp61/App/containers/route/map/examples/CustomCallout.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124838,7 +125024,7 @@ marginTop:-0.5}});
 
 module.exports=CustomCallout;
 }, "ddpapp61/App/containers/route/map/examples/CustomCallout.js");
-__d(886 /* ddpapp61/App/containers/route/map/examples/Overlays.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(888 /* ddpapp61/App/containers/route/map/examples/Overlays.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -124982,7 +125168,7 @@ backgroundColor:'transparent'}});
 
 module.exports=Overlays;
 }, "ddpapp61/App/containers/route/map/examples/Overlays.js");
-__d(887 /* ddpapp61/App/containers/route/map/examples/DefaultMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(889 /* ddpapp61/App/containers/route/map/examples/DefaultMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -125093,7 +125279,7 @@ backgroundColor:'transparent'}});
 
 module.exports=DefaultMarkers;
 }, "ddpapp61/App/containers/route/map/examples/DefaultMarkers.js");
-__d(888 /* ddpapp61/App/containers/route/map/examples/CachedMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(890 /* ddpapp61/App/containers/route/map/examples/CachedMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -125104,7 +125290,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
+var _flagBlue=require(877 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
 
 var HORIZONTAL_PADDING=12;
 var VERTICAL_PADDING=6;var
@@ -126924,7 +127110,7 @@ latitudeDelta:10.0}];
 
 module.exports=CachedMap;
 }, "ddpapp61/App/containers/route/map/examples/CachedMap.js");
-__d(889 /* ddpapp61/App/containers/route/map/examples/LoadingMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(891 /* ddpapp61/App/containers/route/map/examples/LoadingMap.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -126933,7 +127119,7 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);var _Dimensions$get=
+var _flagBlue=require(877 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -127027,7 +127213,7 @@ backgroundColor:'transparent'}});
 
 module.exports=LoadingMap;
 }, "ddpapp61/App/containers/route/map/examples/LoadingMap.js");
-__d(890 /* ddpapp61/App/containers/route/map/examples/TakeSnapshot.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(892 /* ddpapp61/App/containers/route/map/examples/TakeSnapshot.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -127038,8 +127224,8 @@ var _reactNative=require(12 /* react-native */);
 
 
 var _reactNativeMaps=require(775 /* react-native-maps */);var _reactNativeMaps2=babelHelpers.interopRequireDefault(_reactNativeMaps);
-var _flagBlue=require(875 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
-var _flagPink=require(876 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
+var _flagBlue=require(877 /* ./assets/flag-blue.png */);var _flagBlue2=babelHelpers.interopRequireDefault(_flagBlue);
+var _flagPink=require(878 /* ./assets/flag-pink.png */);var _flagPink2=babelHelpers.interopRequireDefault(_flagPink);var _Dimensions$get=
 
 _reactNative.Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;
 
@@ -127161,7 +127347,7 @@ justifyContent:'center'}});
 
 module.exports=MarkerTypes;
 }, "ddpapp61/App/containers/route/map/examples/TakeSnapshot.js");
-__d(891 /* ddpapp61/App/containers/route/map/examples/FitToSuppliedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(893 /* ddpapp61/App/containers/route/map/examples/FitToSuppliedMarkers.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -127324,7 +127510,7 @@ _reactNative.StyleSheet.absoluteFillObject)});
 
 module.exports=FocusOnMarkers;
 }, "ddpapp61/App/containers/route/map/examples/FitToSuppliedMarkers.js");
-__d(892 /* ddpapp61/App/containers/route/map/examples/LiteMapView.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(894 /* ddpapp61/App/containers/route/map/examples/LiteMapView.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 
@@ -127378,7 +127564,7 @@ marginVertical:50}});
 
 module.exports=LiteMapView;
 }, "ddpapp61/App/containers/route/map/examples/LiteMapView.js");
-__d(893 /* ddpapp61/App/containers/route/map/examples/CustomTiles.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
+__d(895 /* ddpapp61/App/containers/route/map/examples/CustomTiles.js */, function(global, require, module, exports) {var _react=require(16 /* react */);var _react2=babelHelpers.interopRequireDefault(_react);
 var _reactNative=require(12 /* react-native */);
 
 

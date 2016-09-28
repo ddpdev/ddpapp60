@@ -15,6 +15,7 @@ import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.xiaobu.amap.AMapLocationReactPackage;
+import com.syarul.rnalocation.RNALocation;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
             new ReactMaterialKitPackage(),
             new ImagePickerPackage(),
             new RNFetchBlobPackage(),
-            new AMapLocationReactPackage()
+            new AMapLocationReactPackage(),
+            new RNALocation()
       );
     }
   };
