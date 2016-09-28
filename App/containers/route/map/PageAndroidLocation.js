@@ -40,7 +40,7 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
                 date: Date(),
                 initialPosition: [],
                 lastPosition: [],
-                locData: 'unkown',
+                locData: [],
             //}
         };
 
@@ -56,7 +56,9 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
          } else {
              console.log('locationMapping :', data);
              var curPosition = JSON.stringify(data);
-             this.setState({locData: curPosition, date: Date()});
+             var newArray = this.state.locData.slice();
+             newArray.push(curPosition);
+             this.setState({locData: newArray, date: Date()});
              console.log('curPosition :', curPosition);
          }
      }
@@ -69,24 +71,24 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                var initialPosition = JSON.stringify(position);
+                var currPosition = JSON.stringify(position);
                 //this.setState({initialPosition : initialPosition });
                 var newArray = this.state.initialPosition.slice();
-                newArray.push(initialPosition);
+                newArray.push(currPosition);
                 this.setState({initialPosition:newArray})
-                console.log("initialPosition:",initialPosition);
+                console.log("initialPosition:",currPosition);
             },
             (error) => alert(JSON.stringify(error)),
             {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
         );
         this.watchID = navigator.geolocation.watchPosition((position) => {
-            var lastPosition = JSON.stringify(position);
+            var currPosition = JSON.stringify(position);
             //this.setState({lastPosition:position});
             var newArray = this.state.lastPosition.slice();
-            newArray.push(initialPosition);
+            newArray.push(currPosition);
             this.setState({lastPosition:newArray})
 
-            console.log("lastPosition:",lastPosition);
+            console.log("lastPosition:",currPosition);
         });
 
 
