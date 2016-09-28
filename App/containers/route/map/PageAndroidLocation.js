@@ -70,7 +70,10 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 var initialPosition = JSON.stringify(position);
-                this.setState({initialPosition : initialPosition });
+                //this.setState({initialPosition : initialPosition });
+                var newArray = this.state.initialPosition.slice();
+                newArray.push(initialPosition);
+                this.setState({initialPosition:newArray})
                 console.log("initialPosition:",initialPosition);
             },
             (error) => alert(JSON.stringify(error)),
@@ -78,9 +81,15 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
         );
         this.watchID = navigator.geolocation.watchPosition((position) => {
             var lastPosition = JSON.stringify(position);
-            this.setState({lastPosition:position});
+            //this.setState({lastPosition:position});
+            var newArray = this.state.lastPosition.slice();
+            newArray.push(initialPosition);
+            this.setState({lastPosition:newArray})
+
             console.log("lastPosition:",lastPosition);
         });
+
+
 
         console.log("watchID:",watchID);
 

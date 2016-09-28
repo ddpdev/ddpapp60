@@ -122519,7 +122519,10 @@ console.log("getFromGeoLocation Start");
 navigator.geolocation.getCurrentPosition(
 function(position){
 var initialPosition=JSON.stringify(position);
-_this2.setState({initialPosition:initialPosition});
+
+var newArray=_this2.state.initialPosition.slice();
+newArray.push(initialPosition);
+_this2.setState({initialPosition:newArray});
 console.log("initialPosition:",initialPosition);
 },
 function(error){return alert(JSON.stringify(error));},
@@ -122527,9 +122530,15 @@ function(error){return alert(JSON.stringify(error));},
 
 this.watchID=navigator.geolocation.watchPosition(function(position){
 var lastPosition=JSON.stringify(position);
-_this2.setState({lastPosition:position});
+
+var newArray=_this2.state.lastPosition.slice();
+newArray.push(initialPosition);
+_this2.setState({lastPosition:newArray});
+
 console.log("lastPosition:",lastPosition);
 });
+
+
 
 console.log("watchID:",watchID);
 
