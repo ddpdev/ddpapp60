@@ -77,6 +77,7 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
                 var currPosition = JSON.stringify(position);
                 //this.setState({initialPosition : initialPosition });
                 var newArray = this.state.initialPosition.slice();
+                // const newArray = [...this.state.initialPosition];
                 newArray.push(currPosition);
                 this.setState({initialPosition:newArray})
                 console.log("initialPosition:",currPosition);
@@ -84,6 +85,7 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
             (error) => alert(JSON.stringify(error)),
             {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
         );
+
         this.watchID = navigator.geolocation.watchPosition((position) => {
             var currPosition = JSON.stringify(position);
             //this.setState({lastPosition:position});
