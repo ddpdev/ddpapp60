@@ -7,13 +7,17 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "babel-eslint": "^7.0.0",
     "base-64": "^0.1.0",
+    "core-js": "^2.4.1",
     "draft-js": "^0.9.1",
     "draft-js-hashtag-plugin": "^2.0.0-beta5",
     "draft-js-linkify-plugin": "^2.0.0-beta5",
     "draft-js-plugins-editor": "^2.0.0-beta5",
     "draft-js-sticker-plugin": "^2.0.0-beta5",
-    "es6-promise": "^3.3.0",
+    "eslint": "^3.6.1",
+    "eslint-plugin-flowtype": "^2.19.0",
+    "google-map-react": "^0.20.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.15.0",
@@ -38,6 +42,7 @@
     "react-native-router-flux": "^3.35.0",
     "react-native-uploader": "0.0.9",
     "react-native-vector-icons": "*",
+    "react-pure-render": "^1.0.2",
     "react-redux": "*",
     "recompose": "^0.20.2",
     "redux": "*",
@@ -47,6 +52,8 @@
     "reselect": "*"
   },
   "devDependencies": {
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-preset-stage-2": "^6.16.0",
     "react-native-debugger-open": "^0.3.1"
   }
 }

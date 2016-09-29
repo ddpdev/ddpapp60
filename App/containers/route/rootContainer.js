@@ -21,6 +21,7 @@ import PagePhotoBrowser from './PagePhotoBrowser';
 import PageMaps from './map/PageMaps';
 import PageAmapLocation from './map/PageAmapLocation';
 import PageAndroidLocation from './map/PageAndroidLocation';
+import PageGoogleMapLocation from './map/PageGoogleMapLocation';
 import PageMapExamples from './map/PageMapExamples';
 //import PageCameraRoll from './camera/PageCameraRoll';
 
@@ -94,6 +95,10 @@ class RootContainer extends Component {
                     rightTitle='Main'
               />
               <Scene key="pageAndroidLocation" component={PageAndroidLocation} title="현재 위치(GPS,WIFI)-Android"
+                     onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
+                     rightTitle='Main'
+              />
+              <Scene key="pageGoogleMapLocation" component={PageGoogleMapLocation} title="현재 위치-GoogleMap연동"
                      onRight={()=>(Actions.pageMain({type: ActionConst.REPLACE}))}
                      rightTitle='Main'
               />

@@ -91,10 +91,7 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
             console.log("lastPosition:",currPosition);
         });
 
-
-
         console.log("watchID:",watchID);
-
     }
 
      componentDidMount() {

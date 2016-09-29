@@ -58,8 +58,8 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
              console.log('locationMapping Error:', data);
          } else {
              console.log('locationMapping :', data);
-             var curPosition = JSON.stringify(data);
-             var newArray = this.state.locData.slice();
+           const curPosition = JSON.stringify(data);
+           const newArray = this.state.locData.slice();
              newArray.push(curPosition);
              this.setState({locData: newArray, date: Date()});
              console.log('curPosition :', curPosition);
@@ -68,15 +68,15 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
     getFromGeoLocation() {
 
-        var watchID ; //: ?number = null;
+        const watchID ; //: ?number = null;
 
         console.log("getFromGeoLocation Start");
 
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                var currPosition = JSON.stringify(position);
+              const currPosition = JSON.stringify(position);
                 //this.setState({initialPosition : initialPosition });
-                var newArray = this.state.initialPosition.slice();
+              const newArray = this.state.initialPosition.slice();
                 // const newArray = [...this.state.initialPosition];
                 newArray.push(currPosition);
                 this.setState({initialPosition:newArray})
@@ -87,9 +87,9 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
         );
 
         this.watchID = navigator.geolocation.watchPosition((position) => {
-            var currPosition = JSON.stringify(position);
+          const currPosition = JSON.stringify(position);
             //this.setState({lastPosition:position});
-            var newArray = this.state.lastPosition.slice();
+          const newArray = this.state.lastPosition.slice();
             newArray.push(currPosition);
             this.setState({lastPosition:newArray})
 

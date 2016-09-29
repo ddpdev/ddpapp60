@@ -113,6 +113,14 @@ class PageOne extends Component {
                 onPress={Actions.pageAndroidLocation}
             />
             <Button
+              iconRight
+              icon={{name: 'collections'}}
+              title='현재위치 - GoogleMap 연동'
+              color='#737fa4'
+              backgroundColor='#a9cab8'
+              onPress={Actions.pageGoogleMapLocation}
+            />
+            <Button
                 raised
                 iconRight
                 icon={{name: 'collections'}}
