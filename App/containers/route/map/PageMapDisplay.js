@@ -15,8 +15,8 @@ import { View,
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { SocialIcon, Button  } from 'react-native-elements'
-import GoogleMap from 'google-map-react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
+import GoogleMap from 'react-';
+//import shouldPureComponentUpdate from 'react-pure-render/function';
 
 //https://github.com/istarkov/google-map-react-examples/blob/master/web/flux/components/examples/x_main/main_map_block.jsx
 //import MapView from 'react-native-maps';
@@ -33,6 +33,7 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
  class PageAndroidLocation extends Component {
 
+    static watchID = 0;
 
     constructor(props) {
         super(props);
@@ -67,8 +68,6 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
      }
 
     getFromGeoLocation() {
-
-        const watchID ; //: ?number = null;
 
         console.log("getFromGeoLocation Start");
 

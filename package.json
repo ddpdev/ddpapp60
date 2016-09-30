@@ -17,7 +17,6 @@
     "draft-js-sticker-plugin": "^2.0.0-beta5",
     "eslint": "^3.6.1",
     "eslint-plugin-flowtype": "^2.19.0",
-    "google-map-react": "^0.20.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.15.0",
@@ -52,8 +51,6 @@
     "reselect": "*"
   },
   "devDependencies": {
-    "babel-preset-stage-1": "^6.16.0",
-    "babel-preset-stage-2": "^6.16.0",
     "react-native-debugger-open": "^0.3.1"
   }
 }

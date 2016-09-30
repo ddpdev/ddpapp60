@@ -3,7 +3,7 @@
  */
 
 import React, {PropTypes, Component} from 'react/addons';
-import shouldPureComponentUpdate from 'react-pure-render/function';
+//import shouldPureComponentUpdate from 'react-pure-render/function';
 
 export default class MyGreatPlace extends Component {
   static propTypes = {
@@ -12,7 +12,7 @@ export default class MyGreatPlace extends Component {
 
   static defaultProps = {};
 
-  shouldComponentUpdate = shouldPureComponentUpdate;
+  //shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
     return (

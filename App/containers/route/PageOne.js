@@ -1,5 +1,6 @@
 /**
  * Created by ms.kim2 on 2016-09-09.
+ * @flow
  */
 import React, { Component } from 'react';
 import { View, Text, StyleSheet,ScrollView } from 'react-native';
@@ -13,9 +14,11 @@ import { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
 class PageOne extends Component {
     constructor(props){
         super(props);
+
         this.state = {
             isLoggedIn : false,
-        }
+        };
+
         console.log("PageOne:",props,this.state);
     }
 
@@ -115,10 +118,10 @@ class PageOne extends Component {
             <Button
               iconRight
               icon={{name: 'collections'}}
-              title='현재위치 - GoogleMap 연동'
+              title='현재위치 - React GoogleMap 연동'
               color='#737fa4'
               backgroundColor='#a9cab8'
-              onPress={Actions.pageGoogleMapLocation}
+              onPress={Actions.pageReactMap({provider:'google'})}
             />
             <Button
                 raised
