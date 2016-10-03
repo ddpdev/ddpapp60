@@ -21,13 +21,12 @@
 
  const RouterWithRedux = connect()(Router);
 
- import configureStore from './store/configureStore';
- //import MainApp from './mainApp';
- import RootContainer from './containers/route/rootContainer';
- // component can connect and listen to props
- // const connMainApp = connect()(MainApp);
-
-
+import configureRealm from './realm/configure';
+import configureStore from './store/configureStore';
+//import MainApp from './mainApp';
+import RootContainer from './containers/route/rootContainer';
+// component can connect and listen to props
+// const connMainApp = connect()(MainApp);
 
  //const store = configureStore();
 
@@ -41,17 +40,20 @@
 
    constructor(props) {
      super(props);
+
+     configureRealm();
+
      this.state = {
        isLoading : true,
        isLogin : true,
        store: configureStore(),
      }
-    console.log("Setup constructor:",this.state);
+    console.log("Setup constructor with realm:",this.state);
   }
 
    render() {
      //const { state, actions } = this.props;
-     console.log("Setup Render:");
+     //console.log("Setup Render:");
      // create Scene
     //  const scenes = Actions.create(
     //    <Scene key="scene">

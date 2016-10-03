@@ -21,28 +21,15 @@ import {Location} from 'react-native-gps';
 
 const { width, height } = Dimensions.get('window');
 
-const ASPECT_RATIO = width / height;
-const LATITUDE = 35.907757;
-const LONGITUDE = 127.766922;
-const LATITUDE_DELTA = 10.0;
-const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-
-let id = 0;
-
-function randomColor() {
-  return '#${Math.floor(Math.random() * 16777215).toString(16)}';
-}
-
-
  class PageLocation extends Component {
 
-   state = {
-     initialPosition: 'unknown',
-     lastPosition: 'unknown',
-     currentPostion:'unknown',
-   };
+   constructor(props) {
+     super(props);
+     this.state = {
+       currentPostion:[],
+     };
 
-   watchID: ?number = null;
+   }
 
    componentWillMount() {
      Location.startUpdatingLocation();
@@ -52,9 +39,7 @@ function randomColor() {
    const subscription = DeviceEventEmitter.addListener(
                          'locationUpdated',
                          (location) => {
-                           let nowPostion = JSON.stringify(location);
-                           console.log("Gps location",nowPostion);
-                           this.setState(this.state.currentPostion = )
+                           console.log("Gps location",location);
                            /* Example location returned
                             {
                             speed: -1,
@@ -70,20 +55,23 @@ function randomColor() {
                        );
 
    componentDidMount() {
+     let watchID :number = 0;
+
      navigator.geolocation.getCurrentPosition(
        (position) => {
-         var initialPosition = JSON.stringify(position);
+         let initialPosition = JSON.stringify(position);
          console.log("initialPosition",initialPosition);
 
-         this.setState({initialPosition});
+         this.setState({currentPostion:position});
        },
        (error) => alert(JSON.stringify(error)),
        {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
      );
-     this.watchID = navigator.geolocation.watchPosition((position) => {
-       var lastPosition = JSON.stringify(position);
-       console.log("initialPosition",lastPosition);
-       this.setState({lastPosition});
+
+     watchID = navigator.geolocation.watchPosition((position) => {
+       let lastPosition = JSON.stringify(position);
+       console.log("lastPosition",lastPosition);
+       this.setState({currentPostion::lastPosition});
      });
    }
 
@@ -96,7 +84,7 @@ function randomColor() {
                    <View style={styles.container}>
                      <Text>
                          <Text style={styles.title}>Initial position: </Text>
-                         {this.state.initialPosition}
+                         {this.state.currentPostion.map()}
                      </Text>
                      <Text>
                          <Text style={styles.title}>Current position: </Text>

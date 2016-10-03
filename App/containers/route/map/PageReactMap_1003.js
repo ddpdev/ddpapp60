@@ -3,7 +3,7 @@
  * @flow
  */
 
-import React, { PropTypes, DeviceEventEmtter } from 'react';
+import React, { PropTypes } from 'react';
 import {
     StyleSheet,
     View,
@@ -12,8 +12,6 @@ import {
     ScrollView,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Location } from 'react-native-gps';
-
 import { connect } from 'react-redux';
 import MapView from 'react-native-maps';
 import ShopMarker from './ShopMarker';
@@ -29,10 +27,37 @@ const LATITUDE_DELTA = 0.0522;  //  0.0922 -->  0.0522 숫자(0.02)가 작으면
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 let id = 0;
 
+class Event extends React.Component {
+    shouldComponentUpdate(nextProps) {
+        return this.props.event.id !== nextProps.event.id;
+    }
+
+    render() {
+        const { event } = this.props;
+        return (
+            <View style={styles.event}>
+                <Text style={styles.eventName}>{event.name}</Text>
+                <Text style={styles.eventData}>{JSON.stringify(event.data, null, 2)}</Text>
+            </View>
+        );
+    }
+}
+
+Event.propTypes = {
+    event: PropTypes.object,
+};
+
+
+// eslint-disable-next-line react/no-multi-comp
 class PageReactMap extends React.Component {
+
     static watchID = 0;
+
+    // {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+
     constructor(props) {
         super(props);
+
         this.state = {
             region: {
                 latitude: LATITUDE,
@@ -42,8 +67,32 @@ class PageReactMap extends React.Component {
             },
             events: [],
         };
+
+
         this.updataPostion = this.updataPostion.bind(this);
+
         console.log("PageReactMap:",props,this.state);
+
+    }
+
+    makeEvent(e, name) {
+        return {
+            id: id++,
+            name,
+            data: e.nativeEvent ? e.nativeEvent : e,
+        };
+    }
+
+    recordEvent(name) {
+        return e => {
+            const { events } = this.state;
+            this.setState({
+                events: [
+                    this.makeEvent(e, name),
+                    ...events.slice(0, 10),
+                ],
+            });
+        };
     }
 
     async updataPostion() {
@@ -71,11 +120,11 @@ class PageReactMap extends React.Component {
 
               this.setState({region : currentRegion});
           },
-          (error) => console.log("error:",error), //alert(JSON.stringify(error)),
+          (error) => alert(JSON.stringify(error)),
           geo_options
         );
 
-        this.watchID = navigator.geolocation.watchPosition((position) => {
+        this.watchID = await navigator.geolocation.watchPosition((position) => {
             let lastPosition = JSON.stringify(position);
             //console.log("initialPosition",lastPosition);
             //this.updatePosition(lastPosition);
@@ -84,12 +133,9 @@ class PageReactMap extends React.Component {
             currentRegion.longitude = position.coords.longitude;
 
             this.setState({region : currentRegion});
-            console.log("currentPosition:", this.watchID, lastPosition);
+            console.log("currentPosition:",lastPosition);
         });
-    }
 
-    componentWillMount() {
-        Location.startUpdatingLocation();
     }
 
     componentDidMount() {
@@ -107,7 +153,28 @@ class PageReactMap extends React.Component {
                     provider={this.props.provider}
                     style={styles.map}
                     initialRegion={this.state.region}
+                    onRegionChange={this.recordEvent('Map::onRegionChange')}
+                    onRegionChangeComplete={this.recordEvent('Map::onRegionChangeComplete')}
+                    onPress={this.recordEvent('Map::onPress')}
+                    onPanDrag={this.recordEvent('Map::onPanDrag')}
+                    onLongPress={this.recordEvent('Map::onLongPress')}
+                    onMarkerPress={this.recordEvent('Map::onMarkerPress')}
+                    onMarkerSelect={this.recordEvent('Map::onMarkerSelect')}
+                    onMarkerDeselect={this.recordEvent('Map::onMarkerDeselect')}
+                    onCalloutPress={this.recordEvent('Map::onCalloutPress')}
                 >
+                    <MapView.Marker
+                        coordinate={{
+                                      latitude: LATITUDE + (LATITUDE_DELTA / 2),
+                                      longitude: LONGITUDE + (LONGITUDE_DELTA / 2),
+                                    }}
+                    />
+                    <MapView.Marker
+                        coordinate={{
+                                      latitude: LATITUDE - (LATITUDE_DELTA / 2),
+                                      longitude: LONGITUDE - (LONGITUDE_DELTA / 2),
+                                    }}
+                    />
                     <MapView.Marker
                       coordinate={{
                                       latitude: this.state.region.latitude,
@@ -117,12 +184,31 @@ class PageReactMap extends React.Component {
                       title={'내위치'}
                       description={Date()}
                     />
+                    <MapView.Marker
+                        title="This is a title"
+                        description="This is a description"
+                        coordinate={this.state.region}
+                        onPress={this.recordEvent('Marker::onPress')}
+                        onSelect={this.recordEvent('Marker::onSelect')}
+                        onDeselect={this.recordEvent('Marker::onDeselect')}
+                        onCalloutPress={this.recordEvent('Marker::onCalloutPress')}
+                    >
+                        <ShopMarker amount={99} />
+                        <MapView.Callout
+                            style={styles.callout}
+                            onPress={this.recordEvent('Callout::onPress')}
+                        >
+                            <View>
+                                <Text>Well hello there...</Text>
+                            </View>
+                        </MapView.Callout>
+                    </MapView.Marker>
                 </MapView>
-                {/*<View style={styles.eventList}>*/}
-                    {/*<ScrollView>*/}
-                        {/*{this.state.events.map(event => <Event key={event.id} event={event} />)}*/}
-                    {/*</ScrollView>*/}
-                {/*</View>*/}
+                <View style={styles.eventList}>
+                    <ScrollView>
+                        {this.state.events.map(event => <Event key={event.id} event={event} />)}
+                    </ScrollView>
+                </View>
             </View>
         );
     }

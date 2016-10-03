@@ -4,32 +4,30 @@
  *
 * */
 
-const UserInfo = {
-    name : 'UserInfo',
-    properties : {
-        isLoggedIn: 'boolean',
-        id : 'string',
-        name : 'string',
-        icon : 'string'
-    }
+export type DeviceInfo = {
+    uniqueId: ?string,
+    modelName: ?string,
+    deviceId: ?string,
+    deviceLocale: ?string,
+    version: ?string,
+    brand: ?string,
+    timezone: ?any,
 };
 
-const LocationInfo = {
-    name : 'LocationInfo',
-    properties {
-        latitude: 'int',
-        longitude: 'int',
-        latitudeDelta: 'int',
-        longitudeDelta: 'int',
-        lastdate: 'date'
-    }
+export type GeoLocationInfo = {
+    speed: ?number,
+    longitude: ?number,
+    latitude: ?number,
+    accuracy: ?number,
+    heading: ?number,
+    altitude: ?number,
+    altitudeAccuracy: ?number,
+    getDateTime: ?any,
 };
 
-const UserLocation = {
-    name : 'UserLocation',
-    properties : {
-        id : 'string',
-        lastdate: 'date',
-        location : {type:'list', objectType:'LocationInfo'}
-    }
+export type UserLocation = {
+    userName: ?string,
+    userId: ?string,
+    deviceInfo: ?DeviceInfo,
+    geoLocation: ?Array<GeoLocation>,
 };
